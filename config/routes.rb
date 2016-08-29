@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  # devise_for :admin_users, {class_name: 'User'}.merge(ActiveAdmin::Devise.config)
+  ActiveAdmin.routes(self)
+  devise_for :users, controllers: {sessions: 'users/sessions'}
+
   get "homepages/show"
   get "contactpages/show"
 
