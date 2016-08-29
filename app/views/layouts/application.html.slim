@@ -1,0 +1,74 @@
+doctype html
+html
+  head
+    title
+      | ChurchWeb
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    = csrf_meta_tags
+  body
+  .title-bar[data-responsive-toggle="menu" data-hide-for="medium"]
+    button.menu-icon[type="button" data-toggle]
+    .title-bar-title
+      | Menu
+  #menu.top-bar
+    .top-bar-left
+      ul.dropdown.vertical.medium-horizontal.menu[data-dropdown-menu]
+        li.menu-text
+          | The Great Love Of God
+        li
+          a[href=homepages_show_path]
+            | Home
+        li.has-submenu
+          a[href="#"]
+            | Our Beliefs
+          ul.submenu.menu.vertical[data-submenu]
+            li
+              a[href=fatherpages_show_path]
+                | God/Father
+            li
+              a[href=sonpages_show_path]
+                | Jesus/Son
+            li
+              a[href=holyspiritpages_show_path]
+                | Holy Spirit
+        li
+          a[href=contactpages_show_path]
+            | Contact
+            li.has-submenu
+              a[href="#"]
+                | Worship Days
+              ul.submenu.menu.vertical[data-submenu]
+                li
+                  a[href=sundaypages_show_path]
+                    | Sunday
+                li
+                  a[href=tuesdaypages_show_path]
+                    | Tuesday
+                li
+                  a[href=thursdaypages_show_path]
+                    | thursday
+            li.has-submenu
+              a[href="#"]
+                | Ministries
+              ul.submenu.menu.vertical[data-submenu]
+                li
+                  a[href=childrenpages_show_path]
+                    | Children
+                li
+                  a[href=youthpages_show_path]
+                    | Youth
+                li
+                  a[href=elderpages_show_path]
+                    | Elder
+                li
+                  a[href=hospitalpages_show_path]
+                    | Hospital
+                li
+                  a[href=prisonpages_show_path]
+                    | Prison
+                li
+                  a[href=foodpages_show_path]
+                    | Food
+        = yield
