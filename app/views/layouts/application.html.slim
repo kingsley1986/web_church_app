@@ -71,4 +71,14 @@ html
                 li
                   a[href=foodpages_show_path]
                     | Food
-= yield
+
+          - unless current_user && user_signed_in?
+              li= link_to 'Sign up', new_user_registration_path
+          - unless current_user && user_signed_in?
+              li= link_to 'Sign in', new_user_session_path
+          - if current_user && user_signed_in?
+            li= link_to 'Sign out', destroy_user_session_path, :method=>'delete'
+
+
+
+  = yield

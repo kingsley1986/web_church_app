@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  # devise_for :admin_users, {class_name: 'User'}.merge(ActiveAdmin::Devise.config)
   ActiveAdmin.routes(self)
   devise_for :users, controllers: {sessions: 'users/sessions'}
 
@@ -21,7 +20,7 @@ Rails.application.routes.draw do
   get "hospitalpages/show"
   get "prisonpages/show"
   get "foodpages/show"
-  # root "posts#index"
+  root to: "posts#index"
 
   resources :posts, shallow: true do
     resources :comments do

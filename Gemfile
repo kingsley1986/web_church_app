@@ -20,7 +20,14 @@ gem 'slim'
 gem 'simple_form'
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+  gem 'pry'
+  gem 'factory_girl_rails'
   gem 'byebug'
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
