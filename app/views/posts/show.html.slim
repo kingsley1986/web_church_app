@@ -1,2 +1,12 @@
-= @post.title
-=@post.post_body
+ul
+li = @post.title
+li = @post.post_body
+= "posted #{time_ago_in_words(@post.created_at)}"
+
+#comments
+  h2
+    = @post.comments.count
+    |  Comments
+  = render @post.comments
+  |  Add a Comment:
+  = render "comments/form"

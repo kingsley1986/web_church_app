@@ -1,6 +1,7 @@
 class Comment < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :commentable, polymorphic: true
   belongs_to :post
-
-  validates :comment_body, presence: true
+  belongs_to :user
+  validates :body, presence: true
+  has_many :replies, dependent: :destroy
 end

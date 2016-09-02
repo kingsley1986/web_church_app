@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
          validates :gender, presence: true
 
          has_many :posts
+         has_many :comments, through: :post
+         has_many :replies, through: :comment
 
 
 end

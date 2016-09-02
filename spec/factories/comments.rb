@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :comment do
-    comment_body "commenting"
+    body "MyText"
+    commentable nil
   end
 end

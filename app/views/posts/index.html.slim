@@ -1,4 +1,9 @@
-- @posts .each do |post|
-  ul
-    li = post.title
-    li = post.post_body
+ #page_wrapper
+    - @posts.each do |post|
+      = link_to post.title, post
+      p
+      = post.post_body
+      p
+      = post.created_at.strftime("%B, %d, %Y")
+      p
+    = link_to "New Post", new_post_path

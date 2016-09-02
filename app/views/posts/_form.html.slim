@@ -1,0 +1,10 @@
+= simple_form_for @post do |f|
+  - if @post.errors.any?
+    =pluralize(@post.errors.count, "error")
+  - @post.errors.full_messages.each do |msg|
+    ul
+      li
+        = msg
+  = f.input :title
+  = f.input :post_body
+  = f.submit
