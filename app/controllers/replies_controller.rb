@@ -10,7 +10,7 @@ class RepliesController < ApplicationController
      @reply = @comment.replies.create(params[:reply].permit(:reply_body))
      @reply.user = current_user
      if @reply.save
-       redirect_to post_comments_path(:post_id, @comments)
+       redirect_to post_comments_path(:post_id, @comment)
      else
        render new
      end

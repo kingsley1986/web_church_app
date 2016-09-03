@@ -1,5 +1,6 @@
 class HomepagesController < ApplicationController
 
-  def show
+  def index
+    @homepages = Homepage.all
   end
 end

@@ -1,0 +1,2 @@
+module FoodpagesHelper
+end

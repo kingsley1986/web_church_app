@@ -1,0 +1,2 @@
+module FatherpagesHelper
+end

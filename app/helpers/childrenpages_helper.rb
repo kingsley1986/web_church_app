@@ -1,0 +1,2 @@
+module ChildrenpagesHelper
+end

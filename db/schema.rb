@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160901114304) do
+ActiveRecord::Schema.define(version: 20160903152954) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 20160901114304) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
 
+  create_table "children_pages", force: :cascade do |t|
+    t.text     "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.integer  "commentable_id"
@@ -42,8 +48,44 @@ ActiveRecord::Schema.define(version: 20160901114304) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
+  create_table "contact_pages", force: :cascade do |t|
+    t.text     "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "elder_pages", force: :cascade do |t|
+    t.text     "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "father_pages", force: :cascade do |t|
+    t.string   "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "food_pages", force: :cascade do |t|
+    t.text     "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "holyspirit_pages", force: :cascade do |t|
+    t.text     "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "homepages", force: :cascade do |t|
     t.string   "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hospital_pages", force: :cascade do |t|
+    t.text     "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,6 +100,12 @@ ActiveRecord::Schema.define(version: 20160901114304) do
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
+  create_table "prison_pages", force: :cascade do |t|
+    t.text     "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "replies", force: :cascade do |t|
     t.string   "reply_body"
     t.integer  "comment_id"
@@ -68,6 +116,30 @@ ActiveRecord::Schema.define(version: 20160901114304) do
 
   add_index "replies", ["comment_id"], name: "index_replies_on_comment_id"
   add_index "replies", ["user_id"], name: "index_replies_on_user_id"
+
+  create_table "son_pages", force: :cascade do |t|
+    t.text     "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sunday_pages", force: :cascade do |t|
+    t.text     "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "thursday_pages", force: :cascade do |t|
+    t.text     "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tuesday_pages", force: :cascade do |t|
+    t.text     "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -86,9 +158,16 @@ ActiveRecord::Schema.define(version: 20160901114304) do
     t.string   "last_name"
     t.string   "phone"
     t.string   "gender"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "youth_pages", force: :cascade do |t|
+    t.text     "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

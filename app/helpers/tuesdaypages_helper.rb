@@ -1,0 +1,2 @@
+module TuesdaypagesHelper
+end

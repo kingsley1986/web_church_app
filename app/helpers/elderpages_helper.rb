@@ -1,0 +1,2 @@
+module ElderpagesHelper
+end

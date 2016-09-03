@@ -13,8 +13,9 @@ class User < ActiveRecord::Base
          validates :gender, presence: true
 
          has_many :posts
-         has_many :comments, through: :post
-         has_many :replies, through: :comment
+         has_many :comments
+         has_many :replies
+         accepts_nested_attributes_for :posts
 
 
 end
