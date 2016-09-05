@@ -8,6 +8,18 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def like
+    post = Post.find(params[:id])
+    Like.create(likeable: post, user: current_user, like: params[:like])
+    flash[:success] = "Like Counted!"
+    redirect_to :back
+  end
+
+  def unlike
+    post = Post.find(params[:id])
+    post.likes.destroy_all
+    redirect_to :back
+  end
 
   def new
     @post = Post.new

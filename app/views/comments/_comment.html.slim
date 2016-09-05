@@ -2,16 +2,30 @@
   .comment_content
     p.comment_name
       strong
-      = comment.user.first_name
+
+      = "posted by #{comment.user.first_name}"
     p.comment_body
       = comment.body
     p.comment_time
       = time_ago_in_words(comment.created_at)
       |  Ago
 
-      =link_to "Delete", comment_path(comment), :confirm => "Are you sure?", :method => :delete
+    ul
+      -if current_user.id == comment.user_id && comment.likes.count == 1
+        li = link_to "Unlike", unlike_comment_path(comment, like: true), method: 'delete'
+      -else
+        li = link_to "Like", like_comment_path(comment, like: true), method: 'post'
+      = pluralize( comment.likes.size, "like")
 
-    p
-      = link_to "View Replies",   comment_replies_path(comment.id, @reply )
+
+      -if comment.replies.any?
+        h5  Replies
+        - comment.replies.each do |r|
+            li = r.reply_body
+        = comment.replies.count
+        = link_to "Replies",   comment_replies_path(comment.id, @reply )
+
+
+      li =link_to "Delete", comment_path(comment), :confirm => "Are you sure?", :method => :delete
     p
     = link_to "Reply This Comment", new_comment_reply_path(comment.id, @reply)

@@ -17,4 +17,19 @@ class CommentsController < ApplicationController
     @comment.delete
     redirect_to posts_path(@post)
   end
+
+
+  def like
+    comment = Comment.find(params[:id])
+    Like.create(likeable: comment, user: current_user, like: params[:like])
+    flash[:success] = "Like Counted!"
+    redirect_to :back
+  end
+
+  def unlike
+    comment = Comment.find(params[:id])
+    comment.likes.destroy_all
+    redirect_to :back
+  end
+
 end

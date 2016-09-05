@@ -1,6 +1,6 @@
 ul
 li = @post.title
-li = @post.post_body
+li = raw @post.post_body
 = "posted #{time_ago_in_words(@post.created_at)}"
 
 #comments
@@ -10,3 +10,4 @@ li = @post.post_body
   = render @post.comments
   |  Add a Comment:
   = render "comments/form"
+  = javascript_include_tag Ckeditor.cdn_url

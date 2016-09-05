@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :reply do
     reply_body "reply"
-    comment nil
+    association :comment
   end
 end

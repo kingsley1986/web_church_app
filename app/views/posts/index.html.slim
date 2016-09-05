@@ -2,7 +2,13 @@
     - @posts.each do |post|
       = link_to post.title, post
       p
-      = post.post_body
+      = raw post.post_body
+      ul
+        -if current_user.id == post.user_id && post.likes.count == 1
+          li = link_to "Unlike", unlike_post_path(post, like: true), method: 'delete'
+        -else
+          li = link_to "Like", like_post_path(post, like: true), method: 'post'
+      = pluralize( post.likes.size, "like")
       p
       = post.created_at.strftime("%B, %d, %Y")
       p

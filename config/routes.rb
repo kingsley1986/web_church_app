@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   ActiveAdmin.routes(self)
   # devise_for :users, controllers: {sessions: 'users/sessions'}
 
@@ -31,10 +32,18 @@ Rails.application.routes.draw do
   get "foodpages/index"
   root to: "posts#index"
 
-  resources :posts, shallow: true do
-    resources :comments do
+
+  resources :posts, :pictures, shallow: true do
+      member do
+        post 'like'
+        delete "unlike"
+      end
+      resources :comments do
+        member do
+          post 'like'
+          delete "unlike"
+        end
       resources :replies
     end
   end
-
 end

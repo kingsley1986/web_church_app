@@ -1,20 +1,25 @@
-# require 'rails_helper'
-#
-# RSpec.describe PostsController, type: :controller do
-#   let(:user) { create(:user) }
-#
-#   before :each do
-#     sign_in user
-#   end
-#
-#   describe "GET #new" do
-#     context "post with valid params" do
-#       it "shoud get new" do
-#         get :new
-#         expect(response).to render_template :new
-#       end
-#     end
-#   end
+require 'rails_helper'
+
+RSpec.describe PostsController, type: :controller do
+  # let(:user) { create(:user) }
+  # # let(:post) { create(:post)}
+  #
+  # before :each do
+  #   sign_in user
+  # end
+
+  # describe "POST vote" do
+  #     it "creates vote" do
+  #       @user2 = FactoryGirl.create(:user)
+  #       @answer = FactoryGirl.create(:post)
+  #       @vote = FactoryGirl.create(:like, like: "like")
+  #       expect {
+  #         post :like, id: :like
+  #       }.to change(Like, :count).by(1)
+  #       # response.should be_success
+  #     end
+  #   end
+  # end
 #
 #   describe "POST create" do
 #     subject { post :create, { user_id: user.id, post: params } }
@@ -57,4 +62,4 @@
 #       end
 #     end
 #   end
-# end
+end
