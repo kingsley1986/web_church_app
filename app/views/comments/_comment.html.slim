@@ -11,7 +11,7 @@
       = time_ago_in_words(comment.created_at)
       |  Ago
       = simple_form_for [comment, comment.replies.new] do |f|
-        =f.input :reply_body, placeholder: "Reply to this comment here", label: "reply"
+        =f.input :reply_body, placeholder: "Reply to this comment", label: "reply"
 
     ul
       -if current_user && current_user.id == comment.user_id && comment.likes.count >= 1
