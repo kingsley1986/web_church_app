@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
 
-
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(params[:comment].permit(:body))
@@ -17,6 +16,11 @@ class CommentsController < ApplicationController
     @comment.delete
     redirect_to posts_path(@post)
   end
+
+  def index
+    @comment = Comment.all
+  end
+
 
 
   def like

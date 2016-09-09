@@ -1,3 +1,12 @@
-- @replies.each do  |reply|
-  ul
-    li= reply.reply_body
+#section
+  #page_wrapper
+    #content
+      - @replies.each do  |reply|
+        div class="post"
+          .post_title
+            p
+              = reply.reply_body
+            p
+              = "Replied by #{reply.user.first_name}"
+            p
+              = "#{time_ago_in_words(reply.created_at)}"

@@ -3,29 +3,32 @@
     p.comment_name
       strong
 
-      = "posted by #{comment.user.first_name}"
+      div class="comment"
     p.comment_body
-      = comment.body
+      p = comment.body
+      p = "Comment by #{comment.user.first_name}"
     p.comment_time
       = time_ago_in_words(comment.created_at)
       |  Ago
+      = simple_form_for [comment, comment.replies.new] do |f|
+        =f.input :reply_body, placeholder: "Reply to this comment here", label: "reply"
 
     ul
-      -if current_user.id == comment.user_id && comment.likes.count == 1
+      -if current_user && current_user.id == comment.user_id && comment.likes.count >= 1
         li = link_to "Unlike", unlike_comment_path(comment, like: true), method: 'delete'
       -else
         li = link_to "Like", like_comment_path(comment, like: true), method: 'post'
       = pluralize( comment.likes.size, "like")
+      -if comment.likes.size >= 1
+        .like_icon
+          i.fa.fa-thumbs-o-up[style="font-size:17px;color:blue"]
+
+
 
 
       -if comment.replies.any?
         h5  Replies
         - comment.replies.each do |r|
-            li = r.reply_body
         = comment.replies.count
         = link_to "Replies",   comment_replies_path(comment.id, @reply )
-
-
       li =link_to "Delete", comment_path(comment), :confirm => "Are you sure?", :method => :delete
-    p
-    = link_to "Reply This Comment", new_comment_reply_path(comment.id, @reply)

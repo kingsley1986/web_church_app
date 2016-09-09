@@ -5,6 +5,7 @@ html
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+  link[rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"]
   = csrf_meta_tags
   head
     .title-bar[data-responsive-toggle="menu" data-hide-for="medium"]
@@ -17,7 +18,7 @@ html
           li.menu-text
             | The Great Love Of God
           li
-            a[href=homepages_index_path]
+            a[href=homepages_index_path style="color:white; font-weight: bolder;"]
               | Home
           li.has-submenu
             a[href="#"]
@@ -33,7 +34,7 @@ html
                 a[href=holyspiritpages_index_path]
                   | Holy Spirit
           li
-            a[href=contactpages_index_path]
+            a[href=contactpages_index_path  style="color:white; font-weight: bolder;"]
               | Contact
               li.has-submenu
                 a[href="#"]
@@ -72,13 +73,13 @@ html
                       | Food
 
               - unless current_user && user_signed_in?
-                  li= link_to 'Sign up', new_user_registration_path
+                  li= link_to 'Sign up', new_user_registration_path, style: "color:white; font-weight: bolder;"
               - unless current_user && user_signed_in?
-                  li= link_to 'Sign in', new_user_session_path
+                  li= link_to 'Sign in', new_user_session_path, style: "color:white; font-weight: bolder"
               - if current_user && user_signed_in?
-                li= link_to 'Sign out', destroy_user_session_path, :method=>'delete'
+                li= link_to 'Sign out', destroy_user_session_path, :method=>'delete', style: "color:white; font-weight: bolder"
     body
-      .section
         = yield
+        = render "layouts/footer"
     javascript:
       $(document).foundation();
