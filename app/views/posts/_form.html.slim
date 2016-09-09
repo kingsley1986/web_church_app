@@ -6,6 +6,6 @@
       li
         = msg
   = f.input :title
-  = f.cktext_area :post_body
+  = f.input :post_body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } }
   = f.submit
   = javascript_include_tag Ckeditor.cdn_url
