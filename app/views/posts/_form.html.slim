@@ -6,6 +6,6 @@
       li
         = msg
   = f.input :title
-  = f.input :post_body
+  = f.cktext_area :post_body
   = f.submit
   = javascript_include_tag Ckeditor.cdn_url
