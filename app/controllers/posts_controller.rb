@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :find_post_id, except: [:index, :like, :unlike, :new, :create]
+  before_action :find_post_id, except: [:index, :like, :new, :create]
 
   def index
     @posts = Post.all
@@ -10,13 +10,14 @@ class PostsController < ApplicationController
   end
 
   def like
+    post = Post.find(params[:id])
     Like.create(likeable: post, user: current_user, like: params[:like])
     flash[:success] = "Like Counted!"
     redirect_to :back
   end
 
   def unlike
-    post.likes.destroy_all
+    @post.likes.destroy_all
     redirect_to :back
   end
 

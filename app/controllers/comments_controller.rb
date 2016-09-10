@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_action :find_comment_id, except: [:index, :create]
+  before_action :find_comment_id, except: [:like]
 
   def create
     @post = Post.find(params[:post_id])
@@ -23,14 +23,18 @@ class CommentsController < ApplicationController
   end
 
   def like
+    comment = Comment.find(params[:id])
     Like.create(likeable: comment, user: current_user, like: params[:like])
     flash[:success] = "Like Counted!"
     redirect_to :back
   end
 
   def unlike
-    comment.likes.destroy_all
+    @comment.likes.destroy_all
     redirect_to :back
   end
 
+  def find_comment_id
+    @comment = Comment.find(params[:id])
+  end
 end
