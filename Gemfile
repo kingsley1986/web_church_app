@@ -14,6 +14,8 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'ckeditor'
 gem 'paperclip'
+gem 'non-stupid-digest-assets', '~> 1.0.4'
+
 
 
 
