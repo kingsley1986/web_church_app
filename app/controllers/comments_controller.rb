@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_action :find_comment_id, except: [:like]
+  before_action :find_comment_id, except: [:like, :create]
 
   def create
     @post = Post.find(params[:post_id])

@@ -14,7 +14,7 @@
         =f.input :reply_body, placeholder: "Reply to this comment", label: "reply"
 
     ul
-      -if find_comment_like && comment.likes.count >= 1
+      -if current_user && current_user.id == comment.user_id && comment.likes.count >= 1
         li = link_to "Unlike", unlike_comment_path(comment, like: true), method: 'delete'
       -else
         li = link_to "Like", like_comment_path(comment, like: true), method: 'post'
@@ -22,6 +22,8 @@
       -if comment.likes.size >= 1
         .like_icon
           i.fa.fa-thumbs-o-up[style="font-size:17px;color:blue"]
+
+
 
 
       -if comment.replies.any?
