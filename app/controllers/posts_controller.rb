@@ -1,22 +1,21 @@
 class PostsController < ApplicationController
 
+  before_action :find_post_id, except: [:index, :like, :unlike, :new, :create]
+
   def index
     @posts = Post.all
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def like
-    post = Post.find(params[:id])
     Like.create(likeable: post, user: current_user, like: params[:like])
     flash[:success] = "Like Counted!"
     redirect_to :back
   end
 
   def unlike
-    post = Post.find(params[:id])
     post.likes.destroy_all
     redirect_to :back
   end
@@ -36,16 +35,18 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post  = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to post_path(@post)
     else
       render new
     end
+  end
+
+  def find_post_id
+    @post  = Post.find(params[:id])
   end
 
   private
