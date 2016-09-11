@@ -14,6 +14,8 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'ckeditor'
 gem 'paperclip'
+gem 'aws-sdk', '~> 2.5', '>= 2.5.8'
+gem 'figaro'
 gem 'non-stupid-digest-assets', '~> 1.0.4'
 
 
