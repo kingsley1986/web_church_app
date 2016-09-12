@@ -7,7 +7,9 @@
             = link_to post.title, post
           p
             .post_body
-            = raw post.post_body
+            = post.post_body
+            -post.pictures.each do |pic|
+              = image_tag(pic.image) if pic.image? 
             p
             = post.created_at.strftime("%B, %d, %Y")
             p

@@ -6,6 +6,7 @@
       li
         = msg
   = f.input :title
-  = f.input :post_body, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } }
+  = f.input :post_body
+  =f.simple_fields_for :pictures, Picture.new do |ff|
+    =ff.input :image
   = f.submit
-  = javascript_include_tag Ckeditor.cdn_url

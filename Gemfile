@@ -12,11 +12,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
-gem 'ckeditor'
-gem 'paperclip'
-gem 'aws-sdk', '~> 2.5', '>= 2.5.8'
-gem 'non-stupid-digest-assets', '~> 1.0.4'
-
+gem 'carrierwave'
+gem "mini_magick"
+gem "fog"
+gem "figaro"
 
 
 

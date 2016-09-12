@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  mount Ckeditor::Engine => '/ckeditor'
   ActiveAdmin.routes(self)
   # devise_for :users, controllers: {sessions: 'users/sessions'}
 
@@ -34,6 +33,7 @@ Rails.application.routes.draw do
 
 
   resources :posts, :pictures, shallow: true do
+    resources :pictures
       member do
         post 'like'
         delete "unlike"
