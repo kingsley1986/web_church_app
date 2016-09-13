@@ -45,6 +45,18 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
+
+  CarrierWave.configure do |config|
+    config.fog_credentials = {
+        :provider               => 'AWS',
+        :aws_access_key_id      => ENV['S3_KEY'],
+        :aws_secret_access_key  => ENV['S3_SECRECT'],
+        :endpoint               => "https://s3.amazonaws.com",
+        :region                 => ENV['S3-REGION']
+    }
+    config.fog_directory  = ENV['S3_BUCKET_NAME']
+  end
+  
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
   config.log_level = :debug
@@ -78,16 +90,4 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-
-
-  CarrierWave.configure do |config|
-    config.fog_credentials = {
-        :provider               => 'AWS',
-        :aws_access_key_id      => ENV['S3_KEY'],
-        :aws_secret_access_key  => ENV['S3_SECRECT'],
-        :endpoint               => "https://s3.amazonaws.com",
-        :region                 => ENV['S3-REGION']
-    }
-    config.fog_directory  = ENV['S3_BUCKET_NAME']
-  end
 end
