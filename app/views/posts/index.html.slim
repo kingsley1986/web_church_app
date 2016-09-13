@@ -10,7 +10,8 @@
             = post.post_body
             -post.pictures.each do |pic|
               p
-                = image_tag pic.image.url(:medium)
+                .style_image
+                  = image_tag pic.image.url(:medium)
             p
             = post.created_at.strftime("%B, %d, %Y")
             p

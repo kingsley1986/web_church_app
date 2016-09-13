@@ -19,9 +19,9 @@
  */
 /*position top_bar center*/
 
-img {
+.style_image {
   position: relative;
-  padding-top: 13px;
+  padding-top: 6px;
 }
 .dropdown.vertical.medium-horizontal.menu{
   position: relative;

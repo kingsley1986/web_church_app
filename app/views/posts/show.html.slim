@@ -7,8 +7,19 @@
         li = @post.post_body
         -@post.pictures.each do |pic|
           p
-           = image_tag pic.image.url(:medium)
+            .style_image
+              = image_tag pic.image.url(:medium)
         = "posted #{time_ago_in_words(@post.created_at)}"
+        ul
+          -if current_user && user_signed_in?
+            -if find_post_like && @post.likes.count >= 1
+              li = link_to "Unlike", unlike_post_path(@post, like: true), method: 'delete'
+            -else
+              li = link_to "Like", like_post_path(@post, like: true), method: 'post'
+            = pluralize( @post.likes.size, "like")
+            -if @post.likes.size >= 1
+              .like_icon
+                i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]
 
       #comments
         h2
