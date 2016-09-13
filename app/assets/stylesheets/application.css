@@ -18,6 +18,11 @@
 
  */
 /*position top_bar center*/
+
+img {
+  position: relative;
+  padding-top: 13px;
+}
 .dropdown.vertical.medium-horizontal.menu{
   position: relative;
   left: 18%;

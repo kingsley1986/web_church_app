@@ -6,7 +6,8 @@
         li = @post.title
         li = @post.post_body
         -@post.pictures.each do |pic|
-          li = image_tag pic.image.url(:medium)
+          p
+           = image_tag pic.image.url(:medium)
         = "posted #{time_ago_in_words(@post.created_at)}"
 
       #comments
