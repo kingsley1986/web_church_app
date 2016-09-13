@@ -29,12 +29,7 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     @post.user = current_user
     if @post.save
-      @post.pictures.each do |picture|
-        unless picture.image == nil
-          picture.save!
-          redirect_to posts_path
-        end
-      end
+      redirect_to posts_path
     else
       render :new
     end
