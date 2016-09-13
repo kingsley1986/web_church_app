@@ -8,6 +8,7 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+  config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
@@ -27,6 +28,7 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  config.serve_static_assets = true
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true

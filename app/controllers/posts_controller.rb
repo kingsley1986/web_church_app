@@ -29,11 +29,17 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     @post.user = current_user
     if @post.save
-      redirect_to posts_path
+      @post.pictures.each do |picture|
+        unless picture.image == nil
+          picture.save!
+          redirect_to posts_path
+        end
+      end
     else
       render :new
     end
   end
+
 
   def edit
   end
@@ -53,6 +59,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:id, :title, :post_body, pictures_attributes: [:id, :image])
+    params.require(:post).permit(:id, :title, :post_body, pictures_attributes: [:id, :post_id, :image])
   end
 end
