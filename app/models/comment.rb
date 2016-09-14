@@ -6,5 +6,6 @@ class Comment < ActiveRecord::Base
   has_many :replies, dependent: :destroy
   has_many :likes, as: :likeable, dependent: :destroy
   accepts_nested_attributes_for :replies
-
+  # accepts_nested_attributes_for :pictures
+  has_many :pictures, as: :picturable
 end

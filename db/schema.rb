@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160912124741) do
+ActiveRecord::Schema.define(version: 20160913210357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,8 +117,10 @@ ActiveRecord::Schema.define(version: 20160912124741) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "post_id"
+    t.integer  "comment_id"
   end
 
+  add_index "pictures", ["comment_id"], name: "index_pictures_on_comment_id", using: :btree
   add_index "pictures", ["picturable_type", "picturable_id"], name: "index_pictures_on_picturable_type_and_picturable_id", using: :btree
   add_index "pictures", ["post_id"], name: "index_pictures_on_post_id", using: :btree
   add_index "pictures", ["user_id"], name: "index_pictures_on_user_id", using: :btree
@@ -208,6 +210,7 @@ ActiveRecord::Schema.define(version: 20160912124741) do
   add_foreign_key "likes", "comments"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
+  add_foreign_key "pictures", "comments"
   add_foreign_key "pictures", "posts"
   add_foreign_key "pictures", "users"
   add_foreign_key "posts", "users"

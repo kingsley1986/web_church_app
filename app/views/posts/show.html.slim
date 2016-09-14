@@ -26,6 +26,10 @@
           = @post.comments.count
           |  Comments
         = render @post.comments
+          -@post.comments.each do |c|
+            -c.pictures.each do |pic|
+              = simple_form_for pic do |f|
+                = f.input :image
         |  Add a Comment:
         - if current_user && user_signed_in?
           = render "comments/form"

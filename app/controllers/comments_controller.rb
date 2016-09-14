@@ -2,6 +2,8 @@ class CommentsController < ApplicationController
 
   before_action :find_comment_id, except: [:like, :create]
 
+
+
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(params[:comment].permit(:body))
@@ -9,7 +11,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@post)
     else
-      render new
+      redirect_to :back
     end
   end
 

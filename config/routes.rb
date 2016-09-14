@@ -33,12 +33,12 @@ Rails.application.routes.draw do
 
 
   resources :posts, :pictures, shallow: true do
-    resources :pictures
       member do
         post 'like'
         delete "unlike"
       end
       resources :comments do
+        resources :pictures
         member do
           post 'like'
           delete "unlike"

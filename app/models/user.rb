@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
          has_many :posts
          has_many :comments
          has_many :replies
+         has_many :pictures
          accepts_nested_attributes_for :posts
 
 
