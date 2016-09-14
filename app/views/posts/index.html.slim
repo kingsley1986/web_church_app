@@ -8,10 +8,10 @@
           p
             .post_body
             = post.post_body
-            -post.pictures.each do |pic|
+            -post.pictures.each do |pic, remov|
               p
                 .style_image
-                  = image_tag pic.image.url(:medium)
+                = image_tag pic.image.url(:medium)
             p
             = post.created_at.strftime("%B, %d, %Y")
             p

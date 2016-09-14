@@ -10,6 +10,19 @@ class PicturesController < ApplicationController
     @picture.save
   end
 
+  def show
+    @picture = Picture.find(params[:id])
+  end
+
+  def destroy
+    @picture = Picture.find(params[:id])
+    if @picture.delete
+      redirect_to posts_path(@post)
+    else
+      redirect_to :back
+    end
+  end
+
 
   def private
     params.require(:picture).permit(:image)
