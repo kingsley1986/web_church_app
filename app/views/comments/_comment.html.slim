@@ -6,6 +6,8 @@
       div class="comment"
     p.comment_body
       p = comment.body
+      -comment.pictures.each do |comment_pic|
+        p =link_to( image_tag(comment_pic.image.url(:medium)), comment_pic)
       p = "Comment by #{comment.user.first_name}"
     p.comment_time
       = time_ago_in_words(comment.created_at)
