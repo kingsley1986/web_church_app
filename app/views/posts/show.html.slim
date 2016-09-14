@@ -7,7 +7,7 @@
         li = @post.post_body
         -@post.pictures.each do |pic|
           p
-            .style_image
+            =link_to( image_tag(pic.image.url(:thumb)), pic)
         = "posted #{time_ago_in_words(@post.created_at)}"
         ul
           -if current_user && user_signed_in?
