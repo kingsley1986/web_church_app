@@ -12,8 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery-ui
  *= require foundation_and_overrides
  /*= require foundation
+
 
 
  */
@@ -108,8 +110,6 @@
 .post{
   margin-right: 30px;
 }
-
-
 
 footer {
   margin-top: 2px;

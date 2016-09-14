@@ -26,6 +26,7 @@ gem 'rails_12factor', group: :production
 gem 'foundation-rails'
 gem 'slim'
 gem 'simple_form'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
