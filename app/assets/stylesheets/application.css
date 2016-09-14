@@ -19,7 +19,7 @@
  */
 /*position top_bar center*/
 
-.dv, .delete_photo{
+.delete_photo{
   display: inline-block;
    background-color: #ccc;
    border: 1px solid #777;
