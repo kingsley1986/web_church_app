@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   get "hospitalpages/index"
   get "prisonpages/index"
   get "foodpages/index"
-  root to: "posts#index"
+  root to: "homepages#index"
 
 
   resources :posts, :pictures, shallow: true do
