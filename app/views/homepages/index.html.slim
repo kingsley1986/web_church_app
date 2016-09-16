@@ -4,4 +4,5 @@
       - @homepages.each do |father|
         = father.info
     .post_link
-      h3 = link_to "Click Here To View and Make A Post", posts_path(@post), style: 'color:#FFFFFF; font-size: 40px; font-family: Arial, Helvetica;'
+      -if current_user && user_signed_in?
+        h3 = link_to "Click Here To View and Make A Post", posts_path(@post), style: 'color:#FFFFFF; font-size: 40px; font-family: Arial, Helvetica;'

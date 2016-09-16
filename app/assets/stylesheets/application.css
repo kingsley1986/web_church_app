@@ -55,8 +55,8 @@
 h4 {
    position: absolute;
    top: 20px;
-   left: 30px;
-   width: 50%;
+   left: 90px;
+   width: 70%;
 }
 
 h4 span {
@@ -202,15 +202,15 @@ text-decoration: none;
 }
 
 .title-bar {
-  background: #3b5998; }
+  background: #0080ff; }
 
 .top-bar {
-  background: #3b5998; }
+  background: #0080ff; }
   .top-bar ul {
-    background: #3b5998; }
+    background: #0080ff; }
 
     .top-bar ul li {
-      background: #3b5998; }
+      background: #0080ff; }
       .top-bar ul li a {
         color: #ffffff; }
 .top-bar ul li a:hover {
