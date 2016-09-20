@@ -110,44 +110,13 @@ h4 span {
   font-size: 15px;
 }
 
-/*border between top_bar and body*/
-#section {
-  background-color: #DCDCDC;
-  border: 8px solid #DCDCDC;
-}
 
+
+ul {
+	list-style: none;
+}
 /*set the page to the center*/
- #page_wrapper {
-   background-color: #ffffff;
-   width: 74%;
-   margin: 0 auto;
-}
 
-
-/*aligning the body*/
-#content {
-  position: relative;
-  left: 15px;
-  top: 10px;
-  padding-bottom: 10%;
-}
-
-
-.post_title {
-  font-size: 25px;
-}
-
-.post_body {
-  font-size: 20px;
-}
-
-.post {
-  border-bottom:2px solid #CCCCCC;
-}
-
-.post:last-child {
-  border-bottom:0;
-}
 
 .comment {
   border-bottom:2px solid #CCCCCC;
@@ -155,12 +124,6 @@ h4 span {
 
 }
 
-
-.like_icon{
-  position: relative;
-  top: -20px;
-  left: 32px;
-}
 
 .comment_content{
   margin-right: 30px;

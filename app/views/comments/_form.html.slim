@@ -2,4 +2,4 @@
   = f.input :body
   =f.simple_fields_for :pictures, Picture.new do |comment_pic|
     =comment_pic.input :image
-  = f.submit
+  = f.button :submit, "Send", class: "button"

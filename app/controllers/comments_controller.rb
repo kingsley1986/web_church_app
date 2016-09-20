@@ -32,8 +32,12 @@ class CommentsController < ApplicationController
   end
 
   def unlike
-    @comment.likes.destroy_all
-    redirect_to :back
+    @comment.likes.each do |user_like|
+      if user_like.user_id ==  current_user.id
+        user_like.destroy
+        redirect_to :back
+      end
+    end
   end
 
   def find_comment_id

@@ -17,8 +17,12 @@ class PostsController < ApplicationController
   end
 
   def unlike
-    @post.likes.destroy_all
-    redirect_to :back
+    @post.likes.each do |user_like|
+      if user_like.user_id ==  current_user.id
+        user_like.destroy
+      redirect_to :back
+      end
+    end
   end
 
   def new

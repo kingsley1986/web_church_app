@@ -1,3 +1,71 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#page_wrapper {
+  background-color: #ffffff;
+  width: 74%;
+  margin: 0 auto;
+}
+
+/*border between top_bar and body*/
+#section {
+  background-color: #DCDCDC;
+  border: 8px solid #DCDCDC;
+	list-style: none;
+}
+
+
+/*aligning the body*/
+#content {
+ position: relative;
+ left: 15px;
+ top: 10px;
+ padding-bottom: 10%;
+}
+
+.post_title_show{
+	font-weight: bolder;
+	font-size:  17px;
+}
+
+.post_body_show {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.post_show_days_ago{
+  font-weight: bolder;
+  margin-top: 10px;
+}
+
+.post_title {
+  font-size: 25px;
+}
+
+.post_body {
+  font-size: 20px;
+}
+
+.post {
+  border-bottom:2px solid #CCCCCC;
+}
+
+.post:last-child {
+  border-bottom:0;
+}
+
+.like_icon{
+  position: relative;
+  top: -23px;
+  left: 44px;
+}
+
+.like_word {
+  color: green;
+  font-size: 15px;
+}
+
+.like_and_unlike{
+  font-size: 13px;
+}
