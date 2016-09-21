@@ -7,6 +7,37 @@
 }
 
 .like_and_unlike_comment{
+  font-size: 13px;
+  font-weight: bold;
+  position: relative;
+  right: 19px;
+}
+
+.comment_show_days_ago{
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+  position: relative;
+  left: 0px;
+}
+
+.comment_like_word{
   color: green;
   font-size: 15px;
+  position: relative;
+  right: 19px;
+}
+
+.delete_comment_and_reply_link{
+  color: green;
+  font-size: 15px;
+  position: relative;
+  right: 19px;
+}
+
+.reply{
+  color: green;
+  font-size: 15px;
+  position: relative;
+  right: 19px;
 }

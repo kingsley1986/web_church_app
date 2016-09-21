@@ -10,8 +10,8 @@
 
 /*border between top_bar and body*/
 #section {
-  background-color: #DCDCDC;
-  border: 8px solid #DCDCDC;
+  background-color: #1a2a38;
+  border: 8px solid #1a2a38;
 	list-style: none;
 }
 
@@ -25,18 +25,24 @@
 }
 
 .post_title_show{
+  position: relative;
+  right: 14px;
 	font-weight: bolder;
-	font-size:  17px;
+	right: 20px;
 }
 
 .post_body_show {
   font-size: 14px;
   margin-top: 10px;
+  position: relative;
+  right: 20px;
 }
 
 .post_show_days_ago{
   font-weight: bolder;
   margin-top: 10px;
+  position: relative;
+  right: 20px;
 }
 
 .post_title {
@@ -58,14 +64,43 @@
 .like_icon{
   position: relative;
   top: -23px;
-  left: 44px;
+  left: 27px;
+
+}
+
+.like_icon_index{
+  position: relative;
+  top: -38px;
+  left: 45px;
+
 }
 
 .like_word {
   color: green;
   font-size: 15px;
+  position: relative;
+  right: 19px;
 }
 
 .like_and_unlike{
   font-size: 13px;
+  font-weight: bold;
+  position: relative;
+  right: 19px;
+}
+
+
+// for post index
+.like_and_unlike_index{
+  font-size: 13px;
+  font-weight: bold;
+  position: relative;
+  right: 19px;
+}
+
+.like_word_index {
+  color: green;
+  font-size: 15px;
+  position: relative;
+  right: 19px;
 }
