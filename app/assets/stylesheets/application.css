@@ -70,15 +70,6 @@ h4 span {
 
 }
 
-.post_link {
-	font-weight: bolder;
-	background-color: #0000ff;
-	z-index: -1;
-	opacity: 0.6;
-	margin-top: 20px;
-
-}
-
 
 .delete_photo{
   display: inline-block;
