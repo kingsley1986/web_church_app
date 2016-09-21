@@ -5,35 +5,39 @@
 
       div class="comment"
     .comment_body
-      p = comment.body
-      -comment.pictures.each do |comment_pic|
-        p =link_to( image_tag(comment_pic.image.url(:thumb)), comment_pic)
-      p = "Comment by #{comment.user.first_name}"
+      table
+        td
+          div
+            p
+              p = comment.body
+                -comment.pictures.each do |comment_pic|
+                  p =link_to( image_tag(comment_pic.image.url(:thumb)), comment_pic)
+              p = "Comment by #{comment.user.first_name}"
 
-    .comment_show_days_ago
-      = time_ago_in_words(comment.created_at)
-      |  Ago
-    = simple_form_for [comment, comment.replies.new] do |f|
-      =f.input :reply_body, placeholder: "Reply to this comment", label: "reply"
+              .comment_show_days_ago
+              = time_ago_in_words(comment.created_at)
+              |  Ago
+              = simple_form_for [comment, comment.replies.new] do |f|
+                =f.input :reply_body, placeholder: "Reply to this comment", label: "reply"
 
-    ul
-      .like_and_unlike_comment
-        -if current_user && user_signed_in?
-          -if comment.likes.map(&:user_id).include? current_user.id
-            li = link_to "Unlike", unlike_comment_path(comment, like: true), method: 'delete'
-          -else
-            li = link_to "Like", like_comment_path(comment, like: true), method: 'post'
-      .comment_like_word
-        = pluralize( comment.likes.size, "like")
-      -if comment.likes.size >= 1
-        .like_icon
-          i.fa.fa-thumbs-o-up[style="font-size:17px;color:blue"]
+                ul
+                  .like_and_unlike_comment
+                    -if current_user && user_signed_in?
+                      -if comment.likes.map(&:user_id).include? current_user.id
+                        li = link_to "Unlike", unlike_comment_path(comment, like: true), method: 'delete'
+                      -else
+                        li = link_to "Like", like_comment_path(comment, like: true), method: 'post'
+              .comment_like_word
+                = pluralize( comment.likes.size, "like")
+                -if comment.likes.size >= 1
+                  .comment_like_icon
+                    i.fa.fa-thumbs-o-up[style="font-size:17px;color:blue"]
 
-      -if comment.replies.any?
-        .reply
-          h5  Replies
-        - comment.replies.each do |r|
-        .delete_comment_and_reply_link
-          = comment.replies.count
-          = link_to "Replies",   comment_replies_path(comment.id, @reply )
-          li =link_to "Delete", comment_path(comment), :confirm => "Are you sure?", :method => :delete
+            -if comment.replies.any?
+              .reply
+                h5  Replies
+              - comment.replies.each do |r|
+              .delete_comment_and_reply_link
+                = comment.replies.count
+                p = link_to "Replies",   comment_replies_path(comment.id, @reply )
+                =link_to "Delete", comment_path(comment), :confirm => "Are you sure?", :method => :delete

@@ -118,18 +118,8 @@ ul {
 /*set the page to the center*/
 
 
-.comment {
-  border-bottom:2px solid #CCCCCC;
-  border-style: solid;
-
-}
-
 
 .comment_content{
-  margin-right: 30px;
-}
-
-.post{
   margin-right: 30px;
 }
 
