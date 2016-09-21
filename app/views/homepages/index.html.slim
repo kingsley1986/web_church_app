@@ -1,14 +1,14 @@
 .large-header
-img src=("/assets/images/heaven.jpg" ) class="head_image"
-  h4
-    .home_info
-      span
-      .welcome_link
-        .welcome-shiny
-          p you are welcome in jesus name
-      - @homepages.each do |father|
-        = father.info
-    .post_link
-      .inner-shiny
-        -if current_user && user_signed_in?
-          = link_to "Click Here For Posts", posts_path(@post), style: " text-shadow: 2px 2px 5px 	#4B0082;"
+  img src=("/assets/images/heaven.jpg" ) class="head_image"
+    .welcome_link
+      .welcome-shiny
+        p you are welcome in jesus name
+    h4
+      .home_info
+        span
+        - @homepages.each do |father|
+          = father.info
+  .post_link
+    .inner-shiny
+      -if current_user && user_signed_in?
+        = link_to "Click Here For Posts", posts_path(@post), style: " text-shadow: 2px 2px 5px 	#4B0082;"

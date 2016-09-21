@@ -5,7 +5,7 @@
 div.home_info{
   position: relative;
   right: 30px;
-  top: 138px;
+  top: 230px;
 }
 
 
@@ -21,8 +21,8 @@ div.post_link
   font-weight: 900;
   position: relative;
   text-transform: uppercase;
-  top: -60px;
-  left: 120px;
+  left: 0px;
+  top: 60px;
 }
 
 div.post_link::before
@@ -90,12 +90,12 @@ div.welcome_link
   -webkit-text-fill-color: transparent;
   display: inline-block;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 3em;
+  font-size: 4em;
   font-weight: 900;
   position: relative;
   text-transform: uppercase;
-  top: -60px;
-  left: 120px;
+  top: 98px;
+  left: 0px;
 }
 
 div.welcome_link::before
