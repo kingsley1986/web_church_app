@@ -6,8 +6,9 @@
     h4
       .home_info
         span
-        - @homepages.each do |father|
-          = father.info
+        - @homepages.each do |home|
+          = home.info
+          p = image_tag(home.image.url(:thumb))
   .post_link
     .inner-shiny
       = link_to "Click Here For Posts", posts_path(@post), style: " text-shadow: 2px 2px 5px 	#4B0082;"
