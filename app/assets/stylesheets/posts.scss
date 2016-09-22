@@ -123,3 +123,44 @@ div.post{
   position: relative;
   right: 31px;
 }
+
+div.vertical-text {
+	transform: rotate(77deg);
+  font-size: 30px;
+	// transform-origin: left top 0;
+  position: relative;
+  right: 37%;
+  bottom: 707%;
+  color: black;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  letter-spacing:2px;
+  font-weight:bolder;
+
+  color: white;
+  text-shadow: 2px 2px 1px #000,
+            -2px -2px 1px #000,
+            -2px 2px 1px #000,
+             2px -2px 1px #000;
+
+}
+
+div.new_post_link{
+  position: relative;
+  bottom: 6799px;
+  left: 80px;
+
+  display: inline-block;
+   background-color: #ccc;
+   border: 1px solid #777;
+   padding: 0 1.5em;
+   margin: 0.5em;
+   font: bold 1.2em/2em Arial, Helvetica;
+   text-decoration: none;
+   color: #333;
+   text-shadow: 0 1px 0 rgba(255,255,255,.8);
+   border-radius: .2em;
+   box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+
+}

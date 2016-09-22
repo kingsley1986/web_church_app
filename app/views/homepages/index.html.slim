@@ -10,5 +10,4 @@
           = father.info
   .post_link
     .inner-shiny
-      -if current_user && user_signed_in?
-        = link_to "Click Here For Posts", posts_path(@post), style: " text-shadow: 2px 2px 5px 	#4B0082;"
+      = link_to "Click Here For Posts", posts_path(@post), style: " text-shadow: 2px 2px 5px 	#4B0082;"

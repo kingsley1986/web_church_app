@@ -21,12 +21,20 @@ img src=("/assets/images/heaven.jpg" ) class="head_image"
                 p
               ul
                 .like_and_unlike_index
-                  -if post.likes.map(&:user_id).include? current_user.id
-                    li = link_to "Unlike", unlike_post_path(post, like: true), method: 'delete'
-                  -else
-                    li = link_to "Like", like_post_path(post, like: true), method: 'post'
+                  -if current_user && user_signed_in?
+                    -if post.likes.map(&:user_id).include? current_user.id
+                      li = link_to "Unlike", unlike_post_path(post, like: true), method: 'delete'
+                    -else
+                      li = link_to "Like", like_post_path(post, like: true), method: 'post'
                 .like_word_index
                   = pluralize( post.likes.size, "like")
               -if post.likes.size >= 1
                 .like_icon_index
                   i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]
+
+      .new_post_link
+        = link_to "New Post", new_post_path
+
+-unless current_user && user_signed_in?
+  .vertical-text
+    p Please Sign up or Sign-in to make a Post
