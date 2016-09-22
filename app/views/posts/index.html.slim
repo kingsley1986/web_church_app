@@ -33,7 +33,7 @@ img src=("/assets/images/heaven.jpg" ) class="head_image"
                 .like_word_index
                   = pluralize( post.likes.size, "like")
               -if post.likes.size >= 1
-                .like_icon_index
+                  .like_icon_index
                   i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]
 
 -unless current_user && user_signed_in?
