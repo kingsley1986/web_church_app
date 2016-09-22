@@ -1,14 +1,12 @@
 img src=("/assets/images/heaven.jpg" ) class="head_image"
 
--if current_user && user_signed_in? && current_user.admin?
-.new_post_link
-  = link_to "New Post", new_post_path
+  -if current_user && user_signed_in? && current_user.admin?
+  .new_post_link
+    = link_to "New Post", new_post_path
 #section
   #page_wrapper
     #content
       - @posts.each do |post|
-        -if post.likes.size >= 1
-          i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]
         table
           td
             div
