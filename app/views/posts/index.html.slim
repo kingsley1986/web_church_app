@@ -32,9 +32,10 @@ img src=("/assets/images/heaven.jpg" ) class="head_image"
                 .like_icon_index
                   i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]
 
+    -if current_user && user_signed_in? && current_user.admin?
       .new_post_link
         = link_to "New Post", new_post_path
 
 -unless current_user && user_signed_in?
   .vertical-text
-    p Please Sign up or Sign-in to make a Post
+    p Please Sign up or Sign-in to make a Comment

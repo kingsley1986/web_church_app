@@ -5,7 +5,7 @@
 div.home_info{
   position: relative;
   right: 30px;
-  top: 230px;
+  top: 270px;
 }
 
 
@@ -56,7 +56,7 @@ div.inner-shiny::after, div.inner-shiny::before
 	background: #FFF;
   border-radius: 100%;
   box-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #FFF, 0 0 25px #FFF, 0 0 30px #FFF, 0 0 35px #FFF;
-  content: "You Are Welcome In Jesus Name";
+  content: "";
   display: block;
   height: 10px;
   opacity: 0.7;
@@ -90,7 +90,7 @@ div.welcome_link
   -webkit-text-fill-color: transparent;
   display: inline-block;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 4em;
+  font-size: 3em;
   font-weight: 900;
   position: relative;
   text-transform: uppercase;
@@ -101,12 +101,12 @@ div.welcome_link
 div.welcome_link::before
 {
 	background-position: -180px;
-	-webkit-animation: flare 5s infinite;
+	-webkit-animation: flare 4s infinite;
   -webkit-animation-timing-function: linear;
   background-image: linear-gradient(65deg, transparent 20%, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.3) 27%, transparent 27%, transparent 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  content: "Click";
+  content: "You are welcome in Jesus name";
   color: #FFF;
   display: block;
   padding-right: 140px;
@@ -115,7 +115,7 @@ div.welcome_link::before
 
 div.welcome_link::after
 {
-  content: "Click";
+  content: "You are welcome in Jesus name";
   color: #FFF;
   display: block;
   position: absolute;
@@ -131,7 +131,7 @@ div.welcome-shiny::after, div.welcome-shiny::before
 	background: #FFF;
   border-radius: 100%;
   box-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #FFF, 0 0 25px #FFF, 0 0 30px #FFF, 0 0 35px #FFF;
-  content: "";
+  content: "You are welcome in Jesus name";
   display: block;
   height: 10px;
   opacity: 0.7;
