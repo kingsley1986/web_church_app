@@ -28,11 +28,11 @@
                         li = link_to "Unlike", unlike_comment_path(comment, like: true), method: 'delete'
                       -else
                         li = link_to "Like", like_comment_path(comment, like: true), method: 'post'
-                      .comment_like_word
-                        = pluralize( comment.likes.size, "like")
-                        -if comment.likes.size >= 1
-                          .comment_like_icon
-                            i.fa.fa-thumbs-o-up[style="font-size:17px;color:blue"]
+              .comment_like_word
+                = pluralize( comment.likes.size, "like")
+                -if comment.likes.size >= 1
+                  .comment_like_icon
+                    i.fa.fa-thumbs-o-up[style="font-size:17px;color:blue"]
 
             -if comment.replies.any?
               .reply
