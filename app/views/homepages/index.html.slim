@@ -2,13 +2,93 @@
   img src=("/assets/images/heaven.jpg" ) class="head_image"
     .welcome_link
       .welcome-shiny
-        p you are welcome in jesus name
+        p you are welcome
+        p in jesus name
+
     h4
       .home_info
-        span
         - @homepages.each do |home|
           = home.info
           p = image_tag(home.image.url(:thumb))
   .post_link
     .inner-shiny
-      = link_to "Click Here For Posts", posts_path(@post), style: " text-shadow: 2px 2px 5px 	#4B0082;"
+      = link_to "View Posts", posts_path(@post), style: " text-shadow: 2px 2px 5px 	#4B0082;"
+
+
+
+
+  .css-slideshow
+    figure
+      img[src="/assets/images/crucify.jpeg"]
+      figcaption
+        strong
+          | Savior:
+        |  You are special
+      .image_text
+        h4 HE died for you and me
+
+    figure
+      img[src="/assets/images/thumb.jpeg"]
+      figcaption
+        strong
+          | Savior:
+        |  You are special
+      .image_text
+        h4 HE is no longer in the thomb
+
+    figure
+      img[src="/assets/images/backtoheaven.jpeg"]
+      figcaption
+        strong
+          | Savior:
+        |  You are special
+      .image_text
+        h1 HE has gone back to Heaven
+
+    figure
+      img[src="/assets/images/bread.jpeg"]
+      figcaption
+        strong
+          | Savior:
+        |  You are special
+      .image_text
+        h4 HE will provide all you need
+
+    figure
+      img[src="/assets/images/healing.jpeg"]
+      figcaption
+        strong
+          | Savior:
+        |  You are special
+      .image_text
+        h4 HE can heal all sickness
+
+
+    figure
+      img[src="/assets/images/jesusboat.jpeg"]
+      figcaption
+        strong
+          | Savior:
+        |  You are special
+      .image_text
+        h4 Be calm HE is in your boat
+
+
+    figure
+      img[src="/assets/images/shepherd.jpeg"]
+      figcaption
+        strong
+          | Savior:
+        |  You are special
+      .image_text
+        h4 HE is a good shepherd
+
+
+    figure
+      img[src="/assets/images/heavengoal.jpeg"]
+      figcaption
+        strong
+          | Savior:
+        |  You are special
+      .image_text
+        h4 Make Heaven your Goal
