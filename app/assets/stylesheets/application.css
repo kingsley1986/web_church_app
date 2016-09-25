@@ -33,7 +33,7 @@
 
   position: absolute;
 
-  width: 100%;
+  width: 110%;
 
   height: 160%;
 
@@ -143,11 +143,15 @@ a:link {
 text-decoration: none;
 }
 
-.title-bar {
-  background: #0080ff; }
+div.title-bar {
+  background: #0080ff;
+	width: 110%
+ }
 
 .top-bar {
-  background: #0080ff; }
+  background: #0080ff;
+	width: 110%
+ }
   .top-bar ul {
     background: #0080ff; }
 
