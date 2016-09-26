@@ -5,20 +5,14 @@
     li you are welcome
     li in jesus name
 
+.home_info
+  - @homepages.each do |home|
+    = home.info
+    p = image_tag(home.image.url(:thumb))
 
-
-h4
-  .home_info
-    - @homepages.each do |home|
-      = home.info
-      p = image_tag(home.image.url(:thumb))
-
-.post_link
-  .inner-shiny
-    = link_to "View Posts", posts_path(@post), style: " text-shadow: 2px 2px 5px 	#4B0082;"
-
-
-
+  .post_link
+    .inner-shiny
+      = link_to "View Posts", posts_path(@post), style: " text-shadow: 2px 2px 5px 	#4B0082;"
 
 
 .css-slideshow
