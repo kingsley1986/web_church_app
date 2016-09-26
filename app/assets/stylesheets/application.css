@@ -33,15 +33,21 @@
 
   position: absolute;
 
-  width: 110%;
+  width: 60%;
 
   height: 170%;
+
+
+	margin-top: 170px;
+	center: 40em;
+	top: 6em;
+	margin-left: -5em;
 
   background-size: cover;
 
   background-color: purple;
 
-	background-image: url(http://davidwalsh.name/demo/bg-clouds.png);
+	background-image: url(http://1.bp.blogspot.com/-WqpTG_mtioA/Ue55-HgcIQI/AAAAAAAAG5k/6WxQUrSrfJM/s1600/Bible.jpg);
 	background-position: 0px 0px;
 	background-repeat: repeat-x;
 	background-size:cover;
@@ -52,6 +58,16 @@
   animation:animatedBackground 50s linear infinite;
 
 }
+
+
+.large-header_below {
+	position: absolute;
+
+  width: 100%;
+
+  height: 170%;
+}
+
 
 
 h4 {
@@ -112,9 +128,12 @@ ul {
   margin-right: 30px;
 }
 
-footer {
+.footer {
   margin-top: 30%;
   background-color: #000;
+	position: relative;
+	top: 140%;
+	width: 115%;
 
   font-size: 14px;
   padding-bottom: 6px;
@@ -145,15 +164,15 @@ text-decoration: none;
 
 div.title-bar {
   background: #0080ff;
-	width: 110%
  }
 
 .top-bar {
   background: #0080ff;
-	width: 110%
+	/*width: 115%;*/
  }
   .top-bar ul {
-    background: #0080ff; }
+    background: #0080ff;
+	}
 
     .top-bar ul li {
       background: #0080ff; }
