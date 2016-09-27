@@ -31,16 +31,14 @@
 
 .large-header {
 
-  position: absolute;
+  /*position: absolute;*/
 
   width: 60%;
 
   height: 170%;
 
-
-	margin-top: 170px;
-	center: 40em;
-	top: 6em;
+	position:relative;
+  top: 23%;
 	margin-left: -5em;
 
   background-size: cover;
@@ -57,14 +55,13 @@
   -o-animation:animatedBackground 50s linear infinite;
   animation:animatedBackground 50s linear infinite;
 
+
 }
 
 
-.large-header_below {
+div.large-header_below {
 	position: absolute;
-
-  width: 100%;
-
+  width: 114%;
   height: 170%;
 }
 
@@ -132,8 +129,8 @@ ul {
   margin-top: 30%;
   background-color: #000;
 	position: relative;
-	top: 140%;
-	width: 115%;
+	top: -30%;
+	width: 114%;
 
   font-size: 14px;
   padding-bottom: 6px;
@@ -164,11 +161,12 @@ text-decoration: none;
 
 div.title-bar {
   background: #0080ff;
+	width: 114%;
  }
 
 .top-bar {
   background: #0080ff;
-	/*width: 115%;*/
+	width: 114%;
  }
   .top-bar ul {
     background: #0080ff;
