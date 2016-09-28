@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :find_post_id, except: [:index, :like, :new, :create]
 
   def index
-    @posts = Post.all
+    @posts = Post.paginate(page: params[:page], per_page:  8)
   end
 
   def show

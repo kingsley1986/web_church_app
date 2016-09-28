@@ -39,3 +39,7 @@ img src=("/assets/images/heaven.jpg" ) class="head_image"
 -unless current_user && user_signed_in?
   .vertical-text
     p Please Sign up or Sign-in to make a Comment
+.digg_pagination
+  .page_info
+    = page_entries_info @posts
+  = will_paginate @posts, :container => false
