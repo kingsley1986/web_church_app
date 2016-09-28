@@ -1,8 +1,9 @@
 img src=("/assets/images/heaven.jpg" ) class="head_image"
 
-  -if current_user && user_signed_in? && current_user.admin?
+  -if current_user_signed_in && current_user.admin?
   .new_post_link
-    = link_to "New Post", new_post_path
+    -if current_user_signed_in
+      = link_to "New Post", new_post_path
 #section
   #page_wrapper
     #content
@@ -25,7 +26,7 @@ img src=("/assets/images/heaven.jpg" ) class="head_image"
                 p
               ul
                 .like_and_unlike_index
-                  -if current_user && user_signed_in?
+                  -if current_user_signed_in
                     -if post.likes.map(&:user_id).include? current_user.id
                       li = link_to "Unlike", unlike_post_path(post, like: true), method: 'delete'
                     -else
@@ -36,9 +37,6 @@ img src=("/assets/images/heaven.jpg" ) class="head_image"
                 .like_icon_index
                   i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]
 
--unless current_user && user_signed_in?
-  .vertical-text
-    p Please Sign up or Sign-in to make a Comment
 .digg_pagination
   .page_info
     = page_entries_info @posts

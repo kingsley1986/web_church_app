@@ -2,11 +2,9 @@ class CommentsController < ApplicationController
 
   before_action :find_comment_id, except: [:like, :create]
 
-
-
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.new(params[:comment].permit(:body, pictures_attributes: [:id, :comment_id, :image]))
+    @comment = @post.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
       redirect_to post_path(@post)
@@ -42,5 +40,11 @@ class CommentsController < ApplicationController
 
   def find_comment_id
     @comment = Comment.find(params[:id])
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:body, pictures_attributes: [:id, :comment_id, :image])
   end
 end

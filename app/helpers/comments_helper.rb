@@ -1,6 +1,6 @@
 module CommentsHelper
 
-  def find_comment_like
-   Comment.where(like_id: current_user.id)
+  def current_user_signed_in
+    current_user && user_signed_in?
   end
 end

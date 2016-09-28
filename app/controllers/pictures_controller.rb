@@ -16,7 +16,8 @@ class PicturesController < ApplicationController
 
   def destroy
     @picture = Picture.find(params[:id])
-    if @picture.delete
+    if delete_picture
+      @picture.delete
       redirect_to posts_path(@post)
     else
       redirect_to :back

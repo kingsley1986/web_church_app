@@ -18,12 +18,12 @@
               = time_ago_in_words(comment.created_at)
               |  Ago
               = simple_form_for [comment, comment.replies.new] do |f|
-                -if current_user && user_signed_in?
+                -if current_user_signed_in
                   =f.input :reply_body, placeholder: "Reply to this comment", label: "reply"
 
                 ul
                   .like_and_unlike_comment
-                    -if current_user && user_signed_in?
+                    -if current_user_signed_in
                       -if comment.likes.map(&:user_id).include? current_user.id
                         li = link_to "Unlike", unlike_comment_path(comment, like: true), method: 'delete'
                       -else

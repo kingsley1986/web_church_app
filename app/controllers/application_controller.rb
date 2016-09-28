@@ -18,4 +18,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_url, alert: "Access denied, you are not authorized to view this page" and return
     end
   end
+
+  def delete_picture
+    current_user && @picture.picturable.user_id == current_user.id
+  end
 end
