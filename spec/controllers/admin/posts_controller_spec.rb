@@ -50,25 +50,13 @@ RSpec.describe Admin::PostsController, type: :controller do
         expect(assigns[:post].user_id).to eq user.id
       end
     end
-  end
 
-  context "None admin user" do
-    let(:user) { create(:user, admin: false) }
-    let(:params) { { post: attributes_for(:post, title: "post", post_body: "body") } }
+    context "None admin user" do
+      let(:user) { create(:user, admin: false) }
+      let(:params) { { post: attributes_for(:post, title: "post", post_body: "body") } }
 
-    it 'does not creates a post' do
-      expect{ subject }.to_not change(Post, :count)
-    end
-  end
-
-  describe "DELETE #destroy"
-    context "admin user" do
-      let(:user) { create(:user, admin: true) }
-      let(:params) { { delete: attributes_for(:post, title: "post", post_body: "body") } }
-      expect{delete :destroy, id: comment.id, commentable_id: @post.id,  post_id: @post}.
-      to change{@post.comments.count}.by(-1)
-      it "should delete a post" do
-        expect{subject}.to change(Post, :count).by(-1)
+      it 'does not creates a post' do
+        expect{ subject }.to_not change(Post, :count)
       end
     end
   end
