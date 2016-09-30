@@ -60,4 +60,43 @@ RSpec.describe Admin::PostsController, type: :controller do
       end
     end
   end
+
+  describe '#DELETE destroy' do
+    context "admin user" do
+      let(:user) { create(:user, admin: true) }
+      it 'deletes a comment' do
+        post = create(:post, user_id: user.id)
+        expect{delete :destroy, id: post.id, post_id: post}.
+        to change(Post, :count).by(-1)
+      end
+
+      it "should redirect_to admin posts" do
+        post = create(:post, user_id: user.id)
+        delete :destroy, id: post.id, post_id: post
+        expect(response).to redirect_to admin_posts_path
+      end
+    end
+  end
+
+  describe '#DELETE destroy' do
+
+    before :each do
+      request.env["HTTP_REFERER"] =  "http://test.host/"
+    end
+
+    context "non admin user" do
+      let(:user) { create(:user, admin: false) }
+      it 'deletes a comment' do
+        post = create(:post, user_id: user.id)
+        expect{delete :destroy, id: post.id, post_id: post}.
+        to_not change(Post, :count)
+      end
+
+      it "should redirect_to admin posts" do
+        post = create(:post, user_id: user.id)
+        delete :destroy, id: post.id, post_id: post
+        expect(response).to redirect_to :back
+      end
+    end
+  end
 end

@@ -50,20 +50,57 @@ RSpec.describe CommentsController, type: :controller do
   end
 
   describe '#DELETE destroy' do
-    context "do" do
+    context "comment owner" do
+      before { controller.stub(:current_user).and_return user }
+
       before(:each) do
+        request.env["HTTP_REFERER"] =  "http://test.host/"
         @post = FactoryGirl.build(:post)
-        @post.user_id = user.id
         @post.save
-        @comment_attributes = FactoryGirl.attributes_for(:comment, post_id: @post)
       end
 
       it 'deletes a comment' do
-        comment = create(:comment)
+        comment = create(:comment, user_id: user.id)
         @post.comments << comment
         expect{delete :destroy, id: comment.id, commentable_id: @post.id,  post_id: @post}.
         to change{@post.comments.count}.by(-1)
         expect(response).to redirect_to posts_path
+      end
+
+      it "should redirect_to post_path" do
+        comment = create(:comment, user_id: user.id)
+        @post.comments << comment
+        delete :destroy, id: comment.id, commentable_id: @post.id,  post_id: @post
+        expect(response).to redirect_to posts_path
+      end
+    end
+
+
+    context "non comment owner" do
+      before { controller.stub(:current_user).and_return user }
+
+      before(:each) do
+        request.env["HTTP_REFERER"] =  "http://test.host/posts"
+        @post = FactoryGirl.build(:post)
+        @post.save
+        @comment_attributes = FactoryGirl.attributes_for(:comment, post_id: @post)
+      end
+
+      let(:other_user) { create(:user, email: "other_user@gmail.com", password: "password",
+          first_name: "first_name", last_name: "last_name", phone: "3344", gender: "male") }
+
+      it " doesn't delete a comment" do
+        comment = create(:comment, user_id: other_user.id)
+        @post.comments << comment
+        expect{delete :destroy, id: comment.id, user_id: other_user.id, commentable_id: @post.id,  post_id: @post}.
+        to_not change{@post.comments.count}
+      end
+
+      it "should redirect_to post_path" do
+        comment = create(:comment, user_id: user.id)
+        @post.comments << comment
+        delete :destroy, id: comment.id, commentable_id: @post.id,  post_id: @post
+        expect(response).to redirect_to :back
       end
     end
   end

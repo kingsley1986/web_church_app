@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
-  # devise_for :users, controllers: {sessions: 'users/sessions'}
-
   devise_for :users, ActiveAdmin::Devise.config.merge({
      controllers: {sessions: 'users/sessions'},
     path: '',

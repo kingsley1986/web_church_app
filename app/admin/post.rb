@@ -2,7 +2,6 @@ ActiveAdmin.register Post do
 
 
   permit_params :title, :post_body, comments_attributes: [:id, :body, :_destroy, replies_attributes: [:id, :reply_body]]
-  actions :all, :except => [:destroy]
 
   before_create do |post|
     post.user_id = current_user.id
@@ -26,8 +25,6 @@ ActiveAdmin.register Post do
    end
    f.actions
  end
-
-
 
 
   show do

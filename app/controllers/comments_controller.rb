@@ -14,8 +14,12 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment.delete
-    redirect_to posts_path(@post)
+    if @comment.user_id == current_user.id
+      @comment.delete
+      redirect_to posts_path(@post)
+    else
+      redirect_to :back
+    end
   end
 
   def index
