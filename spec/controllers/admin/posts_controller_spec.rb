@@ -60,4 +60,16 @@ RSpec.describe Admin::PostsController, type: :controller do
       expect{ subject }.to_not change(Post, :count)
     end
   end
+
+  describe "DELETE #destroy"
+    context "admin user" do
+      let(:user) { create(:user, admin: true) }
+      let(:params) { { delete: attributes_for(:post, title: "post", post_body: "body") } }
+      expect{delete :destroy, id: comment.id, commentable_id: @post.id,  post_id: @post}.
+      to change{@post.comments.count}.by(-1)
+      it "should delete a post" do
+        expect{subject}.to change(Post, :count).by(-1)
+      end
+    end
+  end
 end
