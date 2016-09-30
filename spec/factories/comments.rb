@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :comment do
     body "MyText"
-    association :post
+    post
   end
 end

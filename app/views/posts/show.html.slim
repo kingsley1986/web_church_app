@@ -22,9 +22,9 @@ img src=("/assets/images/heaven.jpg" ) class="head_image"
                 .like_and_unlike
                   -if current_user_signed_in
                     -if @post.likes.map(&:user_id).include? current_user.id
-                      li = link_to "Unlike", unlike_post_path(@post, like: true), method: 'delete'
+                      li = link_to "Unlike", unlike_post_path(@post, like: true), method: 'delete', remote: true
                     -else
-                      li = link_to "Like", like_post_path(@post, like: true), method: 'post'
+                      li = link_to "Like", like_post_path(@post, like: true), method: 'post', remote: true
                 .like_word
                   = pluralize( @post.likes.size, "like")
                 -if @post.likes.size >= 1
