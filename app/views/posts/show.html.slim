@@ -27,9 +27,9 @@ img src=("/assets/images/heaven.jpg" ) class="head_image"
                       li = link_to "Like", like_post_path(@post, like: true), method: 'post', remote: true
                 .like_word
                   = pluralize( @post.likes.size, "like")
-                -if @post.likes.size >= 1
-                  .show_like_icon
-                    i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]
+                .show_like_icon
+                  -if @post.likes.size >= 1
+                      i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]
 
       #comments
         h3
