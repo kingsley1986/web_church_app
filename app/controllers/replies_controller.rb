@@ -7,7 +7,7 @@ class RepliesController < ApplicationController
      if @reply.save
        redirect_to(:back)
      else
-       render new
+       redirect_to :back
      end
    end
 
@@ -15,4 +15,14 @@ class RepliesController < ApplicationController
      @comments = Comment.find(params[:comment_id])
      @replies = @comments.replies
    end
+
+   def destroy
+     @reply = Reply.find(params[:id])
+     if @reply.user_id == current_user.id
+       @reply.delete
+      redirect_to reply_path(@reply)
+    else
+      redirect_to :back
+    end
+  end
 end
