@@ -10,51 +10,6 @@
   .inner-shiny
     = link_to "View Posts", posts_path(@post), style: " text-shadow: 2px 2px 5px 	#4B0082;"
 
-
-.css-slideshow
-  figure
-    img[src="/assets/images/crucify.jpeg"]
-    .image_text
-      h6 HE died for you and me
-
-  figure
-    img[src="/assets/images/thumb.jpeg"]
-    .image_text
-        h6 HE is no longer in the thomb
-
-  figure
-    img[src="/assets/images/backtoheaven.jpeg"]
-    .image_text
-      h6 HE has gone back to Heaven
-
-  figure
-    img[src="/assets/images/bread.jpeg"]
-    .image_text
-      h6 HE will provide all you need
-
-  figure
-    img[src="/assets/images/healing.jpeg"]
-    .image_text
-      h6 HE can heal all sickness
-
-
-  figure
-    img[src="/assets/images/jesusboat.jpeg"]
-    .image_text
-      h6 Be calm HE is in your boat
-
-
-  figure
-    img[src="/assets/images/shepherd.jpeg"]
-    .image_text
-      h6 HE is a good shepherd
-
-
-  figure
-    img[src="/assets/images/heavengoal.jpeg"]
-    .image_text
-      h6 Make Heaven your Goal
-
 .home_info
   - @homepages.each do |home|
     = home.info

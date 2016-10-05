@@ -36,11 +36,6 @@
  }
 
 
-
-
-
-
-
 @keyframes animatedBackground {
 	from { background-position: 0 0; }
 	to { background-position: 100% 0; }
@@ -135,10 +130,9 @@ ul {
 }
 
 .footer {
-  background-color: #000;
+  background-color: #CCCCCC;
 	position: relative;
-	top: 70%;
-	margin-top: -48%;
+	margin-top: 1%;
 	width: 100%;
 
   font-size: 14px;
