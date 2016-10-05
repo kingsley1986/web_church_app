@@ -1,65 +1,42 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-  # let(:user) { create(:user) }
-  # # let(:post) { create(:post)}
-  #
-  # before :each do
-  #   sign_in user
-  # end
+  let(:user) { create(:user) }
+  let(:poster) { create(:post, user_id: user.id)}
 
-  # describe "POST vote" do
-  #     it "creates vote" do
-  #       @user2 = FactoryGirl.create(:user)
-  #       @answer = FactoryGirl.create(:post)
-  #       @vote = FactoryGirl.create(:like, like: "like")
-  #       expect {
-  #         post :like, id: :like
-  #       }.to change(Like, :count).by(1)
-  #       # response.should be_success
-  #     end
-  #   end
-  # end
-#
-#   describe "POST create" do
-#     subject { post :create, { user_id: user.id, post: params } }
-#     context "post with valid params" do
-#       let(:params) { {title: "title", post_body: "post" } }
-#
-#       it "should create" do
-#         expect{subject}.to change(Post, :count).by(1)
-#       end
-#
-#       it "should redirect_to to post_path root" do
-#         subject
-#         expect(response).to redirect_to posts_path
-#       end
-#     end
-#   end
-#
-#   # describe "GET show" do
-#   #   context "assings post" do
-#   #       subject { get :show, { user_id: user.id} }
-#   #     it 'assigns the post to @post' do
-#   #       expect(assigns(:post)).to eq(post)
-#   #     end
-#   #   end
-#   # end
-#
-#   describe "POST #create" do
-#     subject { post :create, { user_id: user.id, post: params } }
-#
-#     context "post with invalid params" do
-#       let(:params) { {title: "", post_body: "post" } }
-#
-#       it "should not create" do
-#         expect{subject}.to_not change(Post, :count)
-#       end
-#
-#       it "should redirect_to to post_path root" do
-#         subject
-#         expect(response).to render_template :new
-#       end
-#     end
-#   end
+  before :each do
+    request.env["HTTP_REFERER"] =  "http://test.host/"
+    sign_in user
+  end
+
+  describe "POST #like" do
+    subject { post :like, params }
+    context "valid user" do
+      let(:params) { { like: attributes_for(:like), like: true, id: poster.id }}
+
+      it "creates like" do
+        expect {subject}.to change(Like, :count).by(1)
+      end
+
+      it "should redirect_to back" do
+        subject
+        expect(response).to redirect_to :back
+      end
+    end
+  end
+
+  describe "POST #unlike" do
+    subject { post :like, params }
+    context "valid user" do
+      let(:params) { { like: attributes_for(:like), like: true, id: poster.id }}
+
+
+      it "unlike likes" do
+        subject
+        poster.likes.each do |po|
+          expect {po.delete}.to change(Like, :count).by(-1)
+        end
+      end
+    end
+  end
 end

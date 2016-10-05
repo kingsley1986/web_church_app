@@ -30,21 +30,14 @@ div.image_text{
   left: 15px;
 
 }
-.css-slideshow{
-   position: relative;
-   max-width: 495px;
-   height: 370px;
-   margin: 5em auto .5em auto;
-}
-
 
 
 div.css-slideshow{
  position: absolute;
- max-width: 70%;
- top: 27.5%;
- left: 57%;
+ max-width: 50%;
+ bottom: 64%;
  width:100%;
+ position:fixed;
 }
 .css-slideshow figure{
    margin: 0;
@@ -101,11 +94,11 @@ figure:nth-child(8) {
 
 
 div.home_info{
-  position: relative;
-  bottom: 106%;
-  left: 11.2%;
-  padding-left: 45%;
-  padding-right: 15%;
+  position: absolute;
+  top: 20%;
+  max-width: 100%;
+  padding-left: 57%;
+  padding-right: 3%;
 }
 
 
@@ -121,7 +114,6 @@ div.post_link
   font-weight: 900;
   position: relative;
   text-transform: uppercase;
-  left: 2%;
   top: -155%;
 }
 

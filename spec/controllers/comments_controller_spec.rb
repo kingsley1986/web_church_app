@@ -104,4 +104,56 @@ RSpec.describe CommentsController, type: :controller do
       end
     end
   end
+
+  describe "POST #like" do
+    before :each do
+      request.env["HTTP_REFERER"] =  "http://test.host/"
+      sign_in user
+    end
+
+    let(:comment) { create(:comment, user_id: user.id)}
+    subject { post :like, params }
+    context "valid user" do
+      let(:params) { { like: attributes_for(:like), like: true, id: comment.id }}
+
+      it "creates like" do
+        expect {subject}.to change(Like, :count).by(1)
+      end
+
+      it "should redirect_to back" do
+        subject
+        expect(response).to redirect_to :back
+      end
+    end
+  end
+
+
+  describe "POST #unlike" do
+    before :each do
+      request.env["HTTP_REFERER"] =  "http://test.host/"
+      sign_in user
+    end
+
+    subject { post :like, params }
+    context "valid user" do
+      let(:comment) { create(:comment, user_id: user.id)}
+      let(:params) { { like: attributes_for(:like), id: comment.id }}
+
+
+      it "unlike likes" do
+        subject
+        comment.likes.each do |po|
+          expect {po.delete}.to change(Like, :count).by(-1)
+        end
+      end
+
+      it "should redirect back" do
+        subject
+        comment.likes.each do |po|
+          po.delete
+          expect(response).to redirect_to :back
+        end
+      end
+    end
+  end
 end
