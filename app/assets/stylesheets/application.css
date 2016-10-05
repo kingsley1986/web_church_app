@@ -21,6 +21,10 @@
  */
 /*position top_bar center*/
 
+body{
+  background: url('/assets/images/black1.jpg');
+}
+
 .alert-error {
     background-color: #f2dede;
     border-color: #eed3d7;
@@ -45,7 +49,7 @@
   width: 60%;
   height: 150%;
 	position:relative;
-  top: 13.5%;
+  top: 11%;
 	margin-left: -5em;
   background-size: cover;
   background-color: purple;
@@ -66,7 +70,7 @@
 div.large-header_below {
 	position: absolute;
   width: 100%;
-  height: 100%;
+  height: 80%;
 }
 
 
