@@ -1,6 +1,6 @@
 class SundaypagesController < ApplicationController
 
   def index
-    @sundaypages = SundayPage.all
+    @sunday_pages = SundayPage.all
   end
 end

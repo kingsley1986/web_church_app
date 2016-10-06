@@ -1,3 +1,6 @@
 class FatherPage < ActiveRecord::Base
-  validates :info, presence: true 
+  mount_uploader :image, PictureImageUploader
+  validates :info, presence: true
+
+  has_many :pictures, as: :picturable
 end
