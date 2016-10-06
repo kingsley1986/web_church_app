@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   root to: "homepages#index"
 
 
-  resources :posts, :pictures, shallow: true do
+  resources :posts, :pictures, :aboutpages, shallow: true do
     resources :pictures
       member do
         post 'like'

@@ -1,0 +1,4 @@
+.home_info
+  - @about_pages.each do |about|
+    = about.info
+    p = image_tag(about.image.url(:thumb))
