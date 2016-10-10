@@ -13,12 +13,6 @@
   background-color: #c4c7ce;
 }
 
-.head_image{
-  position: absolute;
-  width: 120%;
-  height: 13%;
-}
-
 /*aligning the body*/
 #content {
  position: relative;
@@ -167,8 +161,9 @@ div.new_post_link{
 
 
 .digg_pagination {
-  background: white;
   cursor: default;
+  position: relative;
+  bottom: 18px;
   /* self-clearing method: */ }
   .digg_pagination a, .digg_pagination span, .digg_pagination em {
     padding: 0.2em 0.5em;

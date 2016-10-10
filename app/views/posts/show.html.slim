@@ -1,41 +1,40 @@
-img src=("/assets/images/heaven.jpg" ) class="head_image"
-#section
-  #page_wrapper
-    #content
-      div class="post"
-        ul
-         table
-            td
-              div
-                p
-                  .post_title_show
-                    = @post.title
-                  .post_body_show
-                    = @post.post_body
-                  .post_show_days_ago
-                    = "posted #{time_ago_in_words(@post.created_at)}"
-              -@post.pictures.each do |pic|
+#page_wrapper
+  #content
+    div class="post"
+      ul
+       table
+          td
+            div
+              p
+                .post_title_show
+                  = @post.title
+                .post_body_show
+                  = @post.post_body
+                .post_show_days_ago
+                  = "posted #{time_ago_in_words(@post.created_at)}"
+            -@post.pictures.each do |pic|
 
-                p
-                  =link_to( image_tag(pic.image.url(:medium)), pic)
-              ul
-                .like_and_unlike
-                  -if current_user_signed_in
-                    -if @post.likes.map(&:user_id).include? current_user.id
-                      li = link_to "Unlike", unlike_post_path(@post, like: true), method: 'delete', remote: true
-                    -else
-                      li = link_to "Like", like_post_path(@post, like: true), method: 'post', remote: true
-                .like_word
-                  = pluralize( @post.likes.size, "like")
-                .show_like_icon
-                  -if @post.likes.size >= 1
-                      i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]
+              p
+                =link_to( image_tag(pic.image.url(:medium)), pic)
+            ul
+              .like_and_unlike
+                -if current_user_signed_in
+                  -if @post.likes.map(&:user_id).include? current_user.id
+                    li = link_to "Unlike", unlike_post_path(@post, like: true), method: 'delete', remote: true
+                  -else
+                    li = link_to "Like", like_post_path(@post, like: true), method: 'post', remote: true
+              .like_word
+                = pluralize( @post.likes.size, "like")
+              .show_like_icon
+                -if @post.likes.size >= 1
+                    i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]
 
-      #comments
-        h3
+    #comments
+      h3
+        .count_comment
           = @post.comments.count
           |  Comments
-        = render @post.comments
-        |  Add a Comment:
-        - if current_user_signed_in
-          = render "comments/form"
+      = render @post.comments
+      |  Add a Comment:
+      - if current_user_signed_in
+        = render "comments/form"

@@ -1,8 +1,12 @@
-.footer
-  p
-    |  We are for God:
-    = link_to "Contact Us", contactpages_index_path
-    |  Developed by:
-    = link_to 'Kingsley Chukwuma'
-    |  Contact:
-    = link_to 'Contact Us'
+
+
+.page-wrap
+  h1
+    | Sticky Footer
+  = link_to "Contact Us", contactpages_index_path
+  h2
+    | with Fixed Footer Height
+  button#add
+    | Add Content
+footer.site-footer
+  |  I'm the Sticky Footer.
