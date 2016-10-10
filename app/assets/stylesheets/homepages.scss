@@ -11,9 +11,8 @@ div.home_info{
   font-weight: bolder;
   color: white;
   font-size: 20px;
-
   height:260px;
- top:-1255px;
+ bottom: 157.5%;
  margin-bottom:-324px;
 }
 
@@ -30,6 +29,7 @@ div.about_info{
   font-size: 20px;
 }
 
+
 div.post_link
 {
   color: #FFD700;
@@ -37,12 +37,14 @@ div.post_link
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 2.4vw;
+  font-size: 1.7em;
   font-weight: 900;
   position: relative;
   text-transform: uppercase;
   top: -157%;
   left: 20px;
+
+
 }
 
 
