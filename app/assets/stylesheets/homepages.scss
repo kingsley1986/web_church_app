@@ -10,10 +10,19 @@ div.home_info{
   padding-right: 3%;
   font-weight: bolder;
   color: white;
-  font-size: 20px;
   height:260px;
  bottom: 157.5%;
  margin-bottom:-324px;
+}
+
+div.home_info {
+  font-size: 10px;
+}
+
+@media (min-width: 900px) {
+div.home_info {
+    font-size: 18px;
+  }
 }
 
 div.about_info{
@@ -37,7 +46,7 @@ div.post_link
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.7em;
+  font-size: 2.5vw;
   font-weight: 900;
   position: relative;
   text-transform: uppercase;
