@@ -11,7 +11,7 @@ div.home_info{
   font-weight: bolder;
   color: white;
   height:260px;
- bottom: 157.5%;
+ bottom: 153%;
  margin-bottom:-324px;
 }
 
@@ -41,17 +41,38 @@ div.about_info{
 
 div.post_link
 {
-  color: #FFD700;
-  background: -webkit-gradient(linear, left top, left bottom, from(#F5C21B), to(#D17000));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 2.5vw;
-  font-weight: 900;
-  position: relative;
+  position: absolute;
   text-transform: uppercase;
-  top: -157%;
+  bottom: 94.4%;
 
+
+
+  display: inline-block;
+   background-color: #ccc;
+   border: 1px solid #777;
+   padding: 0 1.5em;
+   margin: 0.5em;
+   text-decoration: none;
+   color: #333;
+   font-weight: bolder;
+   text-shadow: 0 1px 0 rgba(255,255,255,.8);
+   border-radius: .2em;
+   box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+   padding-left: 3px;
+   padding-right: 3px;
+   left: 63px;
+
+}
+
+
+div.post_link {
+  font-size: 10px;
+}
+
+@media (min-width: 900px) {
+div.post_link {
+    font-size: 18px;
+  }
 }
 
 

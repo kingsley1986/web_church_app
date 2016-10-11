@@ -137,25 +137,42 @@ div.vertical-text {
 
 }
 
-div.new_post_link{
-  position: relative;
-  bottom: 40px;
-  left: 80%;
-  font-size: 50px;
+div.new_post_link
+{
+  position: absolute;
+  text-transform: uppercase;
+  bottom: 94.4%;
+
+
 
   display: inline-block;
    background-color: #ccc;
    border: 1px solid #777;
    padding: 0 1.5em;
    margin: 0.5em;
-   font: bold 1.2em/2em Arial, Helvetica;
    text-decoration: none;
    color: #333;
+   font-weight: bolder;
    text-shadow: 0 1px 0 rgba(255,255,255,.8);
    border-radius: .2em;
    box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+   padding-left: 3px;
+   padding-right: 3px;
+   left: 63px;
 
 }
+
+
+div.new_post_link {
+  font-size: 10px;
+}
+
+@media (min-width: 900px) {
+div.new_post_link{
+    font-size: 18px;
+  }
+}
+
 
 
 
