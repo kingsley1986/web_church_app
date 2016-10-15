@@ -26,7 +26,7 @@
 }
 
 body{
-  background: url('/assets/images/black1.jpg');
+  background: url('/assets/images/w.png');
 }
 
 .alert-error {
@@ -47,30 +47,6 @@ body{
 @keyframes animatedBackground {
 	from { background-position: 0 0; }
 	to { background-position: 100% 0; }
-}
-
-.large-header {
-  width: 60%;
-  height: 150%;
-	position:relative;
-  top: 5%;
-	margin-left: -5em;
-  background-size: cover;
-  background-color: purple;
-	background-image: url(http://1.bp.blogspot.com/-WqpTG_mtioA/Ue55-HgcIQI/AAAAAAAAG5k/6WxQUrSrfJM/s1600/Bible.jpg);
-	background-position: 0px 0px;
-	background-repeat: repeat-x;
-	background-size:cover;
-	-webkit-animation:animatedBackground 50s linear infinite;
- 	-moz-animation:animatedBackground 50s linear infinite;
-  -ms-animation:animatedBackground 50s linear infinite;
-  -o-animation:animatedBackground 50s linear infinite;
-  animation:animatedBackground 50s linear infinite;
-  border: 2px solid white;
-  border-radius: 25px;
-
-
-
 }
 
 
@@ -110,8 +86,7 @@ h4 span {
   padding-top: 6px;
 }
 .dropdown.vertical.medium-horizontal.menu{
-  position: relative;
-  left: 18%;
+  background: none;
 }
 
 /*top_bar font_sizing*/
@@ -150,10 +125,6 @@ a:link {
 text-decoration: none;
 }
 
-div.title-bar {
-  background: #0080ff;
-	width: 100%;
- }
 
 .top-bar {
   background: #0080ff;
@@ -163,10 +134,8 @@ div.title-bar {
     background: #0080ff;
 	}
 
-    .top-bar ul li {
-      background: #0080ff; }
-      .top-bar ul li a {
-        color: #ffffff; }
+.top-bar ul li a {
+  color: #ffffff; }
 .top-bar ul li a:hover {
   text-decoration: none;
   color: #ea421e; }
@@ -184,3 +153,44 @@ div.title-bar {
     border-color: transparent transparent transparent #ffffff; }
 .js-drilldown-back::before {
   border-color: transparent #ffffff transparent transparent; }
+
+
+
+
+
+
+  .top-bar {
+    padding: 0.2rem;
+    height: 12%;
+    /*opacity: 0.8;*/
+  }
+
+  .top-bar::before,
+  .top-bar::after {
+    content: ' ';
+    display: table;
+  }
+
+  .top-bar::after {
+    clear: both;
+  }
+
+  .top-bar,
+  .top-bar ul {
+    background:rgba(0,0,0,0.7);
+
+  }
+
+  .top-bar a {
+    color: #CECECE;
+  }
+
+  .top-bar input {
+    width: 200px;
+    margin-right: 1rem;
+  }
+
+  .top-bar input.button {
+    width: auto;
+
+  }
