@@ -194,3 +194,16 @@ text-decoration: none;
     width: auto;
 
   }
+
+/*top bar heading text*/
+
+li.has-submenu.is-dropdown-submenu-parent.opens-right{
+  font-weight: bolder;
+   font-family: Arial Black
+}
+
+a.home_and {
+  font-weight: bold;
+  font-style: italic;
+
+}
