@@ -126,7 +126,7 @@ text-decoration: none;
 }
 
 
-.top-bar {
+/*.top-bar {
   background: #0080ff;
 	width: 100%;
  }
@@ -155,23 +155,22 @@ text-decoration: none;
   border-color: transparent #ffffff transparent transparent; }
 
 
+*/
 
 
 
-
-  .top-bar {
+  /*.top-bar {
     padding: 0.2rem;
     height: 12%;
-    /*opacity: 0.8;*/
-  }
+  }*/
 
-  .top-bar::before,
+  /*.top-bar::before,
   .top-bar::after {
     content: ' ';
     display: table;
-  }
+  }*/
 
-  .top-bar::after {
+  /*.top-bar::after {
     clear: both;
   }
 
@@ -179,7 +178,7 @@ text-decoration: none;
   .top-bar ul {
     background:rgba(0,0,0,0.7);
 
-  }
+  }*/
 
   .top-bar a {
     color: #CECECE;
