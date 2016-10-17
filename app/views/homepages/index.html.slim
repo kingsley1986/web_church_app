@@ -1,8 +1,3 @@
-.home_info
-  - @homepages.each do |home|
-    = home.info
-    p = image_tag(home.image.url(:thumb))
-
 .css-slideshow
   figure
     img.alignnone[src="/assets/images/slide8.jpg" style="border: 1px solid white"]
@@ -52,6 +47,11 @@
       strong
         | Do you Love Jesus?::
       |  Jesus Christ is the ONLY way to God.
+
+.home_info
+  - @homepages.each do |home|
+    = home.info
+    p = image_tag(home.image.url(:thumb))
 
 /.back_ground_transparent
 
