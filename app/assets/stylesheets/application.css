@@ -15,9 +15,6 @@
  *= require jquery-ui
  *= require foundation_and_overrides
  /*= require foundation
-
-
-
  */
 
 .count_comment {
@@ -66,17 +63,17 @@ h4 span {
 
 
 .delete_photo{
-  display: inline-block;
-   background-color: #ccc;
-   border: 1px solid #777;
-   padding: 0 1.5em;
-   margin: 0.5em;
-   font: bold 1em/2em Arial, Helvetica;
-   text-decoration: none;
-   color: #333;
-   text-shadow: 0 1px 0 rgba(255,255,255,.8);
-   border-radius: .2em;
-   box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+ display: inline-block;
+ background-color: #ccc;
+ border: 1px solid #777;
+ padding: 0 1.5em;
+ margin: 0.5em;
+ font: bold 1em/2em Arial, Helvetica;
+ text-decoration: none;
+ color: #333;
+ text-shadow: 0 1px 0 rgba(255,255,255,.8);
+ border-radius: .2em;
+ box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
 }
 
 
@@ -87,6 +84,7 @@ h4 span {
 }
 .dropdown.vertical.medium-horizontal.menu{
   background: none;
+  height: 150px;
 }
 
 /*top_bar font_sizing*/
@@ -161,8 +159,6 @@ text-decoration: none;
 
   .top-bar {
     padding: 0.2rem;
-    height: 12%;
-    /*opacity: 0.8;*/
   }
 
   .top-bar::before,
@@ -201,7 +197,6 @@ li.has-submenu.is-dropdown-submenu-parent.opens-right{
   font-weight: bolder;
    font-family: Arial Black
 }
-
 a.home_and {
   font-weight: bold;
   font-style: italic;

@@ -9,15 +9,34 @@ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
   font-weight: 300;
 }
 
+// div.back_ground_transparent{
+//   background:rgba(0,0,0,0.7);
+//   position: relative;
+//   width: 100%;
+//   height: 10%;
+//   bottom: 7.2%;
+// }
+img.alignnone{
+  width: 400px;
+  height: 200px;
+  height: auto;
+  position: relative;
+  top: -30px;
+  margin: 0 auto;
+  left: 25%;
+}
+
+
 .css-slideshow{
   position: relative;
   max-width: 495px;
-  height: 370px;
   margin: 5em auto .5em auto;
   max-width: 50%;
   height: auto;
   display:block;
+  bottom: 20px;
 }
+
 .css-slideshow figure{
   margin: 0;
   max-width: 495px;
@@ -101,14 +120,14 @@ figure:nth-child(8) {
 
 div.home_info{
   position: relative;
-  max-width: 100%;
-  padding-left: 77%;
-  padding-right: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
   font-weight: bolder;
   color: white;
-  height:260px;
-}
+  text-align: center;
+  top: 48%;
 
+}
 
 
 div.home_info {
