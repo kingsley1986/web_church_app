@@ -16,9 +16,10 @@ div.back_ground_transparent{
   position: relative;
   width: 70%;
   height: 100%;
+  object-fit: cover;
   top: 35%;
   margin: 0 auto;
-  border-radius: 5%;
+  border-radius: 1%;
 }
 img.alignnone{
   width: 400px;
