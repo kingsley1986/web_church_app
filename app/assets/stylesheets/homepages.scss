@@ -9,13 +9,17 @@ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
   font-weight: 300;
 }
 
-// div.back_ground_transparent{
-//   background:rgba(0,0,0,0.7);
-//   position: relative;
-//   width: 100%;
-//   height: 10%;
-//   bottom: 7.2%;
-// }
+div.back_ground_transparent{
+  background-color:black;
+  z-index:0;
+  opacity:0.5;
+  position: relative;
+  width: 70%;
+  height: 100%;
+  top: 35%;
+  margin: 0 auto;
+  border-radius: 5%;
+}
 img.alignnone{
   width: 400px;
   height: 200px;
@@ -125,8 +129,7 @@ div.home_info{
   font-weight: bolder;
   color: white;
   text-align: center;
-  top: 40%;
-
+  bottom: 60%;
 }
 
 

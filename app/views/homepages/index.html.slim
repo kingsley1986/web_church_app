@@ -48,12 +48,14 @@
         | Do you Love Jesus?::
       |  Jesus Christ is the ONLY way to God.
 
+
+
+.back_ground_transparent
+
 .home_info
   - @homepages.each do |home|
     = home.info
     p = image_tag(home.image.url(:medium))
-
-/.back_ground_transparent
 
 .welcome_link
   ul
