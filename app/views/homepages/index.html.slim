@@ -51,7 +51,7 @@
 .home_info
   - @homepages.each do |home|
     = home.info
-    p = image_tag(home.image.url(:thumb))
+    p = image_tag(home.image.url(:large))
 
 /.back_ground_transparent
 
