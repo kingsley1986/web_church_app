@@ -6,8 +6,9 @@
   font-size: 13px;
 }
 
-div.like_and_unlike_comment{
-  font-size: 13px;
+div.like_and_unlike_comment a{
+  color: blue;
+  font-size: 15px;
   font-weight: bold;
   position: relative;
   right: 7px;
@@ -22,29 +23,32 @@ div.like_and_unlike_comment{
 }
 
 div.comment_like_word{
-  color: green;
+  color: blue;
   font-size: 15px;
+  font-weight: bolder;
   position: relative;
   right: 7px;
 }
 
-div.delete_comment_and_reply_link{
-  color: green;
-  font-size: 15px;
-  position: relative;
-  right: 3px;
-}
-
-div.comment_like_icon {
+i.fa.fa-thumbs-o-up {
   position: relative;
   bottom: 22px;
   left: 44px;
+
+}
+
+div.delete_comment_and_reply_link a{
+  color: green;
+  font-size: 17px;
+  position: relative;
+  right: 6px;
 }
 
 
-dv.reply{
+
+div.reply{
   color: green;
   font-size: 15px;
   position: relative;
-  right: 19px;
+  right: 9px;
 }
