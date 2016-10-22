@@ -31,8 +31,7 @@
               .comment_like_word
                 = pluralize( comment.likes.size, "like")
                 -if comment.likes.size > 0
-                  .comment_like_icon
-                    i.fa.fa-thumbs-o-up[style="font-size:17px;color:blue"]
+                  i.fa.fa-thumbs-o-up
 
             -if comment.replies.any?
               .reply
