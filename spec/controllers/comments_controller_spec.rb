@@ -64,14 +64,13 @@ RSpec.describe CommentsController, type: :controller do
         @post.comments << comment
         expect{delete :destroy, id: comment.id, commentable_id: @post.id,  post_id: @post}.
         to change{@post.comments.count}.by(-1)
-        expect(response).to redirect_to posts_path
+        expect(response).to redirect_to :back
       end
 
       it "should redirect_to post_path" do
         comment = create(:comment, user_id: user.id)
         @post.comments << comment
         delete :destroy, id: comment.id, commentable_id: @post.id,  post_id: @post
-        expect(response).to redirect_to posts_path
       end
     end
 

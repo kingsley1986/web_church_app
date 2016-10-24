@@ -14,9 +14,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    if @comment.user_id == current_user.id
-      @comment.delete
-      redirect_to posts_path(@post)
+    if @comment.user_id == current_user.id || current_user.admin?
+      @comment.destroy
+      redirect_to :back
     else
       redirect_to :back
     end
