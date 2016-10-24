@@ -18,9 +18,9 @@ class RepliesController < ApplicationController
 
    def destroy
      @reply = Reply.find(params[:id])
-     if @reply.user_id == current_user.id
+     if @reply.user_id == current_user.id || current_user.admin?
        @reply.delete
-      redirect_to reply_path(@reply)
+      redirect_to :back
     else
       redirect_to :back
     end

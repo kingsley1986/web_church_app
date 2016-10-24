@@ -1,6 +1,5 @@
--if current_user_signed_in && current_user.admin?
 .new_post_link
-  -if current_user_signed_in
+  -if current_user_signed_in && current_user.admin?
     = link_to "New Post", new_post_path
 #page_wrapper
   #content
@@ -10,10 +9,10 @@
           div
             p
               .post_title
-                = link_to post.title, post
+                = link_to truncate(post.title, length: 17), post
               p
                 .post_body
-                  = post.post_body
+                  = truncate(post.post_body, length: 120)
               -post.pictures.each do |pic, remov|
                 p
                   .style_image
@@ -30,6 +29,7 @@
                     li = link_to "Like", like_post_path(post, like: true), method: 'post'
               .like_word_index
                 = pluralize( post.likes.size, "like")
+                p = link_to "Back", request.referer.present? ? request.referer : default_path
             -if post.likes.size >= 1
               .like_icon_index
                 i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]

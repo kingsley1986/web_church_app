@@ -42,8 +42,10 @@ div.post_body_show {
   right: 5px;
 }
 
-.post_title {
+div.post_title a {
   font-size: 25px;
+  color: green;
+  font-weight: bold;
 }
 
 .post_body {
@@ -63,13 +65,13 @@ div.like_icon{
 
 div.like_icon_index{
   position: relative;
-  top: -38px;
-  left: 45px;
+  top: -62px;
+  left: 40px;
 }
 
 div.show_like_icon{
   position: relative;
-  bottom: 23px;
+  bottom: 83px;
   left: 26px;
 }
 
@@ -80,20 +82,22 @@ div.show_like_icon{
   right: 19px;
 }
 
-div.like_and_unlike{
+div.like_and_unlike a{
   font-size: 13px;
   font-weight: bold;
   position: relative;
   left: -20px;
+  color: green;
 }
 
 
 // for post index
-.like_and_unlike_index{
+div.like_and_unlike_index a{
   font-size: 13px;
   font-weight: bold;
   position: relative;
   right: 19px;
+  color: green;
 }
 
 .like_word_index {

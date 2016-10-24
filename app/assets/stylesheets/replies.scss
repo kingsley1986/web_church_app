@@ -1,3 +1,23 @@
 // Place all the styles related to the replies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div.reply_text {
+  font-size: 11px;
+}
+
+@media (min-width: 900px) {
+div.reply_text {
+    font-size: 17px;
+    font-family: "Times New Roman", Times, serif;
+  }
+}
+
+
+div.delete_reply a{
+  color: green;
+  font-size: 17px;
+  position: relative;
+  font-weight: bolder;
+}

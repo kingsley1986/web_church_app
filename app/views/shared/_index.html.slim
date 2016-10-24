@@ -1,12 +1,19 @@
-#section
-  #page_wrapper
-    #content
-      - @replies.each do  |reply|
-        div class="post"
-          .post_title
-            p
-              = reply.reply_body
-            p
-              = "Replied by #{reply.user.first_name}"
-            p
-              = "#{time_ago_in_words(reply.created_at)}"
+#page_wrapper
+  #content
+    - @replies.each do  |reply|
+      table
+        td
+          div
+            .reply_text
+              p
+                = reply.reply_body
+                p
+                  = "Replied by #{reply.user.first_name}"
+                p
+                  = "#{time_ago_in_words(reply.created_at)}"
+                .delete_reply
+                  p
+                    -if reply[:user_id] == current_user.id || current_user.admin?
+                      = link_to 'Delete', reply_path(reply), data: {confirm: 'Are you sure?'}, method: :delete
+                  p
+                    = link_to " Back", request.referer.present? ? request.referer : default_path
