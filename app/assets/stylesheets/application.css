@@ -17,6 +17,10 @@
  /*= require foundation
  */
 
+ .slideshow, .slideshow:after {
+   margin-top: 5%;
+ }
+
 .count_comment {
   color: white;
   font-weight: bolder;
@@ -84,7 +88,7 @@ h4 span {
 }
 .dropdown.vertical.medium-horizontal.menu{
   background: none;
-  height: 50px;
+  height: 150px;
 }
 
 /*top_bar font_sizing*/
@@ -127,14 +131,7 @@ text-decoration: none;
 .top-bar {
   background: #0080ff;
 	width: 100%;
-  position: relative;
-  top: 30%;
  }
-
-div.title-bar {
-  position: relative;
-  top: 30%;
-}
   .top-bar ul {
     background: #0080ff;
 	}
