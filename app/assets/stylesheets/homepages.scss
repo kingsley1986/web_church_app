@@ -3,123 +3,192 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //
 
-
-body{
-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
+.slider:hover {
+  animation-play-state: paused;
 }
-
-div.back_ground_transparent{
-  background-color:black;
-  z-index:0;
-  opacity:0.5;
+header.cont-slider {
   position: relative;
-  width: 70%;
-  height: 160%;
-  top: 35%;
-  margin: 0 auto;
-  border-radius: 1%;
+  bottom: 75px;
 }
-img.alignnone{
-  width: 400px;
-  height: 200px;
-  height: auto;
-  position: relative;
-  top: -30px;
-  margin: 0 auto;
-  left: 25%;
+.cont-slider {
+    position: relative;
+    height: 33vh;
+    max-height: 100vh;
+    width: auto;
+    min-width: 100vw;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slider {
+    animation: sliding 25s ease-out 0s backwards infinite;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500%;
+    height: 100%;
+}
+.slide {
+    display: inline-block;
+    position: relative;
+    width: 20%;
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+.slide span {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0 5vh 5vh 0;
+    color: #FFF;
+    position: absolute;
+    left: 0;
+    top: 40vh;
+    font-size: 20vh;
+    line-height: 20vh;
+    border: 1px solid rgba(255,255,255,.45);
+    border-left: 0 none;
+}
+.one {
+  background-image: url("/assets/images/slide8.jpg");}
+.two {
+  background-image: url("/assets/images/slide7.jpg");}
+.three {
+  background-image: url("/assets/images/slide6.jpg");}
+.four {
+  background-image: url("/assets/images/slide4.jpg");}
+.five {
+  background-image: url("/assets/images/slide3.jpg");}
+
+@keyframes sliding {
+  0% {left: 0%; }
+  15% {left: 0%; }
+  20% {left: -100%; }
+  35% {left: -100%; }
+  40% {left: -200%; }
+  55% {left: -200%; }
+  60% {left: -300%; }
+  75% {left: -300%; }
+  80% {left: -400%; }
+  95% {left: -400%; }
+  100% {left: 0; }
 }
 
-
-.css-slideshow{
-  position: relative;
-  max-width: 495px;
-  margin: 5em auto .5em auto;
-  max-width: 50%;
-  height: auto;
-  display:block;
-  bottom: 16px;
-}
-
-.css-slideshow figure{
-  margin: 0;
-  max-width: 495px;
-  height: 30%;
-  background: #000;
-  position: absolute;
-}
-.css-slideshow img{
-  box-shadow: 0 0 2px #666;
-}
-.css-slideshow figcaption{
-  position: absolute;
-  top: 0;
-  color: #fff;
-  background: rgba(0,0,0, .3);
-  font-size: .8em;
-  padding: 8px 12px;
-  opacity: 0;
-  transition: opacity .5s;
-}
-.css-slideshow:hover figure figcaption{
-  transition: opacity .5s;
-  opacity: 1;
-}
-.css-slideshow-attr{
-  max-width: 495px;
-  text-align: right;
-  font-size: .7em;
-  font-style: italic;
-  margin:0 auto;
-}
-.css-slideshow-attr a{
-  color: #666;
-}
-.css-slideshow figure{
-  opacity:0;
-}
-figure:nth-child(1) {
-  animation: xfade 48s 42s infinite;
-}
-figure:nth-child(2) {
-  animation: xfade 48s 36s infinite;
-}
-figure:nth-child(3) {
-  animation: xfade 48s 30s infinite;
-}
-figure:nth-child(4) {
-  animation: xfade 48s 24s infinite;
-}
-figure:nth-child(5) {
-  animation: xfade 48s 18s infinite;
-}
-figure:nth-child(6) {
-  animation: xfade 48s 12s infinite;
-}
-figure:nth-child(7) {
-  animation: xfade 48s 6s infinite;
-}
-figure:nth-child(8) {
-  animation: xfade 48s 0s infinite;
-}
-
-@keyframes xfade{
-  0%{
-    opacity: 1;
-  }
-  10.5% {
-    opacity: 1;
-  }
-  12.5%{
-    opacity: 0;
-  }
-  98% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+// body{
+// font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+//   font-weight: 300;
+// }
+//
+// div.back_ground_transparent{
+//   background-color:black;
+//   z-index:0;
+//   opacity:0.5;
+//   position: relative;
+//   width: 70%;
+//   height: 160%;
+//   top: 35%;
+//   margin: 0 auto;
+//   border-radius: 1%;
+// }
+// img.alignnone{
+//   width: 400px;
+//   height: 200px;
+//   height: auto;
+//   position: relative;
+//   top: -30px;
+//   margin: 0 auto;
+//   left: 25%;
+// }
+//
+//
+// .css-slideshow{
+//   position: relative;
+//   max-width: 495px;
+//   margin: 5em auto .5em auto;
+//   max-width: 50%;
+//   height: auto;
+//   display:block;
+//   bottom: 16px;
+// }
+//
+// .css-slideshow figure{
+//   margin: 0;
+//   max-width: 495px;
+//   height: 30%;
+//   background: #000;
+//   position: absolute;
+// }
+// .css-slideshow img{
+//   box-shadow: 0 0 2px #666;
+// }
+// .css-slideshow figcaption{
+//   position: absolute;
+//   top: 0;
+//   color: #fff;
+//   background: rgba(0,0,0, .3);
+//   font-size: .8em;
+//   padding: 8px 12px;
+//   opacity: 0;
+//   transition: opacity .5s;
+// }
+// .css-slideshow:hover figure figcaption{
+//   transition: opacity .5s;
+//   opacity: 1;
+// }
+// .css-slideshow-attr{
+//   max-width: 495px;
+//   text-align: right;
+//   font-size: .7em;
+//   font-style: italic;
+//   margin:0 auto;
+// }
+// .css-slideshow-attr a{
+//   color: #666;
+// }
+// .css-slideshow figure{
+//   opacity:0;
+// }
+// figure:nth-child(1) {
+//   animation: xfade 48s 42s infinite;
+// }
+// figure:nth-child(2) {
+//   animation: xfade 48s 36s infinite;
+// }
+// figure:nth-child(3) {
+//   animation: xfade 48s 30s infinite;
+// }
+// figure:nth-child(4) {
+//   animation: xfade 48s 24s infinite;
+// }
+// figure:nth-child(5) {
+//   animation: xfade 48s 18s infinite;
+// }
+// figure:nth-child(6) {
+//   animation: xfade 48s 12s infinite;
+// }
+// figure:nth-child(7) {
+//   animation: xfade 48s 6s infinite;
+// }
+// figure:nth-child(8) {
+//   animation: xfade 48s 0s infinite;
+// }
+//
+// @keyframes xfade{
+//   0%{
+//     opacity: 1;
+//   }
+//   10.5% {
+//     opacity: 1;
+//   }
+//   12.5%{
+//     opacity: 0;
+//   }
+//   98% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
 
 
 div.home_info{
@@ -129,7 +198,7 @@ div.home_info{
   font-weight: bolder;
   color: white;
   text-align: center;
-  bottom: 125%;
+  top: 35%;
 }
 
 

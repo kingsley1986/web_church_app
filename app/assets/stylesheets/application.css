@@ -84,7 +84,7 @@ h4 span {
 }
 .dropdown.vertical.medium-horizontal.menu{
   background: none;
-  height: 150px;
+  height: 50px;
 }
 
 /*top_bar font_sizing*/
@@ -127,7 +127,14 @@ text-decoration: none;
 .top-bar {
   background: #0080ff;
 	width: 100%;
+  position: relative;
+  top: 30%;
  }
+
+div.title-bar {
+  position: relative;
+  top: 30%;
+}
   .top-bar ul {
     background: #0080ff;
 	}
