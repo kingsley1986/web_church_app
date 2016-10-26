@@ -1,6 +1,17 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+
+  before_validation :params_sanitizer, only: :update
+
+  def params_sanitizer
+    self.roles.delete("")
+  end
+
+  def self.roles
+    ['pastor', 'assistant_pastor']
+  end
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
