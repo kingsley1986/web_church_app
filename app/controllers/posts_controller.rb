@@ -26,17 +26,22 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    if pastor
+      @post = Post.new
+    else
+      redirect_to :back
+    end
   end
 
   def create
     @post = Post.create(post_params)
     @post.user = current_user
-    if @post.save
-      redirect_to posts_path
-    else
-      render :new
-    end
+    if pastor
+      @post.save
+        redirect_to posts_path
+      else
+        render :new
+      end
   end
 
 
@@ -44,10 +49,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
-      redirect_to post_path(@post)
-    else
-      render new
+    if pastor
+      if @post.update(post_params)
+        redirect_to post_path(@post)
+      else
+        render new
+      end
     end
   end
 

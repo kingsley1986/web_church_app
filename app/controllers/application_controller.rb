@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  include Pundit
 
 
   before_filter :configure_devise_params, if: :devise_controller?
@@ -21,5 +22,9 @@ class ApplicationController < ActionController::Base
 
   def delete_picture
     current_user && @picture.picturable.user_id == current_user.id
+  end
+
+  def pastor
+    current_user.roles.include?("pastor")
   end
 end

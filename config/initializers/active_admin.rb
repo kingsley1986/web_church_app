@@ -55,6 +55,10 @@ ActiveAdmin.setup do |config|
   # This setting changes the method which Active Admin calls
   # within the application controller.
   config.authentication_method = :authenticate_admin_user!
+  config.authorization_adapter = ActiveAdmin::PunditAdapter
+  # config.pundit_default_policy = "ApplicationPolicy"
+
+
 
   # == User Authorization
   #
@@ -79,6 +83,8 @@ ActiveAdmin.setup do |config|
   # Method provided here should be defined in application_controller.rb.
   # config.on_unauthorized_access = :access_denied
 
+  config.current_user_method = :current_user
+
   # == Current User
   #
   # Active Admin will associate actions with the current
@@ -98,7 +104,8 @@ ActiveAdmin.setup do |config|
   # will call the method to return the path.
   #
   # Default:
-  config.logout_link_path = :destroy_admin_user_session_path
+  # config.logout_link_path = :destroy_admin_user_session_path
+  config.logout_link_path = :destroy_user_session_path
 
   # This setting changes the http method used when rendering the
   # link. For example :get, :delete, :put, etc..
@@ -113,6 +120,8 @@ ActiveAdmin.setup do |config|
   #
   # Default:
   # config.root_to = 'dashboard#index'
+
+  config.root_to = 'users#index'
 
   # == Admin Comments
   #
