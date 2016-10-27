@@ -1,38 +1,41 @@
-ul.slideshow
-  li
-    span
-      | Image 01
-    div
-      h3
-        | A little something something
-  li
-    span
-      | Image 02
-  li
-    span
-      | Image 03
-  li
-    span
-      | Image 04
-  li
-    span
-      | Image 05
-  li
-    span
-      | Image 06
-.container
-  header
-    h1
-      | CSS3
-      span
-        | Fullscreen Slideshow
+header
+  a#logo[href="#"]
+    | Logo
+section#hero1.hero
+  .inner
+    .copy
+      h1
+        | YOU ARE WELCOME IN JESUS NAME.
+      p
+        | Jesus Christ Is The Same Yesterday, Today And Forevermore!
+section.content
+  .inner
+    .copy
+      h1
+      - @homepages.each do |home|
+        = home.info
+        p = image_tag(home.image.url(:medium))
+      p
+        | You Are Born For A Purpose, Endeavour To Fulfil This Purpose To The Glory Of God!
+section#hero2.hero
+  .inner
+    .copy
+      h1
+        | You can't Afford to Miss Heaven, Make Heaven Your Ultimate Goal Today!
+      p
+        | They That Seek The Lord With All Their Heart Will Surely Find HIM ;)
+section.content
+  .inner
+    .copy
+      h1
+        | If You Want To Quit, Remember Why You Started!
+      p
+        |
+link[href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet" type="text/css"]
+link[href="http://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet" type="text/css"]
 
 .back_ground_transparent
 
-.home_info
-  - @homepages.each do |home|
-    = home.info
-    p = image_tag(home.image.url(:medium))
 
 .welcome_link
   ul
