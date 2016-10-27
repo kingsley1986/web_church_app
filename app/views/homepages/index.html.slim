@@ -1,17 +1,13 @@
-header
-  a#logo[href="#"]
-    | Logo
 section#hero1.hero
   .inner
     .copy
-      h1
+      h5
         | YOU ARE WELCOME IN JESUS NAME.
       p
         | Jesus Christ Is The Same Yesterday, Today And Forevermore!
 section.content
   .inner
-    .copy
-      h1
+    .home_info
       - @homepages.each do |home|
         = home.info
         p = image_tag(home.image.url(:medium))
@@ -19,9 +15,9 @@ section.content
         | You Are Born For A Purpose, Endeavour To Fulfil This Purpose To The Glory Of God!
 section#hero2.hero
   .inner
-    .copy
-      h1
-        | You can't Afford to Miss Heaven, Make Heaven Your Ultimate Goal Today!
+    .psalm
+      li Psalm 24:1: King James Bible:
+      h3 A Psalm of David. The earth is the LORD'S, and the fulness thereof; the world, and they that dwell therein.
       p
         | They That Seek The Lord With All Their Heart Will Surely Find HIM ;)
 section.content
