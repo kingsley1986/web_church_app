@@ -38,6 +38,6 @@
                 h5  Replies
               .delete_comment_and_reply_link
                 = link_to pluralize(comment.replies.count, "reply"),   comment_replies_path(comment.id, @reply )
-                -if current_user && user_signed_in? && comment.user_id == current_user.id || current_user.admin?
+                -if current_user && user_signed_in? && comment.user_id == current_user.id || current_user && current_user.admin?
                   p  = link_to "Delete", comment_path(comment), data: {confirm: 'Are you sure?'}, method: :delete
                   p = link_to "Back", request.referer.present? ? request.referer : default_path
