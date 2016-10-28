@@ -1,21 +1,33 @@
-header.cont-slider
-  section.slider
-    article.slide.one
-      span1
-        | One
-    article.slide.two
+ul.slideshow
+  li
+    span
+      | Image 01
+    div
+      h3
+        | A little something something
+  li
+    span
+      | Image 02
+  li
+    span
+      | Image 03
+  li
+    span
+      | Image 04
+  li
+    span
+      | Image 05
+  li
+    span
+      | Image 06
+.container
+  header
+    h1
+      | CSS3
       span
-        | < Two
-    article.slide.three
-      span
-        |  Three
-    article.slide.four
-      span
-        | Four
-    article.slide.five
-      span
-        | Jesus is the Savior of the world
 
+        | Fullscreen Slideshow
+        = render "shared/header"
 .back_ground_transparent
 
 .home_info
@@ -26,7 +38,3 @@ header.cont-slider
 .welcome_link
   ul
     li shalom
-
-.post_link
-  .inner-shiny
-    = link_to "View Posts", posts_path(@post)

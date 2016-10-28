@@ -8,84 +8,11 @@ html
   link[rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"]
   = csrf_meta_tags
   head
-    .title-bar[data-responsive-toggle="menu" data-hide-for="medium"]
-      button.menu-icon[type="button" data-toggle]
-      .title-bar-title
-        | Menu
-    #menu.top-bar
-      .top-bar-left
-        ul.dropdown.vertical.medium-horizontal.menu[data-dropdown-menu]
-          li.menu-text
-            | The Great Love Of God
-          li
-            a[href=homepages_index_path class="home_and"]
-              | Home
 
-          li
-            a[href=aboutpages_path class="home_and"]
-              | About
-
-          li.has-submenu
-            a[href="#"]
-              | Our Beliefs
-            ul.submenu.menu.vertical[data-submenu]
-              li
-                a[href=fatherpages_index_path]
-                  | God/Father
-              li
-                a[href=sonpages_index_path]
-                  | Jesus/Son
-              li
-                a[href=holyspiritpages_index_path]
-                  | Holy Spirit
-          li
-            a[href=contactpages_index_path class="home_and"]
-              | Contact
-              li.has-submenu
-                a[href="#"]
-                  | Worship Days
-                ul.submenu.menu.vertical[data-submenu]
-                  li
-                    a[href=sundaypages_index_path]
-                      | Sunday
-                  li
-                    a[href=tuesdaypages_index_path]
-                      | Tuesday
-                  li
-                    a[href=thursdaypages_index_path]
-                      | thursday
-              li.has-submenu
-                a[href="#"]
-                  | Ministries
-                ul.submenu.menu.vertical[data-submenu]
-                  li
-                    a[href=childrenpages_index_path]
-                      | Children
-                  li
-                    a[href=youthpages_index_path]
-                      | Youth
-                  li
-                    a[href=elderpages_index_path]
-                      | Elder
-                  li
-                    a[href=hospitalpages_index_path]
-                      | Hospital
-                  li
-                    a[href=prisonpages_index_path]
-                      | Prison
-                  li
-                    a[href=foodpages_index_path]
-                      | Food
-
-              - unless current_user && user_signed_in?
-                  li= link_to 'Sign up', new_user_registration_path, style: "color:white; font-weight: bolder;"
-              - unless current_user && user_signed_in?
-                  li= link_to 'Sign in', new_user_session_path, style: "color:white; font-weight: bolder"
-              - if current_user && user_signed_in?
-                li= link_to 'Sign out', destroy_user_session_path, :method=>'delete', style: "color:white; font-weight: bolder"
-                li= link_to "Edit Your Account", edit_user_registration_path
 
     body
+        = render 'shared/header_pages' unless @disable_homepage
         = yield
+
   javascript:
     $(document).foundation();

@@ -1,0 +1,193 @@
+header
+  .row.columns.expanded
+    a[href="index.html"]
+      img.logo.show-for-small-only[src="img/REPLogo.png" alt="Real Estate Promo"]
+    .title-bar[data-responsive-toggle="main-menu" data-hide-for="medium"]
+      button.menu-icon[type="button" data-toggle]
+      .title-bar-title
+        | Menu
+    #main-menu.top-bar
+      .top-bar-left
+        a[href="index.html"]
+          = link_to "Click To View Posts", posts_path(@post)
+      .top-bar-right
+        ul.vertical.medium-horizontal.expanded.dropdown.menu[data-responsive-menu="drilldown medium-dropdown" class="about_home"]
+          li
+            a[href=aboutpages_path]
+              | About Us
+          li
+            a[href=homepages_index_path]
+              | Home
+          li.has-submenu.is-drilldown-submenu-parent
+            a.dropdown[href="#" data-toggle="megamenu-resources" class="checking"]
+              | MINISTRIES
+            #megamenu-resources.dropdown-pane[data-dropdown data-options="closeOnClick:true; hover: true; hoverPane: true"]
+              .row.column.expanded
+                .large-9.columns
+                  .row.column.expanded
+                    .large-4.columns
+                      ul
+                        li
+                          a[href=childrenpages_index_path]
+                          h3
+                            | For Children
+                        li
+                          a[href=childrenpages_index_path]
+                            img[src="img/laws.png" alt="Click for More Info"]
+                        li
+                          | Childrens are blessing from God.
+                    .large-4.columns
+                      ul
+                        li
+                          a[href="lenders.html"]
+                          h3
+                            | For Youths
+                        li
+                          a[href=youthpages_index_path]
+                            img[src="img/coin-stack.png" alt="Click for More Info"]
+                        li
+                          | Youths are the Leaders of tomorrow.
+
+                    .large-4.columns
+                      ul
+                        li
+                          a[href="glossary.html"]
+                          h3
+                            | Elders of the church.
+                        li
+                          a[href=elderpages_index_path]
+                            img[src="http://placehold.it/500x250" alt="Click for More Info"]
+                        li
+                          | God has given our elders wisdom to guide us.
+
+                    .large-4.columns
+                      ul
+                        li
+                          a[href="glossary.html"]
+                          h3
+                            | Hospital Ministry.
+                        li
+                          a[href=hospitalpages_index_path]
+                            img[src="http://placehold.it/500x250" alt="Click for More Info"]
+                        li
+                          | Visit the Sick People at home and Hospital.
+
+                  .large-4.columns
+                    ul
+                      li
+                        a[href="glossary.html"]
+                        h3
+                          | Prison Ministry.
+                      li
+                        a[href=prisonpages_index_path]
+                          img[src="http://placehold.it/500x250" alt="Click for More Info"]
+                      li
+                        | Jesus came for the thieves/sinners not to the righteous.
+
+
+                  .large-4.columns
+                    ul
+                      li
+                        a[href="glossary.html"]
+                        h3
+                          | Food Ministry.
+                      li
+                        a[href=foodpages_index_path]
+                          img[src="http://placehold.it/500x250" alt="Click for More Info"]
+                      li
+                        | Sharing food to the poor.
+
+
+
+                .large-3.columns
+                  ul
+                    li
+                      a[href="#"]
+                      h3
+                        | Find a REIA
+                    li
+                      a[href="#"]
+                        img[src="img/map-icon.png" alt="Click for More Info"]
+                    li
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie ullamcorper nisl, sit amet tristique est dapibus nec.
+          li.has-submenu.is-drilldown-submenu-parent
+            a.dropdown[href="#" data-toggle="megamenu-property-listings" class="checked"]
+              | WORSHIP DAYS
+            #megamenu-property-listings.dropdown-pane[data-dropdown data-options="closeOnClick:true; hover: true; hoverPane: true"]
+              .row.column.expanded
+                .small-12.large-3.columns
+                  ul
+                    li
+                      a[href=sundaypages_index_path]
+                        | Sunday
+                    li
+                      a[href=sundaypages_index_path]
+                        img[src="img/map-icon.png" alt="Click for More Info"]
+                    li
+                      | They gather every sunday morning and broke bread.
+                .small-12.large-4.columns
+                  ul
+                    li
+                      a[href=tuesdaypages_index_path]
+                        | Tuesday
+                    li
+                      a[href="#"]
+                        img[src="img/map-icon.png" alt="Click for More Info"]
+                    li
+                      | It is our Bible study day, come and fill your soul with the word of God.
+                .small-12.large-4.columns
+                  ul
+                    li
+                      a[href="#"]
+                        | Thursday
+                    li
+                      a[href=thursdaypages_index_path]
+                        img[src="img/map-icon.png" alt="Click for More Info"]
+                    li
+                      | It's a night we pray until something happens.
+          li.has-submenu.is-drilldown-submenu-parent
+            a.dropdown[href="#" data-toggle="megamenu-websites" class="checkers"]
+              | OUR BELIEFS
+            #megamenu-websites.dropdown-pane[data-dropdown data-options="closeOnClick:true; hover: true; hoverPane: true"]
+              .row.column.expanded
+                .small-12.large-6.columns
+                  ul
+                    li
+                      a[href=fatherpages_index_path]
+                        | GOD The Father
+                    li
+                      a[href=fatherpages_index_path]
+                        img[src="img/map-icon.png" alt="Click for More Info"]
+                    li
+                      | Our Heavenly Father.
+                .small-12.large-6.columns
+                  ul
+                    li
+                      a[href=sonpages_index_path]
+                        | Son
+                    li
+                      a[href=sonpages_index_path]
+                        img[src="img/map-icon.png" alt="Click for More Info"]
+                    li
+                      | Our Lord Jesus Who did the Father will by Saving us.
+
+
+                .small-12.large-6.columns
+                  ul
+                    li
+                      a[href=holyspiritpages_index_path]
+                        | Holy Spirit
+                    li
+                      a[href=sonpages_index_path]
+                        img[src="img/map-icon.png" alt="Click for More Info"]
+                    li
+                      | Our Comforter and Power.
+
+          li
+            - unless current_user && user_signed_in?
+                li= link_to 'Sign up', new_user_registration_path,  style: "color:white; font-weight: bolder; position: relative; right: -40px;"
+            - unless current_user && user_signed_in?
+                li= link_to 'Sign in', new_user_session_path, style: "color:white; font-weight: bolder; position: relative; right: -20px;"
+            - if current_user && user_signed_in?
+              li= link_to 'Sign out', destroy_user_session_path, :method=>'delete', style: "color:white; font-weight: bolder"
+          li= link_to "Account", edit_user_registration_path

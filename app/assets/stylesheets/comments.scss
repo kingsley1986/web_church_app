@@ -4,6 +4,12 @@
 
 .comment_body{
   font-size: 13px;
+  position: relative;
+  right: 20px;
+}
+
+input#comment_pictures_attributes_0_image.file.optional {
+  border: none;
 }
 
 div.like_and_unlike_comment a{

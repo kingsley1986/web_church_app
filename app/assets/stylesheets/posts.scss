@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 #page_wrapper {
   width: 74%;
   margin: 0 auto;
@@ -14,10 +15,10 @@
 }
 
 /*aligning the body*/
-#content {
+div#content {
  position: relative;
  left: 15px;
- top: 10px;
+ top: 80px;
  padding-bottom: 10%;
 }
 
@@ -48,8 +49,15 @@ div.post_title a {
   font-weight: bold;
 }
 
-.post_body {
+div.post_body {
   font-size: 20px;
+  color: black;
+}
+
+div.post_created {
+  font-size: 12px;
+  color: black;
+  font-weight: bold;
 }
 
 
@@ -96,7 +104,7 @@ div.like_and_unlike_index a{
   font-size: 13px;
   font-weight: bold;
   position: relative;
-  right: 19px;
+  right: 1px;
   color: green;
 }
 
@@ -104,7 +112,7 @@ div.like_and_unlike_index a{
   color: green;
   font-size: 15px;
   position: relative;
-  right: 19px;
+  right: 1px;
 }
 
 

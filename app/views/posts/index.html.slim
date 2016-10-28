@@ -15,10 +15,10 @@
                   = truncate(post.post_body, length: 120)
               -post.pictures.each do |pic, remov|
                 p
-                  .style_image
+                .style_image
                   = image_tag pic.image.url(:medium)
-              p
-              = post.created_at.strftime("%B, %d, %Y")
+              .post_created
+                = post.created_at.strftime("%B, %d, %Y")
               p
             ul
               .like_and_unlike_index
