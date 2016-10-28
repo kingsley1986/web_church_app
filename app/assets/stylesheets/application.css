@@ -24,10 +24,6 @@
   font-weight: bolder;
 }
 
-/*body{
-  background: url('/assets/images/goodwood.jpg');
-}*/
-
 .alert-error {
     background-color: #f2dede;
     border-color: #eed3d7;
@@ -115,8 +111,12 @@ div.title-bar {
 	width: 100%;
  }
   .top-bar ul {
-    background: none;
+    background: #545454;
 	}
+
+
+
+
 
     .top-bar ul li {
       background: none; }
