@@ -9,14 +9,14 @@ header
     #main-menu.top-bar
       .top-bar-left
         a[href="index.html"]
-          = link_to "Click To View Posts", posts_path(@post)
+          = link_to "View Posts", posts_path(@post)
       .top-bar-right
         ul.vertical.medium-horizontal.expanded.dropdown.menu[data-responsive-menu="drilldown medium-dropdown" class="about_home"]
           li
-            a[href=aboutpages_path]
-              | About Us
+            a[href=aboutpages_path class="about_us"]
+              | About
           li
-            a[href=homepages_index_path]
+            a[href=homepages_index_path class="home"]
               | Home
           li.has-submenu.is-drilldown-submenu-parent
             a.dropdown[href="#" data-toggle="megamenu-resources" class="checking"]
@@ -112,7 +112,7 @@ header
                       | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie ullamcorper nisl, sit amet tristique est dapibus nec.
           li.has-submenu.is-drilldown-submenu-parent
             a.dropdown[href="#" data-toggle="megamenu-property-listings" class="checked"]
-              | WORSHIP DAYS
+              | WORSHIP/DAYS
             #megamenu-property-listings.dropdown-pane[data-dropdown data-options="closeOnClick:true; hover: true; hoverPane: true"]
               .row.column.expanded
                 .small-12.large-3.columns
@@ -147,7 +147,7 @@ header
                       | It's a night we pray until something happens.
           li.has-submenu.is-drilldown-submenu-parent
             a.dropdown[href="#" data-toggle="megamenu-websites" class="checkers"]
-              | OUR BELIEFS
+              | OUR/BELIEFS
             #megamenu-websites.dropdown-pane[data-dropdown data-options="closeOnClick:true; hover: true; hoverPane: true"]
               .row.column.expanded
                 .small-12.large-6.columns
