@@ -11,8 +11,9 @@ html
 
 
     body
+        = render 'shared/header' unless @disable_homepage
         = yield
-        = render "shared/filer"
+        = render "shared/background" unless @disable_homepage
 
   javascript:
     $(document).foundation();
