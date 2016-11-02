@@ -11,18 +11,22 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
 
 /**
  * @preserve
  * Project: Bootstrap Hover Dropdown
  * Author: Cameron Spear
+ * require turbolinks 
  * Dependencies: Bootstrap's Dropdown plugin, jQuery
  * Description: A simple plugin to enable Bootstrap dropdowns to active on hover and provide a nice user experience.
  */
+
+
+
 ;(function ($, window, undefined) {
     // outside the scope of the jQuery plugin to
     // keep track of all dropdowns
