@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.6'
 gem 'pg'
-gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 
@@ -24,7 +23,8 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.3'
 
 
 #front-end
-gem 'foundation-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'sass-rails', '>= 3.2'
 gem 'slim'
 gem 'simple_form'
 gem 'jquery-rails'

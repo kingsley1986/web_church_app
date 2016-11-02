@@ -13,9 +13,14 @@
  *= require_tree .
  *= require_self
  *= require jquery-ui
- *= require foundation_and_overrides
- /*= require foundation
  */
+
+
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+
 div.header_pages {
    position: relative;
    bottom: 10px;
@@ -84,52 +89,49 @@ h4 span {
 }
 
 
-#mega-menu-container {
-  background:  #272727
+
+
+
+
+
+
+/* GLOBAL STYLE
+-------------------------------------------------- */
+body {
+  background:#f0f0f0;
+}
+.container{
+	padding-left: 0;
+	padding-right: 0;
+}
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
 }
 
-.menu {
-  position: relative;
-}
-
-.menu > li {
-  display: inline-block;
-}
-
-.is-dropdown-submenu-parent.mega-menu {
+/* MEGAMENU STYLE
+-------------------------------------------------- */
+.megamenu .nav,
+.megamenu .collapse,
+.megamenu .dropup,
+.megamenu .dropdown {
   position: static;
 }
-
-.mega-menu .is-dropdown-submenu {
+.megamenu .container {
+  position: relative;
+}
+.megamenu .dropdown-menu {
+  left: auto;
+}
+.megamenu .megamenu-content {
+  padding: 15px;
+}
+.megamenu .megamenu-content h3{
+  margin-top: 0;
+  color: #428bca;
+  font-size: 18px;
+}
+.megamenu .dropdown.megamenu-fw .dropdown-menu {
   left: 0;
   right: 0;
-  top: auto;
-  position: absolute;
-}
-
-
-ul.menu.submenu.is-dropdown-submenu.first-sub.vertical.js-dropdown-active {
-  background: #272727
-}
-
-#mega-menu-container a{
-  font-weight: bolder;
-  text-decoration: none;
-  color: white;
-}
-
-a.home_link{
-  color: yellow;
-  font-weight: bolder;
-  text-decoration: none;
-  font-size: 20px;
-  font-family: Arial Black
-}
-
-a.program_link {
-  color: yellow;
-  font-weight: bolder;
-  text-decoration: none;
-  font-size: 20px;
-  font-family: Arial Black
 }
