@@ -21,6 +21,11 @@
  @import "bootstrap";
 
 
+
+table tr td {
+  background: white;
+}
+
 div.header_pages {
    position: relative;
    bottom: 10px;
@@ -87,15 +92,6 @@ h4 span {
   position: relative;
   padding-top: 6px;
 }
-
-
-
-ul.nav.navbar-nav {
-  position: relative;
-  right: 130px;
-}
-
-// For navbar
 
 
 $orange:                  #f53200;
@@ -360,8 +356,4 @@ html {
 }
 body {
   font: 14px/1.375 "Noto Sans", "Lucida Grande", "Lucida Unicode", "Calibri", sans-serif;
-}
-
-body{
-  background: url('/assets/images/black1.jpg');
 }

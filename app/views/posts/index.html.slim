@@ -29,7 +29,6 @@
                     li = link_to "Like", like_post_path(post, like: true), method: 'post'
               .like_word_index
                 = pluralize( post.likes.size, "like")
-                p = link_to "Back", request.referer.present? ? request.referer : default_path
             -if post.likes.size >= 1
               .like_icon_index
                 i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]
@@ -38,3 +37,4 @@
       .page_info
         = page_entries_info @posts
         = will_paginate @posts, :container => false
+    p = link_to "Back", request.referer.present? ? request.referer : default_path

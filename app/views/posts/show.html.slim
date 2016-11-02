@@ -25,7 +25,6 @@
                     li = link_to "Like", like_post_path(@post, like: true), method: 'post', remote: true
               .like_word
                 = pluralize( @post.likes.size, "like")
-                p = link_to "Back", request.referer.present? ? request.referer : default_path
               .show_like_icon
                 -if @post.likes.size >= 1
                     i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]
@@ -39,4 +38,4 @@
       |  Add a Comment:
       - if current_user_signed_in
         = render "comments/form"
-        
+  p = link_to "Back", request.referer.present? ? request.referer : default_path

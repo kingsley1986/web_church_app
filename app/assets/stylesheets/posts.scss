@@ -8,6 +8,11 @@
   margin: 0 auto;
 }
 
+body{
+  background: url('/assets/images/black1.jpg');
+
+}
+
 /*border between top_bar and body*/
 #section {
   padding-top: 7%;
@@ -26,21 +31,21 @@ div#content {
   position: relative;
   right: 14px;
 	font-weight: bolder;
-	right: 5px;
+	right: -5px;
 }
 
 div.post_body_show {
   font-size: 14px;
   margin-top: 10px;
   position: relative;
-  right: 2px;
+  right: -5px;
 }
 
-.post_show_days_ago{
+div.post_show_days_ago{
   font-weight: bolder;
   margin-top: 10px;
   position: relative;
-  right: 5px;
+  right: -5px;
 }
 
 div.post_title a {
@@ -87,14 +92,15 @@ div.show_like_icon{
   color: green;
   font-size: 15px;
   position: relative;
-  right: 19px;
+  right: -8px;
+  top: 3px;
 }
 
 div.like_and_unlike a{
   font-size: 13px;
   font-weight: bold;
   position: relative;
-  left: -20px;
+  right: -8px;
   color: green;
 }
 
@@ -125,7 +131,7 @@ border-style: solid; }
 
 div.post{
   position: relative;
-  right: 31px;
+  right: 25px;
 }
 
 div.vertical-text {
