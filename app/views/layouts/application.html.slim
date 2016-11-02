@@ -11,8 +11,10 @@ html
 
 
     body
+        = render  "shared/header" unless @disable_homepage
         = yield
-        = render  "shared/header"
+        = render  "shared/header" if @disable_homepage
+
 
 
   javascript:
