@@ -42,13 +42,12 @@ RSpec.describe RepliesController, type: :controller do
         repl = create(:reply, user_id: user.id, comment_id: comment.id)
         expect{delete :destroy, id: repl.id}.
         to change(Reply, :count).by(-1)
-        expect(response).to redirect_to reply_path(repl)
       end
 
       it "should redirect_to reply_path" do
         repl = create(:reply, user_id: user.id, comment_id: comment.id)
         delete :destroy, id: repl.id
-        expect(response).to redirect_to reply_path(repl)
+        expect(response).to redirect_to :back
       end
     end
 

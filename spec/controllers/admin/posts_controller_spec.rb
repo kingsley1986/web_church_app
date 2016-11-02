@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Admin::PostsController, type: :controller do
-  let(:user) { create(:user, admin: true) }
+  let(:user) { create(:user, roles: ["pastor"], admin: true) }
 
   before(:each) do
     sign_in user
@@ -63,7 +63,7 @@ RSpec.describe Admin::PostsController, type: :controller do
 
   describe '#DELETE destroy' do
     context "admin user" do
-      let(:user) { create(:user, admin: true) }
+      let(:user) { create(:user, roles: ["pastor"], admin: true) }
       it 'deletes a comment' do
         post = create(:post, user_id: user.id)
         expect{delete :destroy, id: post.id, post_id: post}.

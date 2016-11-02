@@ -13,6 +13,8 @@ class PostPolicy < ApplicationPolicy
   end
 
   def create?
-    user.roles.include?("pastor")
+    if user.roles?
+      user.roles.include?("pastor")
+    end
   end
 end
