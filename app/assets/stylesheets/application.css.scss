@@ -92,46 +92,269 @@ h4 span {
 
 
 
+// For navbar
 
 
+$orange:                  #f53200;
+$accent-color:            $orange;
+$tt-nav-color:            #fff;
+$tt-nav-background:       #111;
+$tt-nav-toggle-text:"";
+$tt-nav-open-toggle-text: " \00D7";
+$screen-sm-max:              767px;
+$screen-sm:                  768px;
+$screen-lg:                  1200px;
+%reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+%hem {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
 
-/* GLOBAL STYLE
--------------------------------------------------- */
-body {
-  background:#f0f0f0;
-}
-.container{
-	padding-left: 0;
-	padding-right: 0;
-}
-.nopadding {
-   padding: 0 !important;
-   margin: 0 !important;
+.navbar-default {
+  @media (max-width: $screen-sm-max) {
+    max-height: 80px;
+  }
 }
 
-/* MEGAMENU STYLE
--------------------------------------------------- */
-.megamenu .nav,
-.megamenu .collapse,
-.megamenu .dropup,
-.megamenu .dropdown {
-  position: static;
+.navbar-header {
+  @media (max-width: $screen-sm-max) {
+    padding: 1em 0;
+    max-height: 80px;
+  }
 }
-.megamenu .container {
+.navbar-collapse[style] {
+  height: 0 !important;
+}
+.navbar-collapse {
+  font-size: 12px;
+
+  @media (max-width: $screen-sm-max) {
+    border: none;
+  }
+
+}
+.navbar-collapse .navbar-nav {
+  @extend %reset;
+
+  @media (max-width: $screen-sm-max) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 80px 0 0 0;
+    padding: 0;
+    overflow: hidden;
+    min-width: 13em;
+  }
+
+  @media (min-width: $screen-sm) {
+    float: right;
+  }
+
+}
+
+/* NAV LIST ITEMS */
+.navbar-nav .dropdown {
+
+  @media (min-width: $screen-sm) {
+    min-width: 7em;
+    margin-left: 1px;
+  }
+}
+.navbar-nav .dropdown:first-child,
+.navbar-nav .dropdown:last-child {
+  @media (min-width: $screen-sm) {
+    min-width: 6.5em;
+  }
+}
+.navbar-nav .dropdown:first-child {
+  @media (min-width: $screen-sm) {
+    margin-left: 0;
+  }
+}
+.navbar-nav .dropdown:last-child {
+  @media (min-width: $screen-sm) {
+    margin-right: 0;
+  }
+}
+
+/* NAV LINKS */
+
+.dropdown-toggle {
+  background-color: $tt-nav-background;
+  text-transform: uppercase;
+  @media (min-width: $screen-sm) {
+    transition: background-color .25s;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    text-align: center;
+ //   line-height: 4 !important;
+    &:hover {
+      background-color: $accent-color;
+    }
+  }
+  @media (min-width: $screen-lg) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.dropdown-menu > li > a {
+  @extend %hem;
+  padding-left: 1em !important;;
+  padding-right: 1em !important;;
+  line-height: 3 !important;
+  transition: background-color .25s,color .5s .25s,border-color .75s 1s;
+
+  @media (max-width: $screen-sm-max) {
+    background-color: #333;
+    padding-top: .5em;
+    padding-bottom: .5em;
+  }
+  @media (min-width: $screen-sm) {
+    color: transparent;
+    background-color: transparent;
+  }
+}
+
+.open .dropdown-menu a {
+  @media (min-width: $screen-sm) {
+    color: $tt-nav-color;
+  }
+  border-top-color: rgba(white,.1);
+  border-bottom-color: rgba(black,.95);
+}
+
+
+/* TOGGLE BUTTON */
+.navbar-default .navbar-toggle {
+  background-color: #444;
+  width: 22px;
+  height: 100%;
+  width: 3em;
+  height: 2.5em;
   position: relative;
+
+  &:before,
+  &:after {
+    position: absolute;
+    display: inline-block;
+    top:0;right:0;bottom:0;left:0;
+    line-height: 1;
+    z-index: 1;
+  }
+  &:before {
+    content: " \00D7";
+    border: none;
+    box-shadow: none;
+    font-size: 32px;
+    color: $accent-color;
+  }
+  &:after {
+    content: "Menu";
+    position: absolute;
+    margin-top: -18px;
+    color: #000;
+  }
+
 }
-.megamenu .dropdown-menu {
-  left: auto;
+
+.navbar-default .collapsed {
+  &:before {
+    content: $tt-nav-toggle-text;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    box-shadow: 0 4px 0 0 #444,0 6px 0 0 #ccc;
+    margin: 10px 8px 15px;
+  }
+  &:hover,
+  &:focus {
+    border-color: #777;
+    &:before {
+      border-top: 2px solid #aaa;
+      border-bottom: 2px solid #aaa;
+      box-shadow: 0 4px 0 0 #ddd,0 6px 0 0 #aaa;
+    }
+  }
 }
-.megamenu .megamenu-content {
-  padding: 15px;
+
+/* Submenu */
+.navbar-nav .dropdown-menu {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+  list-style: none;
+  text-transform: uppercase;
+  transition: padding-bottom .75s cubic-bezier(0.6, 0.4, 0.25, 0.75),background-color 2s;
+
+  @media (max-width: $screen-sm-max) {
+    display: block;
+    font-size: 11px;
+    position: static;
+    left: auto;
+    margin: 0;
+  }
+  @media (min-width: $screen-sm) {
+    left: -9999px;
+    display: block;
+    font-size: 12px;
+    min-width: 176px;
+    background-color: rgba(black,.5);
+    margin-top: -1px !important;
+  }
 }
-.megamenu .megamenu-content h3{
-  margin-top: 0;
-  color: #428bca;
-  font-size: 18px;
+.dropdown:last-of-type .dropdown-menu {
+  @media (min-width: $screen-sm) {
+    margin-left: -85%;
+  }
 }
-.megamenu .dropdown.megamenu-fw .dropdown-menu {
-  left: 0;
-  right: 0;
+
+.open .dropdown-menu {
+
+  @media (min-width: $screen-sm) {
+    left: 0; right: 0;
+    background-color: rgba(#333,.96);
+  }
+}
+
+.navbar-collapse .caret {
+  @media (min-width: $screen-sm) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+ //   top: -1em;
+  }
+}
+
+$item-count-list: 1 2 3 4 5 6 7 8 9 10;
+$item-value-list: 44px 88px 132px 176px 220px 264px 308px 352px 396px 440px;
+@for $i from 1 through length($item-count-list) {
+  .open[class*="itemcount-#{$i}"] .dropdown-menu {
+    padding-bottom: nth($item-value-list, $i);
+  }
+}
+// general
+
+h1 {
+  text-transform: none;
+  color: #000000;
+  font-family: "Noto Serif", "Lucida Bright", Georgia, serif;
+  // font-weight: 300;
+  font-weight: 400;
+  letter-spacing: -1px;
+  word-spacing: 1px;
+  line-height: 1;
+  margin: -.125em 0 0 0;
+}
+html {
+  font-size: 16px;
+}
+body {
+  font: 14px/1.375 "Noto Sans", "Lucida Grande", "Lucida Unicode", "Calibri", sans-serif;
 }
