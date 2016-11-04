@@ -38,4 +38,4 @@
       |  Add a Comment:
       - if current_user_signed_in
         = render "comments/form"
-  p = link_to "Back", request.referer.present? ? request.referer : default_path
+    p = link_to "Back", request.referer.present? ? request.referer : default_path

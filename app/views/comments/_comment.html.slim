@@ -9,14 +9,16 @@
         td
           div
             p
-              p = comment.body
+              .comment_body_view
+                p = comment.body
               -comment.pictures.each do |comment_pic|
                 p =link_to( image_tag(comment_pic.image.url(:thumb)), comment_pic)
-              p = "Comment by #{comment.user.first_name}"
+              .comment_days
+                p = "Comment by #{comment.user.first_name}"
 
               .comment_show_days_ago
-              = time_ago_in_words(comment.created_at)
-              |  Ago
+                = time_ago_in_words(comment.created_at)
+                |  Ago
               = simple_form_for [comment, comment.replies.new] do |f|
                 -if current_user_signed_in
                   =f.input :reply_body, placeholder: "Reply to this comment", label: "reply"

@@ -1,49 +1,53 @@
 class ApplicationPolicy
   attr_reader :user, :record
 
-  class Scope < Struct.new(:user, :scope)
-    def resolve
-      scope
-    end
-  end
-
   def initialize(user, record)
     @user = user
     @record = record
   end
 
   def index?
-    account_user_is_admin?
+    false
   end
 
   def show?
-    account_user_is_admin?
+    scope.where(:id => record.id).exists?
+  end
+
+  def create?
+    false
   end
 
   def new?
     create?
   end
 
-  def create?
-    account_user_is_admin?
+  def update?
+    false
   end
 
   def edit?
     update?
   end
 
-  def update?
-    account_user_is_admin?
-  end
-
   def destroy?
-    account_user_is_admin?
+    false
   end
 
-  private
+  def scope
+    Pundit.policy_scope!(user, record.class)
+  end
 
-    def account_user_is_admin?
-      user.admin?
+  class Scope
+    attr_reader :user, :scope
+
+    def initialize(user, scope)
+      @user = user
+      @scope = scope
     end
 
+    def resolve
+      scope
+    end
+  end
 end
