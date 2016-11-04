@@ -16,7 +16,7 @@
               -post.pictures.each do |pic, remov|
                 p
                 .style_image
-                  = image_tag pic.image.url(:medium)
+                  = image_tag(pic.image.url(:medium), class: "img-responsive") if pic.image?
               .post_created
                 = post.created_at.strftime("%B, %d, %Y")
               p
@@ -32,9 +32,3 @@
             -if post.likes.size >= 1
               .like_icon_index
                 i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]
-
-    .digg_pagination
-      .page_info
-        = page_entries_info @posts
-        = will_paginate @posts, :container => false
-    p = link_to "Back", request.referer.present? ? request.referer : default_path

@@ -24,8 +24,7 @@ div#content {
 }
 
 .post_title_show{
-
-  font-size: 20px;
+  font-size: 1.4em;
   color: #0000b2;
   font-family: Helvetica;
   position: relative;
@@ -33,19 +32,66 @@ div#content {
 	right: -5px;
 }
 
+@media screen and (max-width: 768px) {
+.post_title_show{
+        font-size:20px;
+         color: #0000b2;
+         font-family: Helvetica;
+         position: relative;
+         right: 14px;
+       	right: -5px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+.post_title_show {
+        font-size:0.8em;
+    }
+}
+
 div.post_body_show {
-  font-size: 14px;
-  margin-top: 10px;
   position: relative;
   right: -5px;
 }
 
+
+
+@media screen and (max-width: 768px) {
+div.post_body_show{
+        font-size:15px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+div.post_body_show {
+        font-size:0.7em;
+    }
+}
+
+
+
 div.post_show_days_ago{
-  font-weight: bolder;
-  margin-top: 10px;
   position: relative;
+  font-weight: bold;
   right: -5px;
 }
+
+
+
+@media screen and (max-width: 768px) {
+div.post_show_days_ago{
+        font-size:15px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+div.post_show_days_ago {
+        font-size:0.7em;
+    }
+}
+
+
+
 
 div.post_title a {
   position: relative;
@@ -56,6 +102,23 @@ div.post_title a {
   text-decoration: none;
 }
 
+
+@media screen and (max-width: 768px) {
+div.post_title a {
+        font-size:17px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+div.post_title a  {
+        font-size:0.8em;
+    }
+}
+
+
+
+
+
 div.post_body {
   position: relative;
   left: 5px;
@@ -64,6 +127,24 @@ div.post_body {
   font-family: Arial;
 }
 
+
+@media screen and (max-width: 768px) {
+div.post_body {
+        font-size:17px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+div.post_body {
+        font-size:0.8em;
+    }
+}
+
+
+
+
+
+
 div.post_created {
   font-size: 12px;
   color: black;
@@ -71,6 +152,22 @@ div.post_created {
   position: relative;
   left: 5px;
 }
+
+
+@media screen and (max-width: 768px) {
+div.post_created {
+        font-size:17px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+div.post_created {
+        font-size:0.6em;
+    }
+}
+
+
+
 
 
 .post:last-child {
@@ -103,6 +200,23 @@ div.show_like_icon{
   top: 3px;
 }
 
+
+
+@media screen and (max-width: 768px) {
+.like_word{
+        font-size:18px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+.like_word {
+        font-size:0.8em;
+    }
+}
+
+
+
+
 div.like_and_unlike a{
   font-size: 13px;
   font-weight: bold;
@@ -129,6 +243,25 @@ div.like_and_unlike_index a{
   position: relative;
   right: -5px;
 }
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+.like_word_index {
+        font-size:18px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+.like_word_index {
+        font-size:0.8em;
+    }
+}
+
+
 
 
 

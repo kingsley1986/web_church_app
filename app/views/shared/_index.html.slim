@@ -13,7 +13,7 @@
                   = "#{time_ago_in_words(reply.created_at)}"
                 .delete_reply
                   p
-                    -if reply[:user_id] == current_user.id || current_user.admin?
+                    -if reply[:user_id] == current_user.id || current_user && current_user.admin?
                       = link_to 'Delete', reply_path(reply), data: {confirm: 'Are you sure?'}, method: :delete
                   p
       = link_to " Back", request.referer.present? ? request.referer : default_path
