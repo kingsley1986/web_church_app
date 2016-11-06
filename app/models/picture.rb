@@ -20,4 +20,11 @@ class Picture < ActiveRecord::Base
       p.image.recreate_versions! if p.image?
     end
   end
+
+
+  Comment.find_each do |comment|
+    comment.pictures.each do |p|
+      c.image.recreate_versions! if c.image?
+    end
+  end
 end
