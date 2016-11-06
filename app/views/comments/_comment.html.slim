@@ -12,7 +12,7 @@
               .comment_body_view
                 p = comment.body
               -comment.pictures.each do |comment_pic|
-                p = link_to(image_tag(comment_pic.image.url(:square)), comment_pic, class: "img-responsive") if comment_pic.image?
+                p = link_to(image_tag(comment_pic.image.url(:thumb)), comment_pic, class: "img-responsive") if comment_pic.image?
               .comment_days
                 p = "Comment by #{comment.user.first_name}"
 

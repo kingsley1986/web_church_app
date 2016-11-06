@@ -15,7 +15,7 @@
             -@post.pictures.each do |pic|
 
               p
-                = link_to(image_tag(pic.image.url(:thumb)), pic, class: "img-responsive") if pic.image?
+                = link_to(image_tag(pic.image.url(:square)), pic, class: "img-responsive") if pic.image?
 
             ul
               .like_and_unlike
