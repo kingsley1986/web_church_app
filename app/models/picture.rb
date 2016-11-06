@@ -12,4 +12,12 @@ class Picture < ActiveRecord::Base
   belongs_to :father_page
   belongs_to :son_page
   belongs_to :holyspirit_page
+
+
+
+  Post.find_each do |post|
+    post.pictures.each do |p|
+      p.image.recreate_versions! if p.image?
+    end
+  end
 end
