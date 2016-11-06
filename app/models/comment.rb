@@ -12,4 +12,11 @@ class Comment < ActiveRecord::Base
   accepts_nested_attributes_for :replies
   accepts_nested_attributes_for :pictures
 
+
+  Post.find_each do |post|
+    post.pictures.each do |p|
+      p.image.recreate_versions! if p.image?
+    end
+  end
+
 end
