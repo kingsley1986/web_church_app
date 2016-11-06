@@ -23,7 +23,7 @@ class Picture < ActiveRecord::Base
 
 
   Comment.find_each do |comment|
-    comment.pictures.each do |p|
+    comment.pictures.each do |c|
       c.image.recreate_versions! if c.image?
     end
   end
