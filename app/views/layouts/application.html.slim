@@ -11,7 +11,7 @@ html
 
 
     body
-      = render  "shared/header" unless @disable_homepage
-      = render "shared/header_pages" unless @disable_homepage  || @disable_session
+      = render  "shared/header" unless @disable_from_homepage
+      = render "shared/header_pages" if @disable_from_homepage 
       = yield
-      = render  "shared/header" if @disable_homepage
+      = render  "shared/header" if @disable_from_homepage
