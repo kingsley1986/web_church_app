@@ -1,71 +1,29 @@
-// div {
-//   text-align: center;
-//   font-size: 17px;
-// }
-
-input#user_password {
-  margin: 0 auto;
-}
-
-input#user_email.form-control{
-  margin: 0 auto;
-}
-
-input#user_email{
-  margin: 0 auto;
-}
-
-input#user_password_confirmation {
-  margin: 0 auto;
-}
-
-input#user_current_password{
-  margin: 0 auto;
-}
-
-input#user_first_name.form-control{
-  margin: 0 auto;
-}
-
-input#user_last_name.form-control{
-  margin: 0 auto;
-}
-
-input#user_phone.form-control{
-  margin: 0 auto;
-}
-div.field {
-  margin-bottom:25px;
-}
-
-label {
-  margin-left: 40%;
-}
-
-label {
-  margin-left: 40%;
-}
-
-div.actions {
-  margin-left: 40%;
-}
-
-input#user_remember_me {
-  margin-left: 40%;
-}
-
-
-h2 {
-  margin-left: 40%;
-}
-
-.sign_up {
-  font-weight: bolder;
-  margin-left: 40%;
-  font-size: 18px;
-  text-shadow: 1px 1px black;
-}
-
 a:link{
   color: white;
 }
+
+input#user_remember_me {
+  margin-left: 15%;
+}
+
+div.remember_me {
+  position: relative;
+  right: -7%;
+  bottom: 10px;
+}
+
+input#user_gender_female.radio_buttons.required{
+  width: 20px;
+  bottom: -9px;
+}
+
+
+input#user_gender_male.radio_buttons.required{
+  width: 20px;
+  bottom: -10px;
+}
+
+
+// div.log_in_action {
+//   background: red;
+// }
