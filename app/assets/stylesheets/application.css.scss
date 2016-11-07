@@ -20,6 +20,18 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
+.navbar-default .navbar-nav > li > a{
+   color: 	#B0C4DE;
+ }
+
+
+.navbar-default .navbar-nav > .active > a {
+   color: black;
+   font-weight: bolder;
+   background: #c2c5de;
+ }
+
 div.field {
   padding-left: 16%;
 }

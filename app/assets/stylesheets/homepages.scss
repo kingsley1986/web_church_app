@@ -474,6 +474,9 @@ div.about_info{
   font-size: 20px;
 }
 
+div.post_link a {
+  text-decoration: none;
+}
 
 div.post_link
 {
@@ -485,7 +488,6 @@ div.post_link
    border: 1px solid #777;
    padding: 0 1.5em;
    margin: 0.5em;
-   text-decoration: none;
    color: #333;
    font-weight: bolder;
    text-shadow: 0 1px 0 rgba(255,255,255,.8);
