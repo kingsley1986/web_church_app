@@ -21,10 +21,10 @@ class Picture < ActiveRecord::Base
     end
   end
 
-
-  Comment.find_each do |comment|
-    comment.pictures.each do |c|
-      c.image.recreate_versions! if c.image?
-    end
-  end
+  # 
+  # Comment.find_each do |comment|
+  #   comment.pictures.each do |c|
+  #     c.image.recreate_versions! if c.image?
+  #   end
+  # end
 end
