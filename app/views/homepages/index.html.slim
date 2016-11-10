@@ -4,7 +4,9 @@ ul.slideshow
       | Image 01
     div
       h3
-        | God made everything Beautiful.
+        - @homepages.each do |home|
+          = home.info
+          p = image_tag(home.image.url(:medium))
   li
     span
       | Image 02
@@ -23,11 +25,6 @@ ul.slideshow
   li
     span
       | Image 06
-
-.home_info
-  - @homepages.each do |home|
-    = home.info
-    p = image_tag(home.image.url(:medium))
 
 .welcome_link
   ul

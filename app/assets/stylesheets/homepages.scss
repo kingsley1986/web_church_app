@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //
 
+
+
 /* CSS reset */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
 margin:0;
@@ -107,7 +109,6 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
 }
 .slideshow:after {
     content: '';
-    background: transparent url(../images/pattern.png) repeat top left;
 }
 .slideshow li span {
     width: 100%;
@@ -121,17 +122,23 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
     background-repeat: none;
     opacity: 0;
     z-index: 0;
--webkit-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     -webkit-animation: imageAnimation 36s linear infinite 0s;
     -moz-animation: imageAnimation 36s linear infinite 0s;
     -o-animation: imageAnimation 36s linear infinite 0s;
     -ms-animation: imageAnimation 36s linear infinite 0s;
     animation: imageAnimation 36s linear infinite 0s;
 }
+
+.slideshow li div:hover {
+   animation-play-state: paused;
+}
+
+
 .slideshow li div {
     z-index: 1000;
     position: absolute;
-    bottom: 30px;
+    bottom: 45%;
     left: 0px;
     width: 100%;
     text-align: center;
@@ -141,15 +148,26 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
     -o-animation: titleAnimation 36s linear infinite 0s;
     -ms-animation: titleAnimation 36s linear infinite 0s;
     animation: titleAnimation 36s linear infinite 0s;
+    background:  rgba(0, 0, 0, 0.5);
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 5px;
 }
+
+
+
 .slideshow li div h3 {
   font-family: "helvetica neue", helvetica;
-  text-transform: uppercase;
-  font-size: 80px;
+  font-size: 20px;
   padding: 0;
-  line-height: 200px;
-color: rgba(255,255,255, 0.8);
+  color: rgba(255,255,255, 0.8);
+  padding-left: 15%;
+  padding-right: 15%;
 }
+
+
+
 .slideshow li:nth-child(1) span { background-image: url(http://cdn.wallpapersafari.com/65/99/vPBOeg.jpg) }
 .slideshow li:nth-child(2) span {
     background-image: url(http://images.wisegeek.com/holy-bible-against-white-background.jpg);
