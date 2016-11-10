@@ -149,7 +149,6 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
     -ms-animation: titleAnimation 36s linear infinite 0s;
     animation: titleAnimation 36s linear infinite 0s;
     background:rgba(0, 0, 0, 0.5);
-
     width: 50%;
     margin-left: 25%;
     margin-right: 25%;
@@ -452,10 +451,10 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
 opacity: 1;
 }
 @media screen and (max-width: 1140px) {
-.slideshow li div h3 { font-size: 100px }
+.slideshow li div h3 { font-size: 10px }
 }
 @media screen and (max-width: 600px) {
-.slideshow li div h3 { font-size: 50px }
+.slideshow li div h3 { font-size: 14px }
 }
 
 
