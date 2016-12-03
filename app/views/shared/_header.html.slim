@@ -1,110 +1,197 @@
-.navbar.navbar-default.navbar-static-top[role="navigation"]
-  .container
-    .navbar-header
-      button.navbar-toggle.collapsed[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
-        span.sr-only
-          | Toggle navigation
-      a.navbar-brand[href="#"]
-        h1 Website Name
-    nav.navbar-collapse.collapse
-      ul.nav.navbar-nav
-        li#tt-home.dropdown.active
-          a.dropdown-toggle[href="#!" data-toggle="dropdown" data-hover="dropdown" data-target="#"]
-            | Home
-            span.caret
-          ul.dropdown-menu[role="menu"]
-            li
-              a[href= homepages_index_path]
-                | Home
-            li
-              a[href= contactpages_index_path]
-                | Contact
-            li
-              a[href= aboutpages_path]
-                | About
-        li#tt-blog.dropdown
-          a.dropdown-toggle[href="#!" data-toggle="dropdown" data-hover="dropdown" data-target="#"]
-            | MINISTRIES
-            span.caret
-          ul.dropdown-menu[role="menu"]
-            li
-              a[href=childrenpages_index_path]
-                | Children
-            li
-              a[href=youthpages_index_path]
-                | Youths
-            li
-              a[href=elderpages_index_path]
-                | Old Aged
-            li
-              a[href=hospitalpages_index_path]
-                | Hospital
-            li
-              a[href=prisonpages_index_path]
-                | Prison
-            li
-              a[href=foodpages_index_path]
-                | Food
-        li#tt-books.dropdown
-          a.dropdown-toggle[href="#!" data-hover="dropdown" data-toggle="dropdown" data-target="#"]
-            | MEETING DAYS
-            span.caret
-          ul.dropdown-menu[role="menu"]
-            li
-              a[href=sundaypages_index_path]
-                | Sunday
-            li
-              a[href=tuesdaypages_index_path]
-                | Tuesday
-            li
-              a[href=thursdaypages_index_path]
-                | Thursday
-        li#tt-goodies.dropdown
-          a.dropdown-toggle[href="#!" data-toggle="dropdown" data-hover="dropdown" data-target="#"]
-            | Ourb Beliefs
-            span.caret
-          ul.dropdown-menu[role="menu"]
-            li
-              a[href=fatherpages_index_path]
-                | God/Father
-            li
-              a[href=sonpages_index_path]
-                | Jesus/Son
-            li
-              a[href=holyspiritpages_index_path]
-                | Holy Spirit
-        li#tt-media.dropdown
-          a.dropdown-toggle[href="#!" data-toggle="dropdown" data-hover="dropdown" data-target="#"]
-            | VISSION
-            span.caret
-          ul.dropdown-menu[role="menu"]
-            li
-              a[href="#!"]
-                | Vission
-            li
-              a[href="#!"]
-                | Vission
-        li#tt-contact.dropdown
-          a.dropdown-toggle[href="#!" data-toggle="dropdown" data-hover="dropdown" data-target="#"]
-            | ACCOUNT
-            span.caret
-          ul.dropdown-menu[role="menu"]
-            - unless current_user_signed_in
+body.background
+  .content
+    ul.exo-menu
+      li
+        a.active[href="#"]
+          i.fa.fa-home
+          |  Home
+      li.drop-down
+        a[href="#"]
+          i.fa.fa-cogs
+          |  Flyout
+        ul.drop-down-ul.animated.fadeIn
+          li.flyout-right
+            a[href="#"]
+              | Flyout Right
+            ul.animated.fadeIn
               li
-                a[href=new_user_registration_path]
-                  | Signup
+                a[href="#"]
+                  | Mobile
               li
-                a[href=new_user_session_path]
-                  | Login
+                a[href="#"]
+                  | Computer
+              li
+                a[href="#"]
+                  | Watch
+          li.flyout-left
+            a[href="#"]
+              | Flyout Left
+            ul.animated.fadeIn
+              li
+                a[href="#"]
+                  | Mobile
+              li
+                a[href="#"]
+                  | Computer
+              li
+                a[href="#"]
+                  | Watch
+          li
+            a[href="#"]
+              | No Flyout
+      li
+        a[href="#"]
+          i.fa.fa-cogs
+          |  Services
+      li
+        a[href="#"]
+          i.fa.fa-briefcase
+          |  Portfolio
+      li.mega-drop-down
+        a[href="#"]
+          i.fa.fa-list
+          |  Mega Menu
+        .animated.fadeIn.mega-menu
+          .mega-menu-wrap
+            .row
+              .col-md-4
+                h4.row.mega-title
+                  | Feature
+                img.img-responsive[src="http://3.bp.blogspot.com/-rUk36pd-LbM/VcLb48X4f-I/AAAAAAAAGCI/Y_UxBAgEqwA/s1600/Magento_themes.jpg"]
+              .col-md-2
+                h4.row.mega-title
+                  | Standers
+                ul.stander
+                  li
+                    a[href="#"]
+                      | Mobile
+                  li
+                    a[href="#"]
+                      | Computer
+                  li
+                    a[href="#"]
+                      | Watch
+                  li
+                    a[href="#"]
+                      | laptop
+                  li
+                    a[href="#"]
+                      | Camera
+                  li
+                    a[href="#"]
+                      | I pad
+                  li
+                    a.view-more.btn-.btn-sm[href="#"]
+                      | View more
+              .col-md-3
+                h4.row.mega-title
+                  | Description
+                ul.description
+                  li
+                    a[href="#"]
+                      | Women
+                    span
+                      | Description of Women
+                  li
+                    a[href="#"]
+                      | Men
+                    span
+                      | Description of men Cloths
+                  li
+                    a[href="#"]
+                      | Kids
+                    span
+                      | Description of Kids Cloths
+                  li
+                    a[href="#"]
+                      | Others
+                    span
+                      | Description of Others Cloths
+                  li
+                    a.view-more.btn.btn-sm[href="#"]
+                      | View more
+              .col-md-3
+                h4.row.mega-title
+                  | Icon + Description
+                ul.icon-des
+                  li
+                    a[href="#"]
+                      i.fa.fa-globe
+                      | Web
+                  li
+                    a[href="#"]
+                      i.fa.fa-mobile
+                      | Mobile
+                  li
+                    a[href="#"]
+                      i.fa.fa-arrows-h
+                      | Responsive
+                  li
+                    a[href="#"]
+                      i.fa.fa-desktop
+                      | Desktop
+                  li
+                    a[href="#"]
+                      i.fa.fa-paint-brush
+                      | UI/UX
+      li.blog-drop-down
+        a[href="#"]
+          i.fa.fa-bullhorn
+          |  Blog
+        .Blog.animated.fadeIn
+          .col-md-4
+            img.img-responsive[src="http://2.bp.blogspot.com/-VG_e0pKfrDo/VcLb6JwZqfI/AAAAAAAAGCk/8ZgA9kZqTQ8/s1600/images3.jpg"]
+            .blog-des
+              h4.blog-title
+                | Lorem ipsum dolor sit amet
+              p
+                | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate.
+              a.view-more.btn-.btn-sm[href="#"]
+                | Read More
+          .col-md-4
+            img.img-responsive[src="http://3.bp.blogspot.com/-hUt5FrdZHio/VcLb5dlwTBI/AAAAAAAAGCU/UUH5N1JkoQc/s1600/images1.jpg"]
+            .blog-des
+              h4.blog-title
+                | Lorem ipsum dolor sit amet
+              p
+                | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate.
+              a.view-more.btn-.btn-sm[href="#"]
+                | Read More
+          .col-md-4
+            img.img-responsive[src="http://4.bp.blogspot.com/-A7U1uPlSq6Y/VcLb5kKHCkI/AAAAAAAAGCc/7WghyndTEuY/s1600/images2.jpg"]
+            .blog-des
+              h4.blog-title
+                | Lorem ipsum dolor sit amet
+              p
+                | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate.
+              a.view-more.btn-.btn-sm[href="#"]
+                | Read More
+      li.images-drop-down
+        a[href="#"]
+          i.fa.fa-photo
+          |  Images
+        .Images.animated.fadeIn
+          .col-md-3
+            h4
+              | Images Title
+            img.img-responsive[src="http://2.bp.blogspot.com/-VG_e0pKfrDo/VcLb6JwZqfI/AAAAAAAAGCk/8ZgA9kZqTQ8/s1600/images3.jpg"]
+          .col-md-3
+            h4
+              | Images Title
+            img.img-responsive[src="http://3.bp.blogspot.com/-hUt5FrdZHio/VcLb5dlwTBI/AAAAAAAAGCU/UUH5N1JkoQc/s1600/images1.jpg"]
+          .col-md-3
+            h4
+              | Images Title
+            img.img-responsive[src="http://4.bp.blogspot.com/-A7U1uPlSq6Y/VcLb5kKHCkI/AAAAAAAAGCc/7WghyndTEuY/s1600/images2.jpg"]
+          .col-md-3
+            h4
+              | Images Title
+            img.img-responsive[src="http://3.bp.blogspot.com/-hGrnZIjzL2k/VcLb47kyQKI/AAAAAAAAGCQ/J6Q2IAHIQvQ/s1600/image4.jpg"]
+      li
+        a[href="#"]
+          i.fa.fa-envelope
+          |  Contact
+        .contact
 
-            - if current_user && user_signed_in?
-              li
-                a[href= destroy_user_session_path]
-                  | Log Out
-              li
-                a[href= edit_user_registration_path]
-                  | Edit Account
-
-      .post_link
-        a[href= posts_path(@post)]
-          | Go To Blog
+    a.toggle-menu.visible-xs-block[href="#"]
+      | |||

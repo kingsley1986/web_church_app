@@ -20,7 +20,7 @@
  * @preserve
  * Project: Bootstrap Hover Dropdown
  * Author: Cameron Spear
- * require turbolinks 
+ * require turbolinks
  * Dependencies: Bootstrap's Dropdown plugin, jQuery
  * Description: A simple plugin to enable Bootstrap dropdowns to active on hover and provide a nice user experience.
  */
@@ -186,5 +186,17 @@ jQuery.each( itms, function( i, val ) {
     }
 
   });
+
+});
+
+
+
+
+
+$(function () {
+ $('.toggle-menu').click(function(){
+	$('.exo-menu').toggleClass('display');
+
+ });
 
 });
