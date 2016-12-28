@@ -9,7 +9,6 @@ div.comment_content {
 .comment_body{
   font-size: 13px;
   position: relative;
-  right: 30px;
 }
 
 div.comment_body_view {
@@ -29,7 +28,6 @@ div.comment_body_view  {
         font-size:0.8em;
     }
 }
-
 
 
 div.comment_days {
@@ -128,6 +126,19 @@ div.delete_comment_and_reply_link a{
   position: relative;
   right: -5px;
   text-decoration: none;
+}
+div.delete_comment a{
+  color: green;
+  font-size: 17px;
+  position: relative;
+  text-decoration: none;
+  right: 14px;
+}
+
+.commentor {
+  color: purple;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
 }
 
 

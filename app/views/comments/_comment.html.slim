@@ -10,35 +10,37 @@
           div
             p
               .comment_body_view
-                p = comment.body
-              -comment.pictures.each do |comment_pic|
-                p = link_to(image_tag(comment_pic.image.url(:thumb)), comment_pic, class: "img-responsive") if comment_pic.image?
-              .comment_days
-                p = "Comment by #{comment.user.first_name}"
+                hr.style1     
+                  p = comment.body
+                -comment.pictures.each do |comment_pic|
+                  p = link_to(image_tag(comment_pic.image.url(:thumb)), comment_pic, class: "img-responsive") if comment_pic.image?
+                .commentor
+                  p = comment.user.first_name
 
-              .comment_show_days_ago
-                = time_ago_in_words(comment.created_at)
-                |  Ago
-              = simple_form_for [comment, comment.replies.new] do |f|
-                -if current_user_signed_in
-                  =f.input :reply_body, placeholder: "Reply to this comment", label: "reply"
+                .comment_show_days_ago
+                  = time_ago_in_words(comment.created_at)
+                  |  Ago
+                = simple_form_for [comment, comment.replies.new] do |f|
+                  -if current_user_signed_in
+                    =f.input :reply_body, placeholder: "Reply to this comment", label: "reply"
 
-                ul
-                  .like_and_unlike_comment
-                    -if current_user_signed_in
-                      -if comment.likes.map(&:user_id).include? current_user.id
-                        li = link_to "Unlike", unlike_comment_path(comment, like: true), method: 'delete'
-                      -else
-                        li = link_to "Like", like_comment_path(comment, like: true), method: 'post'
-              .comment_like_word
-                = pluralize( comment.likes.size, "like")
-                -if comment.likes.size > 0
-                  i.fa.fa-thumbs-o-up
+                  ul
+                    .like_and_unlike_comment
+                      -if current_user_signed_in
+                        -if comment.likes.map(&:user_id).include? current_user.id
+                          li = link_to "Unlike", unlike_comment_path(comment, like: true), method: 'delete'
+                        -else
+                          li = link_to "Like", like_comment_path(comment, like: true), method: 'post'
+                .comment_like_word
+                  = pluralize( comment.likes.size, "like")
+                  -if comment.likes.size > 0
+                    i.fa.fa-thumbs-o-up
 
             -if comment.replies.any?
               .reply
                 h5  Replies
               .delete_comment_and_reply_link
                 = link_to pluralize(comment.replies.count, "reply"),   comment_replies_path(comment.id, @reply )
+              .delete_comment
                 -if current_user && user_signed_in? && comment.user_id == current_user.id || current_user && current_user.admin?
                   p = link_to "Delete", comment_path(comment), data: {confirm: 'Are you sure?'}, method: :delete

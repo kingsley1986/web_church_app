@@ -165,10 +165,6 @@ div.post_created {
     }
 }
 
-
-
-
-
 .post:last-child {
   border-bottom:0;
 }
@@ -194,8 +190,6 @@ div.show_like_icon{
   top: 3px;
 }
 
-
-
 @media screen and (max-width: 768px) {
 .like_word{
         font-size:18px;
@@ -209,8 +203,6 @@ div.show_like_icon{
 }
 
 
-
-
 div.like_and_unlike a{
   font-size: 13px;
   font-weight: bold;
@@ -219,7 +211,6 @@ div.like_and_unlike a{
   color: green;
   text-decoration: none;
 }
-
 
 // for post index
 div.like_and_unlike_index a{
@@ -256,12 +247,23 @@ div.like_and_unlike_index a{
 }
 
 
+#album {
+    height:auto;
+    display:inline-block;
+    background: white;
+    margin: 0 auto;
+    width: 50%;
+    border: 3px solid #23364B;
+    padding: 10px;
+}
 
+hr.style1{
+	border-top: 1px solid #8c8b8b;
+}
 
-
-td { border-width: medium;
-border-style: outset;
-border-color: #C0C0C0;}
+#comments {
+  background: #F0FFFF;
+}
 
 div.post{
   position: relative;

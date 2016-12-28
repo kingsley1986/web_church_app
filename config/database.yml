@@ -1,17 +1,27 @@
 development:
   adapter: postgresql
+  host: localhost
+  encoding: unicode
   database: web_church_app_development
   pool: 5
-  timeout: 5000
+  username: web_church
+  password: web_church
+  template: template0
 
 test:
   adapter: postgresql
+  host: localhost
+  encoding: unicode
   database: web_church_app_test
   pool: 5
-  timeout: 5000
+  username: web_church
+  password: web_church
+  template: template0
+
 
 production:
   adapter: postgresql
   database: web_church_app_production
   pool: 5
   timeout: 5000
+  template: template0

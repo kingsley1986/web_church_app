@@ -1,0 +1,156 @@
+.navbar.navbar-default.navbar-static-top[role="navigation"]
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
+        span.sr-only
+          | Toggle navigation
+      a.navbar-brand[href="#"]
+        h1 Website Name
+    nav.navbar-collapse.collapse
+      ul.nav.navbar-nav
+        li#tt-home.dropdown.active
+          a.dropdown-toggle[href="#!" data-toggle="dropdown" data-hover="dropdown" data-target="#"]
+            | Home
+            span.caret
+          ul.dropdown-menu[role="menu"]
+            li
+              a[href= homepages_index_path]
+                | Home
+            li
+              a[href= contactpages_index_path]
+                | Contact
+            li
+              a[href= aboutpages_path]
+                | About
+        li#tt-blog.dropdown
+          a.dropdown-toggle[href="#!" data-toggle="dropdown" data-hover="dropdown" data-target="#"]
+            | MINISTRIES
+            span.caret
+          ul.dropdown-menu[role="menu"]
+            li
+              a[href=childrenpages_index_path]
+                | Children
+            li
+              a[href=youthpages_index_path]
+                | Youths
+            li
+              a[href=elderpages_index_path]
+                | Old Aged
+            li
+              a[href=hospitalpages_index_path]
+                | Hospital
+            li
+              a[href=prisonpages_index_path]
+                | Prison
+            li
+              a[href=foodpages_index_path]
+                | Food
+        li#tt-books.dropdown
+          a.dropdown-toggle[href="#!" data-hover="dropdown" data-toggle="dropdown" data-target="#"]
+            | MEETING DAYS
+            span.caret
+          ul.dropdown-menu[role="menu"]
+            li
+              a[href=sundaypages_index_path]
+                | Sunday
+            li
+              a[href=tuesdaypages_index_path]
+                | Tuesday
+            li
+              a[href=thursdaypages_index_path]
+                | Thursday
+        li#tt-goodies.dropdown
+          a.dropdown-toggle[href="#!" data-toggle="dropdown" data-hover="dropdown" data-target="#"]
+            | Ourb Beliefs
+            span.caret
+          ul.dropdown-menu[role="menu"]
+            li
+              a[href=fatherpages_index_path]
+                | God/Father
+            li
+              a[href=sonpages_index_path]
+                | Jesus/Son
+            li
+              a[href=holyspiritpages_index_path]
+                | Holy Spirit
+        li#tt-media.dropdown
+          a.dropdown-toggle[href="#!" data-toggle="dropdown" data-hover="dropdown" data-target="#"]
+            | VISSION
+            span.caret
+          ul.dropdown-menu[role="menu"]
+            li
+              a[href="#!"]
+                | Vission
+            li
+              a[href="#!"]
+                | Vission
+        li#tt-contact.dropdown
+          a.dropdown-toggle[href="#!" data-toggle="dropdown" data-hover="dropdown" data-target="#"]
+            | ACCOUNT
+            span.caret
+          ul.dropdown-menu[role="menu"]
+            - unless current_user_signed_in
+              li
+                a[href=new_user_registration_path]
+                  | Signup
+              li
+                a[href=new_user_session_path]
+                  | Login
+
+            - if current_user && user_signed_in?
+              li
+                a[href= destroy_user_session_path]
+                  | Log Out
+              li
+                a[href= edit_user_registration_path]
+                  | Edit Account
+
+      .post_link
+        a[href= posts_path(@post)]
+          | Go To Blog
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          .new_post_link
+            -if current_user_signed_in && current_user.admin?
+              = link_to "New Post", new_post_path
+          #page_wrapper
+            #content
+              - @posts.each do |post|
+                table
+                  td
+                    div
+                      p
+                      #album
+                        img#img1.imgAlbum
+                          .post_title
+                            = link_to truncate(post.title, length: 17), post
+                        p
+                          .post_body
+                            = truncate(post.post_body, length: 120)
+                        -post.pictures.each do |pic, remov|
+                          p
+                          
+                             = image_tag(pic.image.url(:medium), class: "img-responsive") if pic.image?
+                        .post_created
+                          = post.created_at.strftime("%B, %d, %Y")
+                        p
+                        ul
+                          .like_and_unlike_index
+                            -if current_user_signed_in
+                              -if post.likes.map(&:user_id).include? current_user.id
+                                li = link_to "Unlike", unlike_post_path(post, like: true), method: 'delete'
+                              -else
+                                li = link_to "Like", like_post_path(post, like: true), method: 'post'
+                          .like_word_index
+                            = pluralize( post.likes.size, "like")
+                        -if post.likes.size >= 1
+                          .like_icon_index
+                            i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]

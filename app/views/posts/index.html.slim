@@ -8,27 +8,29 @@
         td
           div
             p
-              .post_title
-                = link_to truncate(post.title, length: 17), post
+            #album
+              img#img1.imgAlbum
+                .post_title
+                  = link_to truncate(post.title, length: 17), post
               p
                 .post_body
                   = truncate(post.post_body, length: 120)
               -post.pictures.each do |pic, remov|
                 p
-                .style_image
-                  = image_tag(pic.image.url(:medium), class: "img-responsive") if pic.image?
+                
+                   = image_tag(pic.image.url(:medium), class: "img-responsive") if pic.image?
               .post_created
                 = post.created_at.strftime("%B, %d, %Y")
               p
-            ul
-              .like_and_unlike_index
-                -if current_user_signed_in
-                  -if post.likes.map(&:user_id).include? current_user.id
-                    li = link_to "Unlike", unlike_post_path(post, like: true), method: 'delete'
-                  -else
-                    li = link_to "Like", like_post_path(post, like: true), method: 'post'
-              .like_word_index
-                = pluralize( post.likes.size, "like")
-            -if post.likes.size >= 1
-              .like_icon_index
-                i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]
+              ul
+                .like_and_unlike_index
+                  -if current_user_signed_in
+                    -if post.likes.map(&:user_id).include? current_user.id
+                      li = link_to "Unlike", unlike_post_path(post, like: true), method: 'delete'
+                    -else
+                      li = link_to "Like", like_post_path(post, like: true), method: 'post'
+                .like_word_index
+                  = pluralize( post.likes.size, "like")
+              -if post.likes.size >= 1
+                .like_icon_index
+                  i.fa.fa-thumbs-o-up[style="font-size:20px;color:blue"]

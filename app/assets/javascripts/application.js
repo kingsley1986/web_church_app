@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery.turbolinks
+//= require turbolinks
 //= require jquery_ujs
+//= require lightbox
 //= require bootstrap-sprockets
 //= require_tree .
 
@@ -20,7 +22,7 @@
  * @preserve
  * Project: Bootstrap Hover Dropdown
  * Author: Cameron Spear
- * require turbolinks
+
  * Dependencies: Bootstrap's Dropdown plugin, jQuery
  * Description: A simple plugin to enable Bootstrap dropdowns to active on hover and provide a nice user experience.
  */

@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get "hospitalpages/index"
   get "prisonpages/index"
   get "foodpages/index"
+  resources :imagegalleries
   root to: "homepages#index"
 
 
