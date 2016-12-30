@@ -24,11 +24,15 @@
  @import "main";
 
  body {
- 	background: url('images/image.png');
+
  }
 
-
-
+  body{
+ 	margin: 0;
+ 	padding: 0;
+ 	font: 300 14px/18px Roboto;
+ 	background: url('images/image.png');
+  }
 
 
   *,
@@ -58,12 +62,6 @@
  }
  .content{
  	margin: 50px 100px 0px 100px;
- }
-
- ul.exo-menu {
-   width: 80%;
-   position: relative;
-   bottom: 50px;
  }
 
  .exo-menu{
