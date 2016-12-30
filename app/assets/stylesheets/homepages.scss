@@ -131,11 +131,15 @@ h1{
 	height: 140px;
 	position: relative;
 	perspective: 1000px;
-  left: 38%;
+  // left: 38%;
+}
+ul.exo-menu{
+   z-index: 2
+
 }
 
 div.container {
-  position: absolute;
+  position: relative;
   z-index: 1;
   bottom: 20%;
 }
