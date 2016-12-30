@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //
-
+//
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -45,7 +45,7 @@ header a{
 .hero, .content{
   text-align:center;
   position:relative;
-  width: 100%;
+  // width: 100%;
 }
 
 section#hero1.hero{
