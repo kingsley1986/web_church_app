@@ -1,0 +1,54 @@
+<!-- <div class="new_post_link" >
+  <%if current_user_signed_in && current_user.admin? %>
+    <%= link_to "New Post", new_post_path %>
+  <% end %>
+</div> -->
+<div class="page_wrapper_index" >
+  <didv class="content" >
+    <% @posts.each do |post| %>
+      <table style="width: 100%;">
+
+        <tr>
+        <td>
+          <div class="post_title" >
+            <%= link_to truncate(post.title, length: 17), post %>
+          </div>
+          <div class="post_body" %>
+            <%= truncate(post.post_body, length: 120) %>
+          </div>
+          <div class="img img1.imgAlbum" >
+            <% post.pictures.each do |pic, remov| %>
+              <%= image_tag(pic.image.url(:medium), class: "img-responsive") if pic.image? %>
+            <% end %>
+          </div>
+            <div class="post_created" >
+              <%= post.created_at.strftime("%B, %d, %Y") %>
+            </div>
+            <ul>
+              <div class="like_and_unlike_index" >
+                <% if current_user_signed_in %>
+                  <% if post.likes.map(&:user_id).include? current_user.id %>
+                    <li>
+                      <%= link_to "Unlike", unlike_post_path(post, like: true, remote: true), method: 'delete', id: "unlike-#{post.id}", class: "unlike" %>
+                  <% else %>
+                      <%= link_to "Like", like_post_path(post, like: true), method: 'post', id: "like-#{post.id}", class: "like" %>
+                    </li>
+                  <% end %>
+                <% end %>
+              </div>
+            </ul>
+            <div class="like_word_index" >
+              <%= pluralize( post.likes.size, "like") %>
+              <% if post.likes.size >= 1 %>
+                <div class="like_icon_index" >
+                  <i class="glyphicon glyphicon-thumbs-up"></i>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </td>
+      </tr>
+      </table>
+    <% end %>
+  </div>
+</div>

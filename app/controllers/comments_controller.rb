@@ -13,10 +13,14 @@ class CommentsController < ApplicationController
     end
   end
 
+
   def destroy
     if @comment.user_id == current_user.id || current_user.admin?
       @comment.destroy
-      redirect_to :back
+      respond_to do |format|
+        format.js {render nothing: true}
+        format.json { render json: @post, location: @post }
+      end
     else
       redirect_to :back
     end

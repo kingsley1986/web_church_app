@@ -2,11 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#page_wrapper {
-  width: 74%;
+.page_wrapper_index  {
+  width: 34%;
   margin: 0 auto;
+  position: relative;
+  top: 60px;
 }
 
+div.new_post_link {
+  position: relative;
+  bottom: 40%;
+}
+
+img.img-responsive {
+  position: relative;
+  left: 5px;
+}
+.content tbody {
+  background-color: #c4c7ce;
+  box-shadow: 2px 2px 2px 2px #888888;
+
+}
 /*border between top_bar and body*/
 #section {
   padding-top: 7%;
@@ -14,7 +30,7 @@
 }
 
 /*aligning the body*/
-div#content {
+div.content {
  position: relative;
  width: 60%;
  top: 80px;
@@ -43,17 +59,15 @@ div#content {
 }
 
 @media screen and (max-width: 568px) {
-.post_title_show {
-        font-size:0.8em;
-    }
+  .post_title_show {
+      font-size:0.8em;
+  }
 }
 
 div.post_body_show {
   position: relative;
   right: -5px;
 }
-
-
 
 @media screen and (max-width: 768px) {
 div.post_body_show{
@@ -172,8 +186,9 @@ div.post_created {
 
 div.like_icon_index{
   position: relative;
-  top: -30px;
-  left: 50px;
+  top: -35px;
+  left: 45px;
+  font-size: 18px;
 }
 
 div.show_like_icon{
@@ -265,10 +280,6 @@ hr.style1{
   background: #F0FFFF;
 }
 
-div.post{
-  position: relative;
-  right: 25px;
-}
 
 div.vertical-text {
 	transform: rotate(77deg);
