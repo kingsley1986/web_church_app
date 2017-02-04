@@ -1,0 +1,50 @@
+<div class="pagewrapper_show">
+  <div class="content">
+    <ul>
+      <table>
+        <td>
+          <div class="album">
+            <div class="imgAlbum">
+              <div class="post_title_show">
+                <%= @post.title %>
+              </div>
+              <div class="post_body_show">
+                <%= @post.post_body %>
+              </div>
+              <div class="post_show_days_ago">
+                <%= "posted #{time_ago_in_words(@post.created_at)}" %>
+              </div>
+              <div class="image_link">
+                <% @post.pictures.each do |pic| %>
+                  <%= link_to(image_tag(pic.image.url(:square)), pic, class: "img-responsive") if pic.image? %>
+                <% end %>
+              </div>
+              <ul>
+                <div id="likes" >
+                  <%= render partial: "likes" %>
+                </div>
+                <div class="like_word" %>
+                  <%= pluralize( @post.likes.size, "like") %>
+                </div>
+                <% if @post.likes.size >= 1 %>
+                <div class="fa fa-thumbs-o-up" aria-hidden="true"></div>
+                <% end %>
+                <div class="comments" %>
+                  <div class="count_comment" >
+                    <%= "#{@post.comments.count} Comments" %>
+                  </div>
+                    <%= render @post.comments %>
+                      <h3> Add a Comment: </h3>
+                  <% if current_user_signed_in %>
+                    <%= render "comments/form" %>
+                  <% end %>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </td>
+      </table>
+    </ul>
+  </div>
+  <%= link_to "Back", request.referer.present? ? request.referer : default_path, style:"color: red" %>
+</div>

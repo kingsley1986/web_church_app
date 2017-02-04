@@ -24,27 +24,6 @@
             <div class="post_created" >
               <%= post.created_at.strftime("%B, %d, %Y") %>
             </div>
-            <ul>
-              <div class="like_and_unlike_index" >
-                <% if current_user_signed_in %>
-                  <% if post.likes.map(&:user_id).include? current_user.id %>
-                    <li>
-                      <%= link_to "Unlike", unlike_post_path(post, like: true, remote: true), method: 'delete', id: "unlike-#{post.id}", class: "unlike" %>
-                  <% else %>
-                      <%= link_to "Like", like_post_path(post, like: true), method: 'post', id: "like-#{post.id}", class: "like" %>
-                    </li>
-                  <% end %>
-                <% end %>
-              </div>
-            </ul>
-            <div class="like_word_index" >
-              <%= pluralize( post.likes.size, "like") %>
-              <% if post.likes.size >= 1 %>
-                <div class="like_icon_index" >
-                  <i class="glyphicon glyphicon-thumbs-up"></i>
-                </div>
-              <% end %>
-            </div>
           </div>
         </td>
       </tr>

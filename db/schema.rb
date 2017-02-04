@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161225061512) do
+ActiveRecord::Schema.define(version: 20170202175500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,19 +112,15 @@ ActiveRecord::Schema.define(version: 20161225061512) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.boolean  "like"
     t.integer  "likeable_id"
     t.string   "likeable_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "user_id"
-    t.integer  "post_id"
-    t.integer  "comment_id"
+    t.string   "like"
   end
 
-  add_index "likes", ["comment_id"], name: "index_likes_on_comment_id", using: :btree
   add_index "likes", ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id", using: :btree
-  add_index "likes", ["post_id"], name: "index_likes_on_post_id", using: :btree
   add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "pictures", force: :cascade do |t|
@@ -244,8 +240,6 @@ ActiveRecord::Schema.define(version: 20161225061512) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "likes", "comments"
-  add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "pictures", "about_pages"
   add_foreign_key "pictures", "comments"

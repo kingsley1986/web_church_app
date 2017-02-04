@@ -10,44 +10,22 @@ class PostsController < ApplicationController
   end
 
   def like
-    post = Post.find(params[:id])
-    @u = Like.create(likeable: post, user: current_user, like: params[:like])
+    @post = Post.find(params[:id])
+    Like.create(likeable: @post, user: current_user, like: params[:like])
     respond_to do |format|
-      if @u.save
-        format.html do
-          redirect_to @u
-        end
-      else
-        format.html { render 'new'} ## Specify the format in which you are rendering "new" page
-      end
+      format.html  { render partial: "post/likes"}
+      binding.pry
+      format.js
     end
   end
-
-  # respond_to do |format|
-  #   format.js {render nothing: true}
-  #   format.json { render json: @post, location: @post }
-
-#   def create
-#     respond_to do |format|
-#     if @reservation.save
-#       format.html do
-#         redirect_to '/'
-#       end
-#       format.json { render json: @reservation.to_json }
-#     else
-#       format.html { render 'new'} ## Specify the format in which you are rendering "new" page
-#       format.json { render json: @reservation.errors } ## You might want to specify a json format as well
-#     end
-#   end
-# end
 
   def unlike
     @post.likes.each do |user_like|
       if user_like.user_id ==  current_user.id
         user_like.destroy
         respond_to do |format|
-          format.js {render nothing: true}
-          format.json { render json: @post, location: @post }
+          format.js {redirect_to @post}
+          format.js
         end
       end
     end
