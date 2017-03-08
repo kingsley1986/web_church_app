@@ -2,7 +2,7 @@ body.background
   .content
     ul.exo-menu
       li
-        a.active[href= homepages_index_path]
+        a.active[href= "#"]
           i.fa.fa-home
           |  Home
       li.drop-down
@@ -25,7 +25,7 @@ body.background
 
               - if current_user && user_signed_in?
                 li
-                  a[href= destroy_user_session_path]
+                  a[href= "#"]
                     | Log Out
                 li
                   a[href= edit_user_registration_path]
@@ -50,22 +50,22 @@ body.background
                   | MINISTRIES
                 ul.stander
                   li
-                    a[href=childrenpages_index_path]
+                    a[href=childrens_pages_path]
                       | Children
                   li
-                    a[href=youthpages_index_path]
+                    a[href=youths_pages_path]
                       | Youths
                   li
-                    a[href=elderpages_index_path]
+                    a[href=elders_pages_path]
                       | Old Aged
                   li
-                    a[href=hospitalpages_index_path]
+                    a[href=hospital_pages_path]
                       | Hospital
                   li
-                    a[href=prisonpages_index_path]
+                    a[href=prison_pages_path]
                       | Prison
                   li
-                    a[href=foodpages_index_path]
+                    a[href=food_pages_path]
                       | Food
                   li
                     a.view-more.btn-.btn-sm[href="#"]
@@ -75,13 +75,13 @@ body.background
                   | MEETING DAYS
                 ul.description
                   li
-                    a[href=sundaypages_index_path]
+                    a[href=sunday_pages_path]
                       | Sunday
                   li
-                    a[href=tuesdaypages_index_path]
+                    a[href=tuesday_pages_path]
                       | Tuesday
                   li
-                    a[href=thursdaypages_index_path]
+                    a[href=thursday_pages_path]
                       | Thursday
                   li
                     a.view-more.btn.btn-sm[href="#"]
@@ -91,13 +91,13 @@ body.background
                   | Ourb Beliefs
                 ul.icon-des
                   li
-                    a[href=fatherpages_index_path]
+                    a[href=father_pages_path]
                       | God/Father
                   li
-                    a[href=sonpages_index_path]
+                    a[href=son_pages_path]
                       | Jesus/Son
                   li
-                    a[href=holyspiritpages_index_path]
+                    a[href= holy_spirit_pages_path]
                       | Holy Spirit
       li.blog-drop-down
         a[href="#"]
@@ -111,7 +111,7 @@ body.background
                 | Lorem ipsum dolor sit amet
               p
                 | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate.
-              a.view-more.btn-.btn-sm[href= contactpages_index_path]
+              a.view-more.btn-.btn-sm[href= "#"]
                 | Read More
           .col-md-4
             img.img-responsive[src="http://3.bp.blogspot.com/-hUt5FrdZHio/VcLb5dlwTBI/AAAAAAAAGCU/UUH5N1JkoQc/s1600/images1.jpg"]
@@ -120,7 +120,7 @@ body.background
                 | Lorem ipsum dolor sit amet
               p
                 | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate.
-              a.view-more.btn-.btn-sm[href= aboutpages_path]
+              a.view-more.btn-.btn-sm[href= "#"]
                 | Read More
           .col-md-4
             img.img-responsive[src="http://4.bp.blogspot.com/-A7U1uPlSq6Y/VcLb5kKHCkI/AAAAAAAAGCc/7WghyndTEuY/s1600/images2.jpg"]
@@ -153,13 +153,13 @@ body.background
               | Images Title
             img.img-responsive[src="http://3.bp.blogspot.com/-hGrnZIjzL2k/VcLb47kyQKI/AAAAAAAAGCQ/J6Q2IAHIQvQ/s1600/image4.jpg"]
       li
-        a[href= contactpages_index_path]
+        a[href= "#"]
           i.fa.fa-envelope
           |  Contact
         .contact
 
       li
-        a[href=  imagegalleries_path]
+        a[href=  "#"]
           i.fa.fa-photo
           |  Images
         .contact

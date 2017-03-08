@@ -10,25 +10,42 @@ Rails.application.routes.draw do
     }
   })
 
-  get "homepages/index"
-  get "contactpages/index"
+  resources :pages do
+    collection do
+      get :youths
+      get :childrens
+      get :elders
+      get :hospital
+      get :food
+      get :prison
 
-  get "fatherpages/index"
-  get "sonpages/index"
-  get "holyspiritpages/index"
+      get :sunday
+      get :tuesday
+      get :thursday
 
-  get "sundaypages/index"
-  get "tuesdaypages/index"
-  get "thursdaypages/index"
-
-  get "childrenpages/index"
-  get "youthpages/index"
-  get "elderpages/index"
-  get "hospitalpages/index"
-  get "prisonpages/index"
-  get "foodpages/index"
+      get :father
+      get :son
+      get :holy_spirit
+    end
+  end
+  # get "contactpages/index"
+  #
+  # get "fatherpages/index"
+  # get "sonpages/index"
+  # get "holyspiritpages/index"
+  #
+  # get "sundaypages/index"
+  # get "tuesdaypages/index"
+  # get "thursdaypages/index"
+  #
+  # get "childrenpages/index"
+  # get "youthpages/index"
+  # get "elderpages/index"
+  # get "hospitalpages/index"
+  # get "prisonpages/index"
+  # get "foodpages/index"
   resources :imagegalleries
-  root to: "homepages#index"
+  root to: "home#index"
 
 
   resources :posts, :pictures, :aboutpages, shallow: true do

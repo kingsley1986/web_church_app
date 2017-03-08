@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161225061512) do
+ActiveRecord::Schema.define(version: 20170304182851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "about_pages", force: :cascade do |t|
-    t.text     "info"
-    t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -38,12 +31,6 @@ ActiveRecord::Schema.define(version: 20161225061512) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
-  create_table "children_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.integer  "commentable_id"
@@ -58,47 +45,9 @@ ActiveRecord::Schema.define(version: 20161225061512) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
-  create_table "contact_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "elder_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "father_pages", force: :cascade do |t|
-    t.string   "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "homes", force: :cascade do |t|
+    t.string   "body"
     t.string   "image"
-  end
-
-  create_table "food_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "holyspirit_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
-  end
-
-  create_table "homepages", force: :cascade do |t|
-    t.string   "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
-  end
-
-  create_table "hospital_pages", force: :cascade do |t|
-    t.text     "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -127,34 +76,28 @@ ActiveRecord::Schema.define(version: 20161225061512) do
   add_index "likes", ["post_id"], name: "index_likes_on_post_id", using: :btree
   add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
+  create_table "pages", force: :cascade do |t|
+    t.string   "body"
+    t.string   "page_type"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pictures", force: :cascade do |t|
     t.string   "image"
     t.integer  "user_id"
     t.integer  "picturable_id"
     t.string   "picturable_type"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "post_id"
     t.integer  "comment_id"
-    t.integer  "about_page_id"
-    t.integer  "sunday_page_id"
-    t.integer  "thursday_page_id"
-    t.integer  "tuesday_page_id"
-    t.integer  "father_page_id"
-    t.integer  "son_page_id"
-    t.integer  "holyspirit_page_id"
   end
 
-  add_index "pictures", ["about_page_id"], name: "index_pictures_on_about_page_id", using: :btree
   add_index "pictures", ["comment_id"], name: "index_pictures_on_comment_id", using: :btree
-  add_index "pictures", ["father_page_id"], name: "index_pictures_on_father_page_id", using: :btree
-  add_index "pictures", ["holyspirit_page_id"], name: "index_pictures_on_holyspirit_page_id", using: :btree
   add_index "pictures", ["picturable_type", "picturable_id"], name: "index_pictures_on_picturable_type_and_picturable_id", using: :btree
   add_index "pictures", ["post_id"], name: "index_pictures_on_post_id", using: :btree
-  add_index "pictures", ["son_page_id"], name: "index_pictures_on_son_page_id", using: :btree
-  add_index "pictures", ["sunday_page_id"], name: "index_pictures_on_sunday_page_id", using: :btree
-  add_index "pictures", ["thursday_page_id"], name: "index_pictures_on_thursday_page_id", using: :btree
-  add_index "pictures", ["tuesday_page_id"], name: "index_pictures_on_tuesday_page_id", using: :btree
   add_index "pictures", ["user_id"], name: "index_pictures_on_user_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
@@ -167,12 +110,6 @@ ActiveRecord::Schema.define(version: 20161225061512) do
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
-  create_table "prison_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "replies", force: :cascade do |t|
     t.string   "reply_body"
     t.integer  "comment_id"
@@ -183,34 +120,6 @@ ActiveRecord::Schema.define(version: 20161225061512) do
 
   add_index "replies", ["comment_id"], name: "index_replies_on_comment_id", using: :btree
   add_index "replies", ["user_id"], name: "index_replies_on_user_id", using: :btree
-
-  create_table "son_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
-  end
-
-  create_table "sunday_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
-  end
-
-  create_table "thursday_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
-  end
-
-  create_table "tuesday_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -236,26 +145,13 @@ ActiveRecord::Schema.define(version: 20161225061512) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "youth_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "comments"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
-  add_foreign_key "pictures", "about_pages"
   add_foreign_key "pictures", "comments"
-  add_foreign_key "pictures", "father_pages"
-  add_foreign_key "pictures", "holyspirit_pages"
   add_foreign_key "pictures", "posts"
-  add_foreign_key "pictures", "son_pages"
-  add_foreign_key "pictures", "sunday_pages"
-  add_foreign_key "pictures", "thursday_pages"
-  add_foreign_key "pictures", "tuesday_pages"
   add_foreign_key "pictures", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "replies", "comments"

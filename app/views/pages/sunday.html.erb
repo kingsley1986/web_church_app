@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th class="page_image"> Image</th>
+    <th class="pull-right">Description</th>
+  </tr>
+  <tr>
+    <% @pages.each do |page| %>
+      <% page.pictures.each do |pic, remov| %>
+        <td class="page_image_td"><%= image_tag(pic.image.url(:medium)) %></td>
+      <% end %>
+      <td class="page_body pull-right"><%= page.body %></td>
+    <% end %>
+  </tr>
+</table>
