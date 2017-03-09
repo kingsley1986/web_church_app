@@ -7,6 +7,18 @@ $ ->
     $(ev.target).closest(".comment_content").remove()
 
 
+
+$ ->
+  $('.liker').on  "ajax:success", (ev) ->
+    console.log(ev)
+    $(ev.target).closest(".liker").replaceWith $('.unliker')
+$ ->
+  $('.unliker').on  "ajax:success", (ev) ->
+    console.log(ev)
+    $(ev.target).closest(".unliker").replaceWith $('.liker')
+
+
+
 # $ ->
 #   $('.like').on 'click', (ev) ->
 #     ev.preventDefault();

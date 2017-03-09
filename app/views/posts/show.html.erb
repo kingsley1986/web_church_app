@@ -20,8 +20,14 @@
                 <% end %>
               </div>
               <ul>
-                <div id="likes" >
-                  <%= render partial: "likes" %>
+                <div id="like_and_unlike" >
+                  <% if current_user_signed_in %>
+                    <% if @post.likes.map(&:user_id).include? current_user.id %>
+                      <%= link_to "Unlike", unlike_post_path(@post, like: true), method: :delete, remote: true, :class => 'unliker' %>
+                    <%else %>
+                      <%= link_to "Like", like_post_path(@post, like: true), remote: true, method: :post, :class => 'liker' %>
+                    <% end %>
+                  <% end %>
                 </div>
                 <div class="like_word" %>
                   <%= pluralize( @post.likes.size, "like") %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170202175500) do
+ActiveRecord::Schema.define(version: 20170304182851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,13 @@ ActiveRecord::Schema.define(version: 20170202175500) do
     t.string   "image"
   end
 
+  create_table "homes", force: :cascade do |t|
+    t.string   "body"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "hospital_pages", force: :cascade do |t|
     t.text     "info"
     t.datetime "created_at", null: false
@@ -112,16 +119,28 @@ ActiveRecord::Schema.define(version: 20170202175500) do
   end
 
   create_table "likes", force: :cascade do |t|
+    t.boolean  "like"
     t.integer  "likeable_id"
     t.string   "likeable_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "user_id"
-    t.string   "like"
+    t.integer  "post_id"
+    t.integer  "comment_id"
   end
 
+  add_index "likes", ["comment_id"], name: "index_likes_on_comment_id", using: :btree
   add_index "likes", ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id", using: :btree
+  add_index "likes", ["post_id"], name: "index_likes_on_post_id", using: :btree
   add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
+
+  create_table "pages", force: :cascade do |t|
+    t.string   "body"
+    t.string   "page_type"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pictures", force: :cascade do |t|
     t.string   "image"
@@ -240,6 +259,8 @@ ActiveRecord::Schema.define(version: 20170202175500) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "likes", "comments"
+  add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "pictures", "about_pages"
   add_foreign_key "pictures", "comments"
