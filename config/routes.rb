@@ -10,40 +10,8 @@ Rails.application.routes.draw do
     }
   })
 
-  resources :pages do
-    collection do
-      get :youths
-      get :childrens
-      get :elders
-      get :hospital
-      get :food
-      get :prison
-
-      get :sunday
-      get :tuesday
-      get :thursday
-
-      get :father
-      get :son
-      get :holy_spirit
-    end
-  end
-  # get "contactpages/index"
-  #
-  # get "fatherpages/index"
-  # get "sonpages/index"
-  # get "holyspiritpages/index"
-  #
-  # get "sundaypages/index"
-  # get "tuesdaypages/index"
-  # get "thursdaypages/index"
-  #
-  # get "childrenpages/index"
-  # get "youthpages/index"
-  # get "elderpages/index"
-  # get "hospitalpages/index"
-  # get "prisonpages/index"
-  # get "foodpages/index"
+  resources :pages
+  get  "pages/filter/:scope" => "pages#index", as: :filtered_page
   resources :imagegalleries
   root to: "home#index"
 

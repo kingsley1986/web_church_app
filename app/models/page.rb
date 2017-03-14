@@ -17,17 +17,18 @@ class Page < ActiveRecord::Base
                  "Holy Spirit" ]
 
 
-
-  def self.swich
-    Page.select do |sorted_pages|
-      case sorted_pages.page_type
-      when "Youths"
-        Page.where(page_type: "Youths")
-      when "Children"
-        Page.where(page_type: "Children")
-      end
-    end
-  end
+scope :children, -> { where(:page_type => "Childrens")}
+scope :youths, -> { where(:page_type => "Youths")}
+scope :elders, -> { where(:page_type =>  "Elders")}
+scope :food, -> { where(:page_type => "Food")}
+scope :prison, -> { where(:page_type => "Prisonns")}
+scope :hospital, -> { where(:page_type => "Hospital")}
+scope :sunday, -> { where(:page_type => "Sunday")}
+scope :tuesday, -> { where(:page_type => "Tuesday")}
+scope :thursday, -> { where(:page_type =>  "Thursday")}
+scope :father, -> { where(:page_type => "Father")}
+scope :son, -> { where(:page_type =>  "Son")}
+scope :holy_spirit, -> { where(:page_type => "Holy Spirit")}
 
 
 end
