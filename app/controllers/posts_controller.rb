@@ -19,25 +19,6 @@ class PostsController < ApplicationController
   end
 
 
-
-  # respond_to do |format|
-  #   format.js {render nothing: true}
-  #   format.json { render json: @post, location: @post }
-
-#   def create
-#     respond_to do |format|
-#     if @reservation.save
-#       format.html do
-#         redirect_to '/'
-#       end
-#       format.json { render json: @reservation.to_json }
-#     else
-#       format.html { render 'new'} ## Specify the format in which you are rendering "new" page
-#       format.json { render json: @reservation.errors } ## You might want to specify a json format as well
-#     end
-#   end
-# end
-
   def unlike
     @post = @post.likes.each do |user_like|
       if user_like.user_id ==  current_user.id
