@@ -1,12 +1,14 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+
 $ ->
   $('.delete_comment').on  "ajax:success", (ev) ->
-    $(ev.target).closest(".comment_content").slideUp()
+    $(ev.target).closest(".comment_content").remove()
 
-$ ->
-  $('.simple_form.new_comment').on  "ajax:success", (event) ->
-    $('.comments').load(document.URL +  ' .comments');
-
-
+document.getElementById('comment_form').onclick = ->
+  console.log getAttribute('comment_form')
+  return
 
 
 # $ ->

@@ -1,5 +1,5 @@
 <div class="comment_content" >
-  <div class="comment">
+  <div class="comment_and_comment">
     <div class"comment_body">
       <table>
         <td>
@@ -25,9 +25,13 @@
               <% if current_user_signed_in %>
                 <% if comment.likes.map(&:user_id).include? current_user.id %>
                   <li>
-                    <%= link_to "Unlike", unlike_comment_path(comment, like: true), method: 'delete' %>
+                    <div class="uncommentor" >
+                      <%= link_to "Unlike", unlike_comment_path(comment, like: true), remote: true, method: 'delete' %>
+                    </div>
                 <% else %>
-                  <%= link_to "Like", like_comment_path(comment, like: true), method: 'post' %>
+                <div class="commentor">
+                  <%= link_to "Like", like_comment_path(comment, like: true), remote: true, method: 'post', class: "my_name" %>
+                </div>
                 <% end %>
               <% end %>
             </div>

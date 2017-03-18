@@ -2,10 +2,12 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+# $ ->
+#   $('#like_and_unlike').on  "ajax:success", (ev) ->
+#     $('#like_and_unlike').load(document.URL +  ' #like_and_unlike');
 
-$ ->
-  $('.unlike').on  "ajax:success", (ev) ->
-    $(ev.target).closest(".page_wrapper_index").remove()
-$ ->
-  $('.like').on  "ajax:success", (ev) ->
-    $(ev.target).closest(".page_wrapper_index").remove()
+
+
+    # $ ->
+    #   $('.comments').load(document.URL +  ' .comments');
+    #   $('.simple_form.new_comment').on  "ajax:success", (event) ->

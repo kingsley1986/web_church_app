@@ -39,8 +39,10 @@
                   <div class="count_comment" >
                     <%= "#{@post.comments.count} Comments" %>
                   </div>
+                  <div id="comments" >
                     <%= render @post.comments %>
                       <h3> Add a Comment: </h3>
+                    </div>
                   <% if current_user_signed_in %>
                     <%= render "comments/form" %>
                   <% end %>

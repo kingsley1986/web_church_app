@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  
+
   def authenticate_admin_user!
     unless current_user && current_user.admin?
       redirect_to root_url, alert: "Access denied, you are not authorized to view this page" and return

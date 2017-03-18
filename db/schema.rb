@@ -147,29 +147,15 @@ ActiveRecord::Schema.define(version: 20170304182851) do
     t.integer  "user_id"
     t.integer  "picturable_id"
     t.string   "picturable_type"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "post_id"
     t.integer  "comment_id"
-    t.integer  "about_page_id"
-    t.integer  "sunday_page_id"
-    t.integer  "thursday_page_id"
-    t.integer  "tuesday_page_id"
-    t.integer  "father_page_id"
-    t.integer  "son_page_id"
-    t.integer  "holyspirit_page_id"
   end
 
-  add_index "pictures", ["about_page_id"], name: "index_pictures_on_about_page_id", using: :btree
   add_index "pictures", ["comment_id"], name: "index_pictures_on_comment_id", using: :btree
-  add_index "pictures", ["father_page_id"], name: "index_pictures_on_father_page_id", using: :btree
-  add_index "pictures", ["holyspirit_page_id"], name: "index_pictures_on_holyspirit_page_id", using: :btree
   add_index "pictures", ["picturable_type", "picturable_id"], name: "index_pictures_on_picturable_type_and_picturable_id", using: :btree
   add_index "pictures", ["post_id"], name: "index_pictures_on_post_id", using: :btree
-  add_index "pictures", ["son_page_id"], name: "index_pictures_on_son_page_id", using: :btree
-  add_index "pictures", ["sunday_page_id"], name: "index_pictures_on_sunday_page_id", using: :btree
-  add_index "pictures", ["thursday_page_id"], name: "index_pictures_on_thursday_page_id", using: :btree
-  add_index "pictures", ["tuesday_page_id"], name: "index_pictures_on_tuesday_page_id", using: :btree
   add_index "pictures", ["user_id"], name: "index_pictures_on_user_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
@@ -262,15 +248,8 @@ ActiveRecord::Schema.define(version: 20170304182851) do
   add_foreign_key "likes", "comments"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
-  add_foreign_key "pictures", "about_pages"
   add_foreign_key "pictures", "comments"
-  add_foreign_key "pictures", "father_pages"
-  add_foreign_key "pictures", "holyspirit_pages"
   add_foreign_key "pictures", "posts"
-  add_foreign_key "pictures", "son_pages"
-  add_foreign_key "pictures", "sunday_pages"
-  add_foreign_key "pictures", "thursday_pages"
-  add_foreign_key "pictures", "tuesday_pages"
   add_foreign_key "pictures", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "replies", "comments"

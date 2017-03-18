@@ -5,11 +5,11 @@ class User < ActiveRecord::Base
     before_validation :params_sanitizer, only: :update
 
   def params_sanitizer
-    self.roles.delete("")
+    self.roles.delete("") if roles&.include?("")
   end
 
   def self.roles
-    ['pastor', 'assistant_pastor']
+    ['Pastor', 'assistant Pastor']
   end
 
   devise :database_authenticatable, :registerable,
