@@ -7,6 +7,7 @@ $ ->
 #     $('.like_and_unlike_comment').load(document.URL +  ' .like_and_unlike_comment');
 
 $ ->
-  $('.like_and_unlike_comment').on  "ajax:success", (ev) ->
+  $('.commentor').on "ajax:success", (ev) ->
     console.log(ev)
-    $('.like_and_unlike_comment').toggle()
+   $('.commentor:not(.uncommentor)').hide()
+   $('.uncommentor').toggle()
