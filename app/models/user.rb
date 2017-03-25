@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
 
     before_validation :params_sanitizer, only: :update
 
-  def params_sanitizer
-    self.roles.delete("") if roles&.include?("")
-  end
+  # def params_sanitizer
+  #   self.roles.delete("") if roles&.include?("")
+  # end
 
   def self.roles
     ['Pastor', 'assistant Pastor']
