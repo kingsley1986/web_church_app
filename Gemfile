@@ -20,7 +20,7 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.3'
 gem 'jquery-turbolinks'
 gem "font-awesome-rails"
 
-
+gem 'rails_12factor'
 
 
 
