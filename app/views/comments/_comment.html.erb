@@ -26,11 +26,11 @@
                 <% if comment.likes.map(&:user_id).include? current_user.id %>
                   <li>
                     <div class="uncommentor" >
-                      <%= link_to "Unlike", unlike_comment_path(comment, like: true), remote: true, method: 'delete' %>
+                      <%= link_to "Unlike", unlike_comment_path(comment, like: true), method: 'delete' %>
                     </div>
                 <% else %>
                 <div class="commentor">
-                  <%= link_to "Like", like_comment_path(comment, like: true), remote: true, method: 'post', class: "my_classified" %>
+                  <%= link_to "Like", like_comment_path(comment, like: true), method: 'post' %>
                 </div>
                 <% end %>
               <% end %>

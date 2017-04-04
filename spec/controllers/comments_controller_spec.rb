@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 RSpec.describe CommentsController, type: :controller do
   let(:user) { create(:user) }
   let(:post_com) { create(:post, user_id: user.id)}

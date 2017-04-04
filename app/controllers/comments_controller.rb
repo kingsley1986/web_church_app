@@ -7,9 +7,9 @@ class CommentsController < ApplicationController
     @comment = @post.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
-      respond_to do |format|
-        format.json { render json: @post, location: @post }
-      end
+      redirect_to :back
+    else
+      redirect_to :back
     end
   end
 
@@ -32,18 +32,20 @@ class CommentsController < ApplicationController
   def like
     comment = Comment.find(params[:id])
     Like.create(likeable: comment, user: current_user, like: params[:like])
-    respond_to do |format|
-      format.json { render json: @post }
-    end
+    redirect_to :back
+    # respond_to do |format|
+    #   format.json { render json: @post }
+    # end
   end
 
   def unlike
     @comment.likes.each do |user_like|
       if user_like.user_id ==  current_user.id
         user_like.destroy
-        respond_to do |format|
-          format.json { render json: @post }
-        end
+        redirect_to :back
+        # respond_to do |format|
+        #   format.json { render json: @post }
+        # end
       end
     end
   end

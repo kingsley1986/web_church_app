@@ -19,6 +19,10 @@ gem 'rails_12factor', group: :production
 gem 'will_paginate', '~> 3.1', '>= 3.1.3'
 gem 'jquery-turbolinks'
 gem "font-awesome-rails"
+gem 'remotipart', '~> 1.2'
+gem 'timepiece'
+
+
 
 
 

@@ -1,6 +1,9 @@
 <div class="comment_form">
-  <%= simple_form_for [@post, @post.comments.build], remote: true do |f| %>
+  <%= simple_form_for [@post, @post.comments.build] do |f| %>
       <%= f.input :body %>
+  <%=f.fields_for :pictures, Picture.new do |comment_pic| %>
+    <%= comment_pic.input :image %>
+      <% end %>
       <%= f.button :submit, "Send" %>
   <% end %>
 </div>

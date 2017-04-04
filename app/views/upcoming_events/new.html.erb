@@ -1,0 +1,11 @@
+<h3> Upcomidng Events <h3>
+<%= simple_form_for  @upcoming_events do |f| %>
+  <%= f.input :title %>
+  <%= f.input :body %>
+  <%= f.input :starting_from %>
+  <%= f.input :ending_time %>
+  <%= f.simple_fields_for :pictures, Picture.new  do |ff| %>
+    <%= ff.input :image %>
+  <%= f.submit %>
+  <% end %>
+<% end %>
