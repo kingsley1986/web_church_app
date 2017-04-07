@@ -2,7 +2,7 @@ body.background
   .content
     ul.exo-menu
       li
-        a.active[href= filtered_page_path(:home)]
+        a.active[href= root_path]
           i.fa.fa-home
           |  Home
       li.drop-down
@@ -25,7 +25,7 @@ body.background
 
               - if current_user && user_signed_in?
                 li
-                  a[href= "#"]
+                  a[href= destroy_user_session_path]
                     | Log Out
                 li
                   a[href= edit_user_registration_path]
@@ -160,7 +160,7 @@ body.background
         .contact
 
       li
-        a[href=  "#"]
+        a[href=  imagegalleries_path]
           i.fa.fa-photo
           |  Images
         .contact
@@ -173,3 +173,5 @@ body.background
 
     a.toggle-menu.visible-xs-block[href="#"]
       | |||
+
+      

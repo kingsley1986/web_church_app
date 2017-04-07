@@ -30,11 +30,12 @@ img.img-responsive {
 }
 
 /*aligning the body*/
+// have to rename this class to avoid dropping the navbar
 div.content {
- position: relative;
- width: 60%;
- top: 80px;
- padding-bottom: 10%;
+ // position: relative;
+ // width: 60%;
+ // top: 80px;
+ // padding-bottom: 10%;
  margin: auto;
 }
 

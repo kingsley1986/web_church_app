@@ -26,7 +26,6 @@
  */
 
 
-
 ;(function ($, window, undefined) {
     // outside the scope of the jQuery plugin to
     // keep track of all dropdowns

@@ -22,7 +22,7 @@ header a{
   background:rgba(0,0,0,0.1);
   display:inline-block;
   padding:0px 30px;
-  height:60px;
+  // height:60px;
   line-height:60px;
   text-align:center;
   font-family: 'Roboto Slab', serif;
@@ -125,14 +125,15 @@ h1{
 	font-weight: 400;
 	text-shadow: 0 1px white, 0 2px black;
 }
-.container{
-	margin: 4% auto;
-	width: 210px;
-	height: 140px;
-	position: relative;
-	perspective: 1000px;
-  // left: 38%;
-}
+//causing the header to enlarge
+// .container{
+// 	margin: 4% auto;
+// 	width: 210px;
+// 	height: 140px;
+// 	position: relative;
+// 	perspective: 1000px;
+//   // left: 38%;
+// }
 .content{
    z-index: 2
 }

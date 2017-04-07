@@ -10,4 +10,6 @@ html
   head
     body
       = render  "shared/header"
+      - if current_page?(root_path)
+        = render "shared/headertwo"
       = yield
