@@ -18,7 +18,7 @@ img.img-responsive {
   position: relative;
   left: 5px;
 }
-.content tbody {
+.content_post tbody {
   background-color: #c4c7ce;
   box-shadow: 2px 2px 2px 2px #888888;
 
@@ -31,11 +31,11 @@ img.img-responsive {
 
 /*aligning the body*/
 // have to rename this class to avoid dropping the navbar
-div.content {
- // position: relative;
- // width: 60%;
- // top: 80px;
- // padding-bottom: 10%;
+div.content_post {
+ position: relative;
+ width: 60%;
+ top: 80px;
+ padding-bottom: 10%;
  margin: auto;
 }
 
