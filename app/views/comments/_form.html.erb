@@ -1,6 +1,0 @@
-<div class="comment_form">
-  <%= simple_form_for [@post, @post.comments.build], remote: true do |f| %>
-      <%= f.input :body %>
-      <%= f.button :submit, "Send" %>
-  <% end %>
-</div>

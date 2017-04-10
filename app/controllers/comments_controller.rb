@@ -7,9 +7,9 @@ class CommentsController < ApplicationController
     @comment = @post.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
-      respond_to do |format|
-        format.json { render json: @post, location: @post }
-      end
+      redirect_to :back
+    else
+      redirect_to :back
     end
   end
 
