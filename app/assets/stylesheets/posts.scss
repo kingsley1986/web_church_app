@@ -192,10 +192,17 @@ div.like_icon_index{
   font-size: 18px;
 }
 
-div.show_like_icon{
+div.fa.fa-thumbs-o-up{
   position: relative;
-  bottom: 17px;
-  left: 55px;
+  bottom: 19px;
+  left: 29px;
+  color: green;
+}
+div.liker{
+  position: relative;
+  bottom: -1px;
+  left: 10px;
+  color: green;
 }
 
 .like_word {

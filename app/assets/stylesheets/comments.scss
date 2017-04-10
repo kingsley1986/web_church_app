@@ -180,3 +180,54 @@ div.reply h5 {
         font-size:0.7em;
     }
 }
+textarea#comment_body.text.required {
+   width: 480px; height: 220px; border: 1px solid #999999; padding: 5px;
+}
+
+label.text.required {
+  display: none;
+}
+label.file.optional {
+  display: none;
+}
+label.string.required {
+  display: none;
+}
+
+.row {text-align: center}
+
+@media screen and (max-width: 568px) {
+textarea#comment_body.text.required {
+        width: 150px;
+        height: 70px;
+    }
+}
+
+
+@media screen and (max-width: 5px) {
+div.row {
+    width: 30px;
+    height: 30px;
+    }
+}
+
+
+input#comment_pictures_attributes_0_image.file.optional {
+  text-align: center
+}
+textarea#reply_reply_body.text.required {
+  width: 200px; height: 45px; border: 1px solid #999999; padding: 5px;
+}
+
+
+//
+// input#comment_pictures_attributes_0_image.file.optional {
+//   position: relative;
+//   left: 570px;
+//   top: 18px;
+// }
+//
+//
+div.count_comment {
+  background-color: #5cdfce;
+}

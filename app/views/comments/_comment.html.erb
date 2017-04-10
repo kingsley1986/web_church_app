@@ -3,57 +3,88 @@
     <div class"comment_body">
       <table>
         <td>
-          <div class="comment_body_view">
-            <%= comment.body %>
+          <div class="row">
+             <div class="span12">
+               <div class="comment_body_view">
+                 <%= comment.body %>
+              </div>
+            </div>
           </div>
           <% comment.pictures.each do |comment_pic| %>
-            <%= link_to(image_tag(comment_pic.image.url(:thumb)), comment_pic, class: "img-responsive") if comment_pic.image? %>
-          <% end %>
-          <div class="commentor" >
-            <%= comment.user.first_name %>
+          <div class="row">
+            <div class="span12">
+              <%= link_to(image_tag(comment_pic.image.url(:thumb)), comment_pic, class: "img-responsive") if comment_pic.image? %>
+            </div>
           </div>
-          <div class="comment_show_days_ago" >
-            <%= time_ago_in_words((comment.created_at)) %>
-          </div>
-          <%= simple_form_for [comment, comment.replies.new] do |f| %>
-            <% if current_user_signed_in %>
-              <%= f.input :reply_body, placeholder: "Reply to this comment", label: "reply" %>
-            <% end %>
           <% end %>
-          <ul>
-            <div class="like_and_unlike_comment" >
-              <% if current_user_signed_in %>
-                <% if comment.likes.map(&:user_id).include? current_user.id %>
-                  <li>
-                    <div class="uncommentor" >
-                      <%= link_to "Unlike", unlike_comment_path(comment, like: true), remote: true, method: 'delete' %>
-                    </div>
-                <% else %>
-                <div class="commentor">
-                  <%= link_to "Like", like_comment_path(comment, like: true), remote: true, method: 'post', class: "my_classified" %>
-                </div>
+          <div class="row">
+            <div class="span12">
+              <div class="commentor" >
+                <%= comment.user.first_name %>
+              </div>
+              <div class="comment_show_days_ago" >
+                <%= time_ago_in_words((comment.created_at)) %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <%= simple_form_for [comment, comment.replies.new] do |f| %>
+                <% if current_user_signed_in %>
+                  <%= f.input :reply_body, placeholder: "Reply to this comment", label: "reply", as: :text %>
                 <% end %>
               <% end %>
             </div>
-            <div class"comment_like_word">
-              <%= pluralize( comment.likes.size, "like") %>
+          </div>
+          <ul>
+            <div class="row">
+              <div class="span12">
+                <div class="like_and_unlike_comment" >
+                  <% if current_user_signed_in %>
+                  <% if comment.likes.map(&:user_id).include? current_user.id %>
+                  <li>
+                      <%= link_to "Unlike", unlike_comment_path(comment, like: true), method: 'delete' %>
+                <% else %>
+                  <%= link_to "Like", like_comment_path(comment, like: true), method: 'post', class: "my_classified" %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div
+            <div class="row">
+              <div class="span12">
+                <div class"comment_like_word">
+                  <%= pluralize( comment.likes.size, "like") %>
+                </div>
+              </div>
             </div>
-            <% if comment.likes.size > 0 %>
-              <div class="i.fa.fa-thumbs-o-up" </div>
-            <% end %>
+            <div class="row">
+              <div class="span12">
+                <% if comment.likes.size > 0 %>
+                  <div class="fa fa-thumbs-o-up" aria-hidden="true"></div>
+                <% end %>
+              </div>
+            </div>
           </ul>
           <% if comment.replies.any? %>
-            <div class="reply" >
-              <h5> "Replies"</h5>
+            <div class="row">
+              <div class="span12">
+                <div class="reply" >
+                  <h5> "Replies"</h5>
+                </div>
+              </div>
             </div>
           <% end %>
-          <div class"delete_comment_and_reply_link" %>
-            <%= link_to pluralize(comment.replies.count, "reply"), comment_replies_path(comment.id, @reply ) %>
+          <div class="row">
+            <div class="span12">
+              <div class"delete_comment_and_reply_link" %>
+                <%= link_to pluralize(comment.replies.count, "reply"), comment_replies_path(comment.id, @reply ) %>
+              </div>
+              <% if current_user && user_signed_in? && comment.user_id == current_user.id || current_user && current_user.admin? %>
+                <p><%= link_to "Delete", comment_path(comment), data: {confirm: 'Are you sure?'},  method: :delete, remote: true,  :class => 'delete_comment' %></p>
+              <% end %>
+            </div>
           </div>
-            <% if current_user && user_signed_in? && comment.user_id == current_user.id || current_user && current_user.admin? %>
-              <p><%= link_to "Delete", comment_path(comment), data: {confirm: 'Are you sure?'},  method: :delete, remote: true,  :class => 'delete_comment' %></p>
-            <% end %>
-          </td>
+        </td>
       </table>
     </div>
   </div>

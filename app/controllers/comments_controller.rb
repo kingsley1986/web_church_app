@@ -32,18 +32,14 @@ class CommentsController < ApplicationController
   def like
     comment = Comment.find(params[:id])
     Like.create(likeable: comment, user: current_user, like: params[:like])
-    respond_to do |format|
-      format.json { render json: @post }
-    end
+    redirect_to :back
   end
 
   def unlike
     @comment.likes.each do |user_like|
       if user_like.user_id ==  current_user.id
         user_like.destroy
-        respond_to do |format|
-          format.json { render json: @post }
-        end
+        redirect_to :back
       end
     end
   end
