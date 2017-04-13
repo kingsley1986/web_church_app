@@ -12,10 +12,7 @@ class PostsController < ApplicationController
   def like
     @post = Post.find(params[:id])
      Like.create(likeable: @post, user: current_user, like: params[:like])
-    respond_to do |format|
-      format.js {render nothing: true}
-      format.json { render json: @post, location: @post }
-    end
+     redirect_to :back
   end
 
 
@@ -23,10 +20,7 @@ class PostsController < ApplicationController
     @post = @post.likes.each do |user_like|
       if user_like.user_id ==  current_user.id
         user_like.destroy
-        respond_to do |format|
-          format.js {render nothing: true}
-          format.json { render json: @post, location: @post }
-        end
+        redirect_to :back
       end
     end
   end

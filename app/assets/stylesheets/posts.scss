@@ -1,397 +1,92 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// div.row {
+//   text-align: center;
+// }
 
-.page_wrapper_index  {
-  width: 34%;
-  margin: 0 auto;
+div.span12 {
+  padding:0em 0.2em 0em 0.2em;
+  display:inline-block;
+  background-color: white;
+  line-height: 0.75em;
   position: relative;
-  top: 60px;
-}
+  top: 40px;
 
-div.new_post_link {
-  position: relative;
-  bottom: 40%;
-}
-
-img.img-responsive {
-  position: relative;
-  left: 5px;
-}
-.content_post tbody {
-  background-color: #c4c7ce;
-  box-shadow: 2px 2px 2px 2px #888888;
-
-}
-/*border between top_bar and body*/
-#section {
-  padding-top: 7%;
-  background-color: #c4c7ce;
-}
-
-/*aligning the body*/
-// have to rename this class to avoid dropping the navbar
-div.content_post {
- position: relative;
- width: 60%;
- top: 80px;
- padding-bottom: 10%;
- margin: auto;
-}
-
-.post_title_show{
-  font-size: 1.4em;
-  color: #0000b2;
-  font-family: Helvetica;
-  position: relative;
-  right: 14px;
-	right: -5px;
-}
-
-@media screen and (max-width: 768px) {
-.post_title_show{
-        font-size:20px;
-         color: #0000b2;
-         font-family: Helvetica;
-         position: relative;
-         right: 14px;
-       	right: -5px;
-    }
-}
-
-@media screen and (max-width: 568px) {
-  .post_title_show {
-      font-size:0.8em;
-  }
 }
 
 div.post_body_show {
-  position: relative;
-  right: -5px;
+  width: 500px;
+word-wrap: break-word;
+line-height: 1.7;
+white-space: -moz-pre-wrap !important;
+white-space: -pre-wrap;
+white-space: -o-pre-wrap;
+white-space: pre-wrap;
+word-wrap: break-word;
+word-break: break-all;
+white-space: normal;
+margin-top: 30px;
 }
 
-@media screen and (max-width: 768px) {
-div.post_body_show{
-        font-size:15px;
-    }
-}
-
-@media screen and (max-width: 568px) {
-div.post_body_show {
-        font-size:0.7em;
-    }
-}
-
-
-
-div.post_show_days_ago{
-  position: relative;
-  font-weight: bold;
-  right: -5px;
-}
-
-
-
-@media screen and (max-width: 768px) {
-div.post_show_days_ago{
-        font-size:15px;
-    }
-}
-
-@media screen and (max-width: 568px) {
 div.post_show_days_ago {
-        font-size:0.7em;
-    }
+  margin-top: 15px;
 }
 
-
-
-
-div.post_title a {
-  position: relative;
-  left: 5px;
-  font-size: 20px;
-  color: #0000b2;
-  font-family: Helvetica;
-  text-decoration: none;
+div.image_link {
+  margin-top: 30px;
 }
 
-
-@media screen and (max-width: 768px) {
-div.post_title a {
-        font-size:17px;
-    }
+div#like_and_unlike {
+   margin-top: 20px;
+   margin-bottom: 20px;
 }
 
-@media screen and (max-width: 568px) {
-div.post_title a  {
-        font-size:0.8em;
-    }
-}
-
-
-
-
-
-div.post_body {
-  position: relative;
-  left: 5px;
-  font-size: 15px;
-  color: black;
-  font-family: Arial;
-}
-
-
-@media screen and (max-width: 768px) {
-div.post_body {
-        font-size:17px;
-    }
-}
-
-@media screen and (max-width: 568px) {
-div.post_body {
-        font-size:0.8em;
-    }
-}
-
-
-
-
-
-
-div.post_created {
-  font-size: 12px;
-  color: black;
-  font-weight: bold;
-  position: relative;
-  left: 5px;
-}
-
-
-@media screen and (max-width: 768px) {
-div.post_created {
-        font-size:17px;
-    }
-}
-
-@media screen and (max-width: 568px) {
-div.post_created {
-        font-size:0.6em;
-    }
-}
-
-.post:last-child {
-  border-bottom:0;
-}
-
-
-div.like_icon_index{
-  position: relative;
-  top: -35px;
-  left: 45px;
-  font-size: 18px;
-}
-
-div.fa.fa-thumbs-o-up{
+div.thum_icon {
   position: relative;
   bottom: 19px;
-  left: 29px;
-  color: green;
-}
-div.liker{
-  position: relative;
-  bottom: -1px;
-  left: 10px;
-  color: green;
+  left: 33px;
+   text-shadow: 1px 1px 1px #ccc;
+   color:#0000ff;
+   font-size: 1.5em;
 }
 
-.like_word {
-  color: green;
-  font-size: 15px;
-  position: relative;
-  right: -8px;
-  top: 3px;
+div.post_body_show {
+  width: 500px;
+word-wrap: break-word;
+line-height: 1.7;
+white-space: -moz-pre-wrap !important;
+white-space: -pre-wrap;
+white-space: -o-pre-wrap;
+white-space: pre-wrap;
+word-wrap: break-word;
+word-break: break-all;
+white-space: normal;
+margin-top: 30px;
+margin-left: 7px;
+margin-right: 7px;
 }
 
-@media screen and (max-width: 768px) {
-.like_word{
-        font-size:18px;
-    }
-}
 
 @media screen and (max-width: 568px) {
-.like_word {
-        font-size:0.8em;
+      div.post_body_show {
+    font-size:15px;
+    width: 250px;
     }
 }
+//
+// @media (max-width: screen-sm) {
+//     div.post_body_show{font-size: 1px;}
+// }
 
-
-div.like_and_unlike a{
-  font-size: 13px;
-  font-weight: bold;
-  position: relative;
-  right: -8px;
-  color: green;
-  text-decoration: none;
-}
-
-// for post index
-div.like_and_unlike_index a{
-  font-size: 13px;
-  font-weight: bold;
-  position: relative;
-  right: -5px;
-  color: green;
-  text-decoration: none;
-}
-
-.like_word_index {
-  color: green;
-  font-size: 15px;
-  position: relative;
-  right: -5px;
-}
-
-
-
-
-
-
-@media screen and (max-width: 768px) {
-.like_word_index {
-        font-size:18px;
-    }
-}
-
-@media screen and (max-width: 568px) {
-.like_word_index {
-        font-size:0.8em;
-    }
-}
-
-
-#album {
-    height:auto;
-    display:inline-block;
-    background: white;
-    margin: 0 auto;
-    width: 50%;
-    border: 3px solid #23364B;
-    padding: 10px;
-}
-
-hr.style1{
-	border-top: 1px solid #8c8b8b;
-}
-
-#comments {
-  background: #F0FFFF;
-}
-
-
-div.vertical-text {
-	transform: rotate(77deg);
-  font-size: 30px;
-  position: relative;
-  right: 37%;
-  bottom: 707%;
-  color: black;
-  -webkit-text-fill-color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  letter-spacing:2px;
-  font-weight:bolder;
-
-  color: white;
-  text-shadow: 2px 2px 1px #000,
-            -2px -2px 1px #000,
-            -2px 2px 1px #000,
-             2px -2px 1px #000;
-
-}
-
-div.new_post_link
-{
-  position: absolute;
-  text-transform: uppercase;
-  bottom: 80%;
-  display: inline-block;
-   background-color: #ccc;
-   border: 1px solid #777;
-   padding: 0 1.5em;
-   margin: 0.5em;
-   text-decoration: none;
-   color: #333;
-   font-weight: bolder;
-   text-shadow: 0 1px 0 rgba(255,255,255,.8);
-   border-radius: .2em;
-   box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
-   right: 60%;
-
-}
-
-div.new_post_link a {
-  text-decoration: none;
-}
-
-div.new_post_link {
-  font-size: 10px;
-}
-
-@media (min-width: 900px) {
-div.new_post_link{
-    font-size: 18px;
-  }
-}
-
-
-
-
-
-.digg_pagination {
-  cursor: default;
-  position: relative;
-  bottom: 18px;
-  /* self-clearing method: */ }
-  .digg_pagination a, .digg_pagination span, .digg_pagination em {
-    padding: 0.2em 0.5em;
-    display: block;
-    float: left;
-    margin-right: 1px; }
-  .digg_pagination .disabled {
-    color: #999999;
-    border: 1px solid #dddddd; }
-  .digg_pagination .current {
-    font-style: normal;
-    font-weight: bold;
-    background: #2e6ab1;
-    color: white;
-    border: 1px solid #2e6ab1; }
-  .digg_pagination a {
-    text-decoration: none;
-    color: #105cb6;
-    border: 1px solid #9aafe5; }
-    .digg_pagination a:hover, .digg_pagination a:focus {
-      color: #000033;
-      border-color: #000033; }
-  .digg_pagination .page_info {
-    background: #2e6ab1;
-    color: white;
-    padding: 0.4em 0.6em;
-    width: 22em;
-    margin-bottom: 0.3em;
-    text-align: center; }
-    .digg_pagination .page_info b {
-      color: #000033;
-      background: #6aa6ed;
-      padding: 0.1em 0.25em; }
-  .digg_pagination:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-  * html .digg_pagination {
-    height: 1%; }
-  *:first-child + html .digg_pagination {
-    overflow: hidden; }
+//
+// textarea#reply_reply_body.text.required {
+//   width: 200px; height: 45px; border: 1px solid #999999; padding: 5px;
+// }
+//
+//
+// input#comment_pictures_attributes_0_image.file.optional {
+//   position: relative;
+//   left: 570px;
+//   top: 18px;
+// }
