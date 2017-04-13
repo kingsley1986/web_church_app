@@ -5,29 +5,31 @@
 </div> -->
 <div class="page_wrapper_index" >
   <didv class="content_post" >
-    <% @posts.each do |post| %>
-      <table style="width: 100%;">
-
-        <tr>
-        <td>
-          <div class="post_title" >
-            <%= link_to post.title, post_path(post)%>
-          </div>
-          <div class="post_body" %>
-            <%= truncate(post.post_body, length: 120) %>
-          </div>
-          <div class="img img1.imgAlbum" >
-            <% post.pictures.each do |pic, remov| %>
-              <%= image_tag(pic.image.url(:medium), class: "img-responsive") if pic.image? %>
-            <% end %>
-          </div>
-            <div class="post_created" >
-              <%= post.created_at.strftime("%B, %d, %Y") %>
-            </div>
-          </div>
-        </td>
-      </tr>
-      </table>
-    <% end %>
+    <div class="row">
+      <div class="span12">
+        <% @posts.each do |post| %>
+          <table style="width: 100%;">
+            <tr>
+              <td>
+                <div class="post_title" >
+                  <%= link_to post.title, post_path(post)%>
+                </div>
+                <div class="post_body" %>
+                  <%= truncate(post.post_body, length: 120) %>
+                </div>
+                <% post.pictures.each do |pic, remov| %>
+                  <div class="post_index_image" >
+                    <%= image_tag(pic.image.url(:medium), class: "img-responsive") if pic.image? %>
+                  </div>
+                <% end %>
+                <div class="post_created" >
+                  <%= post.created_at.strftime("%B, %d, %Y") %>
+                </div>
+              </td>
+            </tr>
+          </table>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

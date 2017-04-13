@@ -12,8 +12,39 @@ div.span12 {
   line-height: 0.75em;
   position: relative;
   top: 40px;
-
 }
+
+div.post_index_image{
+  position: relative;
+  left: 4px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+div.post_title a {
+  position: relative;
+  top: 20px;
+  left: 5px;
+  font-size: 20px;
+  color: #0000b2;
+  font-family: Helvetica;
+  text-decoration: none;
+}
+
+
+div.post_body{
+  width: 350px;
+word-wrap: break-word;
+line-height: 1.7;
+white-space: -moz-pre-wrap !important;
+white-space: -pre-wrap;
+white-space: -o-pre-wrap;
+white-space: pre-wrap;
+word-wrap: break-word;
+word-break: break-all;
+white-space: normal;
+margin-top: 30px;
+}
+
 
 div.post_body_show {
   width: 500px;
