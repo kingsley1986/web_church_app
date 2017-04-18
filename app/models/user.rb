@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   # end
 
   def self.roles
-    ['Pastor', 'assistant Pastor']
+    ['pastor', 'assistant pastor']
   end
 
   devise :database_authenticatable, :registerable,
