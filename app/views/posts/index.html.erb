@@ -5,9 +5,9 @@
 </div> -->
 <div class="page_wrapper_index" >
   <didv class="content_post" >
-    <div class="row">
-      <div class="span12">
-        <% @posts.each do |post| %>
+    <% @posts.each do |post| %>
+      <div class="row">
+        <div class="span12">
           <table style="width: 100%;">
             <tr>
               <td>
@@ -28,8 +28,8 @@
               </td>
             </tr>
           </table>
-        <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>

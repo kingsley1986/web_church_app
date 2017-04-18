@@ -16,6 +16,17 @@
 //   background: #d7c6cf;
 // }
 
+div.span13 {
+  padding:0em 0.2em 0em 0.2em;
+  display:inline-block;
+  line-height: 0.75em;
+  position: relative;
+  top: 40px;
+}
+div.span13 {
+  background-color: white;
+}
+
 div.comment_body_view{
   font-size: 13px;
   position: relative;
@@ -238,5 +249,8 @@ textarea#reply_reply_body.text.required {
 }
 
 div.count_comment {
-  background-color: #5cdfce;
+  color: purple;
+  background-color: none;
+  font-size: 150%;
+   font-family: "Times New Roman", Times, serif;
 }

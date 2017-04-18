@@ -5,13 +5,26 @@
 //   text-align: center;
 // }
 
-div.span12 {
+div.span14 {
   padding:0em 0.2em 0em 0.2em;
   display:inline-block;
-  background-color: white;
   line-height: 0.75em;
   position: relative;
   top: 40px;
+}
+div.span12 {
+  padding:0em 0.2em 0em 0.2em;
+  display:inline-block;
+  line-height: 0.75em;
+  position: relative;
+  top: 40px;
+}
+
+div.span12 {
+  background-color: white;
+}
+div.row {
+  margin-top: 15px;
 }
 
 div.post_index_image{
