@@ -23,10 +23,190 @@
  @import "lightbox";
  @import "main";
 
+ //Church Name stylings
 
- body {
+div.church_name {
+  letter-spacing: 0.2em;
+   font-size: 24px;
+  line-height: 20px;
+}
 
+
+$layer-count: 20;
+$layer-spread: 3px;
+$layer-fade: 2px;
+$start-shadows: ();
+$stop-shadows: ();
+
+@function layer($color,$distance, $fade) {
+  // which shadows we are going for
+  $l: ();
+  // straight factor (make circular)
+  $factor: 1.3;
+  // bottom
+  $l: append($l, 0px ( $distance * $factor) $fade $color, comma);
+  // top
+  $l: append($l, 0px (-$distance * $factor) $fade $color, comma);
+  // right
+  $l: append($l, ( $distance * $factor) 0px $fade $color, comma);
+  // left
+  $l: append($l, (-$distance * $factor) 0px $fade $color, comma);
+  // top left
+  $l: append($l, (-$distance) (-$distance)  $fade $color, comma);
+  // top right
+  $l: append($l, ( $distance) (-$distance)  $fade $color, comma);
+  // bottom right
+  $l: append($l, ( $distance) ( $distance)  $fade $color, comma);
+  // bottom left
+  $l: append($l, (-$distance) ( $distance)  $fade $color, comma);
+
+  @return $l;
+}
+
+
+
+@for $i from 1 through $layer-count {
+  $color: hsl(360 * ($i / $layer-count), 50%, 50%);
+  $throttle-factor: $i * $i / 4;
+  $start-shadows: append($start-shadows, layer(transparentize($color,0.8), 0, 0px), comma);
+  $stop-shadows:  append($stop-shadows,  layer(transparentize($color,1.0), $layer-spread * $throttle-factor, $layer-fade * $i), comma);
+}
+
+/* #{$start-shadows} */
+
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script:700);
+
+$pulse-ease: cubic-bezier(0, 1.74, 0.61, 0.62);
+$pulse-ease: cubic-bezier(0, 2.48, 0.43, 1);
+$pulse-ease: cubic-bezier(0, 1.43, 0.58, 1);
+$pulse-time: 3s;
+
+.church_name {
+  color: white;
+  text-shadow: $start-shadows;
+  animation:
+    flicker 100ms linear infinite,
+    pulse   $pulse-time $pulse-ease infinite,
+    rainbow $pulse-time ease-in-out infinite;
+}
+
+@keyframes rainbow {
+  to { text-shadow: $stop-shadows; }
+}
+
+@keyframes flicker {
+  0%   { color: rgba(white, 1.0); }
+  100% { color: rgba(white, 0.9); }
+}
+
+@keyframes pulse {
+  0%, 10%, 90%, 100% { transform: translateY(-50%) scale(1.0); }
+  45%, 55%  { transform: translateY(-50%) scale(1.05); }
+}
+
+.church_name {
+  position: absolute;
+
+  transform: translateY(-50%);
+  margin: 0;
+  font-size: 6rem;
+  text-align: center;
+}
+
+//three D images
+div.three_d_image {
+  position: relative;
+  bottom: 950px;
+}
+
+
+ *{
+   margin: 0;
+   padding: 0;
+   outline: none;
+   border: none;
+ 	box-sizing: border-box;
  }
+ *:before,
+ *:after{
+ 	box-sizing: border-box;
+ }
+ html,
+ body{
+ 	min-height: 100%;
+ }
+ body{
+ 	background-image: radial-gradient(mintcream 0%, lightgray 100%);
+ }
+ h1{
+ 	display: table;
+ 	margin: 5% auto 0;
+ 	text-transform: uppercase;
+ 	font-family: 'Anaheim', sans-serif;
+ 	font-size: 4em;
+ 	font-weight: 400;
+ 	text-shadow: 0 1px white, 0 2px black;
+ }
+ .container{
+ 	margin: 4% auto;
+ 	width: 210px;
+ 	height: 140px;
+ 	position: relative;
+ 	perspective: 1000px;
+ }
+ #carousel{
+ 	width: 100%;
+ 	height: 100%;
+ 	position: absolute;
+ 	transform-style: preserve-3d;
+ 	animation: rotation 20s infinite linear;
+ }
+ #carousel:hover{
+ 	animation-play-state: paused;
+ }
+ #carousel figure{
+ 	display: block;
+ 	position: absolute;
+ 	width: 186px;
+ 	height: 116px;
+ 	left: 10px;
+ 	top: 10px;
+ 	background: black;
+ 	overflow: hidden;
+ 	border: solid 5px black;
+ }
+ #carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
+ #carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
+ #carousel figure:nth-child(3) { transform: rotateY(80deg) translateZ(288px);}
+ #carousel figure:nth-child(4) { transform: rotateY(120deg) translateZ(288px);}
+ #carousel figure:nth-child(5) { transform: rotateY(160deg) translateZ(288px);}
+ #carousel figure:nth-child(6) { transform: rotateY(200deg) translateZ(288px);}
+ #carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
+ #carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
+ #carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
+
+ // img{
+ // 	-webkit-filter: grayscale(1);
+ // 	cursor: pointer;
+ // 	transition: all .5s ease;
+ // }
+ // img:hover{
+ // 	-webkit-filter: grayscale(0);
+ //   transform: scale(1.2,1.2);
+ // }
+
+ // @keyframes rotation{
+ // 	from{
+ // 		transform: rotateY(0deg);
+ // 	}
+ // 	to{
+ // 		transform: rotateY(360deg);
+ // 	}
+ // }
+
+
+
+
 
   body{
  	margin: 0;

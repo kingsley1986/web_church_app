@@ -15,3 +15,5 @@
 //= require lightbox
 //= require bootstrap-sprockets
 //= require_tree .
+
+jakealbaughSignature("light");

@@ -18,6 +18,26 @@ body {
 .carousel-inner {
     height: 100%;
 }
+.image_lable > p  {
+  display: inline-block;
+  font-family: 'Gabriela', serif;
+  color: #FFF;
+  font-size: 3.5em;
+  border-radius: 20px;
+  background-color:rgba(0, 0, 0, 0.5);
+  padding: 0.5em 0.2em 0.8em 0.5em;
+  position: relative;
+  bottom: 50px;
+  font-size: 30px;
+
+}
+
+/*div.col-lg-12 {
+  color: white;
+  background: rgba(33, 33, 33, .9);
+
+
+}*/
 
 /* Background images are set within the HTML using inline CSS, not here */
 
@@ -29,8 +49,4 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-}
-
-footer {
-    margin: 50px 0;
 }
