@@ -109,22 +109,8 @@ p{
 *:after{
 	box-sizing: border-box;
 }
-html,
-body{
-	min-height: 100%;
-}
-body{
-	background-image: radial-gradient(mintcream 0%, lightgray 100%);
-}
-h1{
-	display: table;
-	margin: 5% auto 0;
-	text-transform: uppercase;
-	font-family: 'Anaheim', sans-serif;
-	font-size: 4em;
-	font-weight: 400;
-	text-shadow: 0 1px white, 0 2px black;
-}
+
+
 //causing the header to enlarge
 // .container{
 // 	margin: 4% auto;
@@ -138,7 +124,7 @@ h1{
    z-index: 2
 }
 
-div.container {
+div.container_again {
   position: relative;
   z-index: 1;
   bottom: 20%;
