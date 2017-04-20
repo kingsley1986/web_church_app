@@ -23,9 +23,18 @@ div.span12 {
 div.span12 {
   background-color: white;
 }
-div.row {
-  margin-top: 15px;
+// div.row {
+//   margin-top: 15px;
+// }
+
+@media screen and (max-width: 568px) {
+      div.span12 {
+    font-size:15px;
+    width: 250px;
+    }
 }
+
+
 
 div.post_index_image{
   position: relative;
@@ -118,6 +127,13 @@ margin-right: 7px;
     width: 250px;
     }
 }
+@media screen and (max-width: 568px) {
+      div.post_body {
+    font-size:15px;
+    width: 200px;
+    }
+}
+
 //
 // @media (max-width: screen-sm) {
 //     div.post_body_show{font-size: 1px;}

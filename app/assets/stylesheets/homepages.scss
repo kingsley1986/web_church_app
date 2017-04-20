@@ -124,7 +124,13 @@ p{
    z-index: 2
 }
 
-div.container_again {
+div.container {
+  position:relative;
+  top:-90%;
+
+  }
+
+div.container {
   position: relative;
   z-index: 1;
   bottom: 20%;
@@ -243,12 +249,8 @@ div.post_link
    padding-left: 3px;
    padding-right: 3px;
    right: 60px;
+   font-size: 10px;
 
-}
-
-
-div.post_link {
-  font-size: 10px;
 }
 
 @media (min-width: 900px) {
@@ -260,19 +262,4 @@ div.post_link {
 
 a.dropdown-toggle {
   text-decoration: none;
-}
-// for welcome text
-div.welcome_link
-{
-  color: #FFD700;
-  background: -webkit-gradient(linear, left top, left bottom, from(#F5C21B), to(#D17000));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 2em;
-  font-weight: 900;
-  position: relative;
-  text-transform: uppercase;
-  overflow: hidden;
-  top: -139%;
-  right: 5px;
 }
