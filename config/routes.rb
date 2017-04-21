@@ -9,6 +9,7 @@ Rails.application.routes.draw do
    } )
 
   resources :pages
+  resources :news
   get 'pages/filter/:scope' => 'pages#index', as: :filtered_page
   resources :imagegalleries
   root to: 'home#index'

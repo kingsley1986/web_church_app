@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170304182851) do
+ActiveRecord::Schema.define(version: 20170421084231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "about_pages", force: :cascade do |t|
-    t.text     "info"
-    t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -38,12 +31,6 @@ ActiveRecord::Schema.define(version: 20170304182851) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
-  create_table "children_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.integer  "commentable_id"
@@ -58,54 +45,9 @@ ActiveRecord::Schema.define(version: 20170304182851) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
-  create_table "contact_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "elder_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "father_pages", force: :cascade do |t|
-    t.string   "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
-  end
-
-  create_table "food_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "holyspirit_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
-  end
-
-  create_table "homepages", force: :cascade do |t|
-    t.string   "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
-  end
-
   create_table "homes", force: :cascade do |t|
     t.string   "body"
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "hospital_pages", force: :cascade do |t|
-    t.text     "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -134,6 +76,13 @@ ActiveRecord::Schema.define(version: 20170304182851) do
   add_index "likes", ["post_id"], name: "index_likes_on_post_id", using: :btree
   add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
+  create_table "news", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pages", force: :cascade do |t|
     t.string   "body"
     t.string   "page_type"
@@ -147,10 +96,11 @@ ActiveRecord::Schema.define(version: 20170304182851) do
     t.integer  "user_id"
     t.integer  "picturable_id"
     t.string   "picturable_type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "post_id"
     t.integer  "comment_id"
+    t.integer  "upcoming_event_id"
   end
 
   add_index "pictures", ["comment_id"], name: "index_pictures_on_comment_id", using: :btree
@@ -168,12 +118,6 @@ ActiveRecord::Schema.define(version: 20170304182851) do
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
-  create_table "prison_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "replies", force: :cascade do |t|
     t.string   "reply_body"
     t.integer  "comment_id"
@@ -185,32 +129,13 @@ ActiveRecord::Schema.define(version: 20170304182851) do
   add_index "replies", ["comment_id"], name: "index_replies_on_comment_id", using: :btree
   add_index "replies", ["user_id"], name: "index_replies_on_user_id", using: :btree
 
-  create_table "son_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
-  end
-
-  create_table "sunday_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
-  end
-
-  create_table "thursday_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
-  end
-
-  create_table "tuesday_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
+  create_table "upcoming_events", force: :cascade do |t|
+    t.string   "title"
+    t.string   "body"
+    t.datetime "starting_from"
+    t.datetime "ending_time"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -236,12 +161,6 @@ ActiveRecord::Schema.define(version: 20170304182851) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "youth_pages", force: :cascade do |t|
-    t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
