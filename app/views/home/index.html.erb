@@ -1,1 +1,16 @@
+<div class="homepages_details">
+  <% @homes.each do |home_page| %>
+    <% home_page.pictures.each do |pic, remov| %>
+      <div class="homepages_image" >
+        <!-- <div class="row">
+          <div class="span14"> -->
+            <%=image_tag(pic.image.url(:medium), class: "img-responsive ") if pic.image?%>
+          </div>
 
+      <div class="home_page_body">
+        <%= home_page.body %>
+      </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

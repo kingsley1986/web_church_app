@@ -23,6 +23,28 @@
  @import "lightbox";
  @import "main";
 
+
+ body {
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 14px;
+   overflow-x: hidden;
+   text-align: center;
+ }
+
+ .jR3DCarouselGalleryDefault,
+ .jR3DCarouselGalleryCustom {
+   margin: 0 auto;
+ }
+
+ .jR3DCarouselGalleryCustom .captions {
+   position: relative;
+   padding: 5px 0;
+   bottom: 4px;
+   color: white;
+   background: #2eb127;
+ }
+
+
  //Church Name stylings
 
 div.church_name {
@@ -119,7 +141,8 @@ $pulse-time: 3s;
  	margin: 0;
  	padding: 0;
  	font: 300 14px/18px Roboto;
- 	background: url('images/image.png');
+  background: rgba(152, 45, 175, 0.5);
+
   }
 
 
@@ -158,14 +181,14 @@ $pulse-time: 3s;
  	float: left;
  	list-style: none;
  	position:relative;
- 	background: #23364B;
+ 	background:  #030033;
  }
  .exo-menu > li {	display: inline-block;float:left;}
  .exo-menu > li > a{
  	color: #ccc;
  	text-decoration: none;
  	text-transform: uppercase;
- 	border-right: 1px #365670 dotted;
+ 	border-right: 1px #D5D5D5 dotted;
  	-webkit-transition: color 0.2s linear, background 0.2s linear;
  	-moz-transition: color 0.2s linear, background 0.2s linear;
  	-o-transition: color 0.2s linear, background 0.2s linear;
