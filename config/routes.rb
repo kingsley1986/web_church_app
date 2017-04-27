@@ -7,7 +7,12 @@ Rails.application.routes.draw do
       sign_out: 'logout'
     }
    } )
-
+  resources :upcoming_events do
+    collection do
+      get  'past_events'
+      get 'upcoming'
+    end
+  end
   resources :pages
   resources :news
   get 'pages/filter/:scope' => 'pages#index', as: :filtered_page
