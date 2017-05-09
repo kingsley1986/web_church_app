@@ -15,12 +15,21 @@ class  UpcomingEventsController < ApplicationController
     @upcoming_events = UpcomingEvent.all
   end
 
-  def upcoming
+  def upcomings
     @upcomings = UpcomingEvent.where("starting_from > ? ", Time.now)
   end
 
   def past_events
     @past_events = UpcomingEvent.where("ending_time < ? ", Time.now)
+  end
+
+  def live_events
+    @live_events =  UpcomingEvent.all
+      # @live_events = u if u.starting_from..u.ending_time.tap { |h| h == DateTime.now}
+      # date_months = date_range.map {|d| Date.new(d.year, d.month, 1) }.uniq
+
+      # if Time.now >= u.starting_from && u.starting_from <= u.ending_time
+      # @live_events = u  if Time.now >= u.starting_from && u.starting_from <= u.ending_time
   end
 
 

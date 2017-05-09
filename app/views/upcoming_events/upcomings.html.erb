@@ -1,6 +1,6 @@
 <div class="page_wrapper_index" >
   <didv class="content" >
-    <% @past_events.each do |upcoming_event| %>
+    <% @upcomings.each do |upcoming_event| %>
         <div class="post_body">
           <%= truncate(upcoming_event.body, length: 120) %>
         </div>
@@ -8,7 +8,7 @@
           <%= upcoming_event.starting_from.strftime("Starting on %m/%d/%Y/%H/%M") %>
         </div>
         <div class="post_created" >
-          <%= upcoming_event.ending_time.strftime("Ends on %m/%d/%Y") + " At " + upcoming_event.ending_time.strftime("%H/%M") %>
+          <%= upcoming_event.ending_time.strftime("Ends on %m/%d/%Y/%H/%M") %>
         </div>
     <% end %>
   </div>

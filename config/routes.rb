@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :upcoming_events do
     collection do
       get  'past_events'
-      get 'upcoming'
+      get 'upcomings'
+      get 'live_events'
     end
   end
   resources :pages

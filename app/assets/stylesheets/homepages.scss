@@ -6,7 +6,7 @@
 
 div.home_page_body {
 background-color: white;
-width: 26%;
+width: 90%;
 padding-left: 30px;
 padding-left:11px;
 padding-right:11px;
@@ -21,28 +21,26 @@ word-wrap: break-word;
 word-break: break-all;
 white-space: normal;
 position: relative;
-top: -290px;
-left: 20px;
+top: 20px;
+margin: auto;
 }
 
-@media screen and (max-width: 768px) {
-  div.home_page_body {
-    font-size:15px;
-    width: 90%;
-    position: absolute;
-    top: 300px;
-    margin-left: -25px;
-    }
-}
+// @media screen and (max-width: 667px) {
+//   div.home_page_body {
+//     font-size:15px;
+//     width: 90%;
+//     margin-left: -94px;
+//     }
+// }
 
-
-@media screen and (min-width: 414px) and (max-width: 1366px){
-     div.home_page_body{
-        width: 85%;
-        position: relative;
-        top: 200px;
-     }
-  }
+// @media screen and (m-width: 1366px) {
+//    div.home_page_body{
+//     width: 85%;
+//     position: relative;
+//     top: 200px;
+//     left: 30px;
+//   }
+// }
 
 
 *, *:after, *:before {
