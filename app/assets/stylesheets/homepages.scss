@@ -1,305 +1,305 @@
-// Place all the styles related to the homepages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-
-div.home_page_body {
-background-color: white;
-width: 90%;
-padding-left: 30px;
-padding-left:11px;
-padding-right:11px;
-padding-top:11px;
-word-wrap: break-word;
-line-height: 1.7;
-white-space: -moz-pre-wrap !important;
-white-space: -pre-wrap;
-white-space: -o-pre-wrap;
-white-space: pre-wrap;
-word-wrap: break-word;
-word-break: break-all;
-white-space: normal;
-position: relative;
-top: 20px;
-margin: auto;
-}
-
-// @media screen and (max-width: 667px) {
-//   div.home_page_body {
-//     font-size:15px;
-//     width: 90%;
-//     margin-left: -94px;
-//     }
-// }
-
-// @media screen and (m-width: 1366px) {
-//    div.home_page_body{
-//     width: 85%;
-//     position: relative;
-//     top: 200px;
-//     left: 30px;
-//   }
-// }
-
-
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-header{
-  z-index: 1;
-  position:fixed;
-  width:100%;
-  height:60px;
-  background:rgba(0,0,0,0.1);
-}
-
-header a{
-  color:white;
-  background:rgba(0,0,0,0.1);
-  display:inline-block;
-  padding:0px 30px;
-  // height:60px;
-  line-height:60px;
-  text-align:center;
-  font-family: 'Roboto Slab', serif;
-  text-decoration:none;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  font-weight:700;
-}
-#hero1{
- background:url(http://4.bp.blogspot.com/_AQ0vcRxFu0A/S9shDGGyMTI/AAAAAAAAAYk/kn3WTkY2LoQ/s1600/IMG_0714.JPG);
-  background-size:cover;
-  background-position:center center;
-  background-attachment:fixed;
-}
-#hero2{background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/21555/Melissani-cave-natural.jpg);
-  background-size:cover;
-  background-position:center center;
-  background-attachment:fixed;
-}
-.hero, .content{
-  text-align:center;
-  position:relative;
-  // width: 100%;
-}
-
-section#hero1.hero{
-  position: relative;
-  z-index: -2;
-  top: 30px;
-}
-
-.inner{
-  min-height:600px;
-  position: relative;
-}
-
-.hero .inner{
-  background: rgba(0,0,0,0.7) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAD0lEQVQIW2NkQABjRmQOAAM+AGkQsDBSAAAAAElFTkSuQmCC) repeat;}
-
-
-.copy{
-  position:absolute;
-  top:50%;
-  height:10em;
-  margin-top:-5em;
-  width:100%;
-}
-
-.hero h1, .hero p{
-  color:#fff;
-}
-
-.content h1, .content p{
-  color:#333;
-}
-
-h1{
-  margin:0px;
-  font-family: 'Roboto Slab', serif;
-  font-weight:400;
-  font-size:32px;
-  padding:0px 20px;
-}
-
-p{
-  font-family: 'Noto Sans', sans-serif;
-  font-size:14px;
-  padding:0px 20px;
-}
-
-
-
-
-// this is for the three d animations
-
-*{
-  margin: 0;
-  padding: 0;
-  outline: none;
-  border: none;
-	box-sizing: border-box;
-}
-*:before,
-*:after{
-	box-sizing: border-box;
-}
-
-
-//causing the header to enlarge
-// .container{
-// 	margin: 4% auto;
-// 	width: 210px;
-// 	height: 140px;
-// 	position: relative;
-// 	perspective: 1000px;
-//   // left: 38%;
-// }
-.content{
-   z-index: 2
-}
-
-// div.container {
-//   position:relative;
-//   top:-90%;
+// // Place all the styles related to the homepages controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
 //
-//   }
-
-// div.container {
-//   position: relative;
-//   z-index: 1;
-//   bottom: 20%;
+//
+//
+// div.home_page_body {
+// background-color: white;
+// width: 90%;
+// padding-left: 30px;
+// padding-left:11px;
+// padding-right:11px;
+// padding-top:11px;
+// word-wrap: break-word;
+// line-height: 1.7;
+// white-space: -moz-pre-wrap !important;
+// white-space: -pre-wrap;
+// white-space: -o-pre-wrap;
+// white-space: pre-wrap;
+// word-wrap: break-word;
+// word-break: break-all;
+// white-space: normal;
+// position: relative;
+// top: 20px;
+// margin: auto;
 // }
-#carousel{
-	width: 30%;
-	height: 60%;
-	position: absolute;
-
-	transform-style: preserve-3d;
-	animation: rotation 20s infinite linear;
-  top: 40%;
-}
-#carousel:hover{
-	animation-play-state: paused;
-}
-#carousel figure{
-	display: block;
-	position: absolute;
-	width: 186px;
-	height: 116px;
-	left: 10px;
-	top: 10px;
-	background: black;
-	overflow: hidden;
-	border: solid 5px black;
-}
-#carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
-#carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
-#carousel figure:nth-child(3) { transform: rotateY(80deg) translateZ(288px);}
-#carousel figure:nth-child(4) { transform: rotateY(120deg) translateZ(288px);}
-#carousel figure:nth-child(5) { transform: rotateY(160deg) translateZ(288px);}
-#carousel figure:nth-child(6) { transform: rotateY(200deg) translateZ(288px);}
-#carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
-#carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
-#carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
-
-
-img{
-	-webkit-filter: grayscale(1);
-	cursor: pointer;
-	transition: all .5s ease;
-}
-img:hover{
-	-webkit-filter: grayscale(0);
-  transform: scale(1.2,1.2);
-}
-
-@keyframes rotation{
-	from{
-		transform: rotateY(0deg);
-	}
-	to{
-		transform: rotateY(360deg);
-	}
-}
-
-
-// drop image for selet
-
-
-
-div.home_info{
-  position: relative;
-  padding-left: 15%;
-  padding-right: 15%;
-  font-weight: bolder;
-  color: white;
-  text-align: center;
-  bottom: 30em;
-}
-
-
-div.home_info {
-  font-size: 10px;
-}
-
-@media (min-width: 900px) {
-div.home_info {
-    font-size: 18px;
-  }
-}
-
-div.about_info{
-  position: relative;
-  top: 2%;
-  max-width: 100%;
-  text-align: justify;
-  margin: 0 auto;
-  width: 50em;
-  margin-top: 20px;
-  font-weight: bolder;
-  color: white;
-  font-size: 20px;
-}
-
-div.post_link a {
-  text-decoration: none;
-}
-
-div.post_link
-{
-  position: absolute;
-  text-transform: uppercase;
-  bottom: 94.4%;
-  display: inline-block;
-   background-color: #ccc;
-   border: 1px solid #777;
-   padding: 0 1.5em;
-   margin: 0.5em;
-   color: #333;
-   font-weight: bolder;
-   text-shadow: 0 1px 0 rgba(255,255,255,.8);
-   border-radius: .2em;
-   box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
-   padding-left: 3px;
-   padding-right: 3px;
-   right: 60px;
-   font-size: 10px;
-
-}
-
-@media (min-width: 900px) {
-div.post_link {
-    font-size: 18px;
-  }
-}
-
-
-a.dropdown-toggle {
-  text-decoration: none;
-}
+//
+// // @media screen and (max-width: 667px) {
+// //   div.home_page_body {
+// //     font-size:15px;
+// //     width: 90%;
+// //     margin-left: -94px;
+// //     }
+// // }
+//
+// // @media screen and (m-width: 1366px) {
+// //    div.home_page_body{
+// //     width: 85%;
+// //     position: relative;
+// //     top: 200px;
+// //     left: 30px;
+// //   }
+// // }
+//
+//
+// *, *:after, *:before {
+//   -webkit-box-sizing: border-box;
+//   -moz-box-sizing: border-box;
+//   box-sizing: border-box;
+// }
+//
+// header{
+//   z-index: 1;
+//   position:fixed;
+//   width:100%;
+//   height:60px;
+//   background:rgba(0,0,0,0.1);
+// }
+//
+// header a{
+//   color:white;
+//   background:rgba(0,0,0,0.1);
+//   display:inline-block;
+//   padding:0px 30px;
+//   // height:60px;
+//   line-height:60px;
+//   text-align:center;
+//   font-family: 'Roboto Slab', serif;
+//   text-decoration:none;
+//   text-transform:uppercase;
+//   letter-spacing:2px;
+//   font-weight:700;
+// }
+// #hero1{
+//  background:url(http://4.bp.blogspot.com/_AQ0vcRxFu0A/S9shDGGyMTI/AAAAAAAAAYk/kn3WTkY2LoQ/s1600/IMG_0714.JPG);
+//   background-size:cover;
+//   background-position:center center;
+//   background-attachment:fixed;
+// }
+// #hero2{background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/21555/Melissani-cave-natural.jpg);
+//   background-size:cover;
+//   background-position:center center;
+//   background-attachment:fixed;
+// }
+// .hero, .content{
+//   text-align:center;
+//   position:relative;
+//   // width: 100%;
+// }
+//
+// section#hero1.hero{
+//   position: relative;
+//   z-index: -2;
+//   top: 30px;
+// }
+//
+// .inner{
+//   min-height:600px;
+//   position: relative;
+// }
+//
+// .hero .inner{
+//   background: rgba(0,0,0,0.7) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAD0lEQVQIW2NkQABjRmQOAAM+AGkQsDBSAAAAAElFTkSuQmCC) repeat;}
+//
+//
+// .copy{
+//   position:absolute;
+//   top:50%;
+//   height:10em;
+//   margin-top:-5em;
+//   width:100%;
+// }
+//
+// .hero h1, .hero p{
+//   color:#fff;
+// }
+//
+// .content h1, .content p{
+//   color:#333;
+// }
+//
+// h1{
+//   margin:0px;
+//   font-family: 'Roboto Slab', serif;
+//   font-weight:400;
+//   font-size:32px;
+//   padding:0px 20px;
+// }
+//
+// p{
+//   font-family: 'Noto Sans', sans-serif;
+//   font-size:14px;
+//   padding:0px 20px;
+// }
+//
+//
+//
+//
+// // this is for the three d animations
+//
+// *{
+//   margin: 0;
+//   padding: 0;
+//   outline: none;
+//   border: none;
+// 	box-sizing: border-box;
+// }
+// *:before,
+// *:after{
+// 	box-sizing: border-box;
+// }
+//
+//
+// //causing the header to enlarge
+// // .container{
+// // 	margin: 4% auto;
+// // 	width: 210px;
+// // 	height: 140px;
+// // 	position: relative;
+// // 	perspective: 1000px;
+// //   // left: 38%;
+// // }
+// .content{
+//    z-index: 2
+// }
+//
+// // div.container {
+// //   position:relative;
+// //   top:-90%;
+// //
+// //   }
+//
+// // div.container {
+// //   position: relative;
+// //   z-index: 1;
+// //   bottom: 20%;
+// // }
+// #carousel{
+// 	width: 30%;
+// 	height: 60%;
+// 	position: absolute;
+//
+// 	transform-style: preserve-3d;
+// 	animation: rotation 20s infinite linear;
+//   top: 40%;
+// }
+// #carousel:hover{
+// 	animation-play-state: paused;
+// }
+// #carousel figure{
+// 	display: block;
+// 	position: absolute;
+// 	width: 186px;
+// 	height: 116px;
+// 	left: 10px;
+// 	top: 10px;
+// 	background: black;
+// 	overflow: hidden;
+// 	border: solid 5px black;
+// }
+// #carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
+// #carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
+// #carousel figure:nth-child(3) { transform: rotateY(80deg) translateZ(288px);}
+// #carousel figure:nth-child(4) { transform: rotateY(120deg) translateZ(288px);}
+// #carousel figure:nth-child(5) { transform: rotateY(160deg) translateZ(288px);}
+// #carousel figure:nth-child(6) { transform: rotateY(200deg) translateZ(288px);}
+// #carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
+// #carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
+// #carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
+//
+//
+// img{
+// 	-webkit-filter: grayscale(1);
+// 	cursor: pointer;
+// 	transition: all .5s ease;
+// }
+// img:hover{
+// 	-webkit-filter: grayscale(0);
+//   transform: scale(1.2,1.2);
+// }
+//
+// @keyframes rotation{
+// 	from{
+// 		transform: rotateY(0deg);
+// 	}
+// 	to{
+// 		transform: rotateY(360deg);
+// 	}
+// }
+//
+//
+// // drop image for selet
+//
+//
+//
+// div.home_info{
+//   position: relative;
+//   padding-left: 15%;
+//   padding-right: 15%;
+//   font-weight: bolder;
+//   color: white;
+//   text-align: center;
+//   bottom: 30em;
+// }
+//
+//
+// div.home_info {
+//   font-size: 10px;
+// }
+//
+// @media (min-width: 900px) {
+// div.home_info {
+//     font-size: 18px;
+//   }
+// }
+//
+// div.about_info{
+//   position: relative;
+//   top: 2%;
+//   max-width: 100%;
+//   text-align: justify;
+//   margin: 0 auto;
+//   width: 50em;
+//   margin-top: 20px;
+//   font-weight: bolder;
+//   color: white;
+//   font-size: 20px;
+// }
+//
+// div.post_link a {
+//   text-decoration: none;
+// }
+//
+// div.post_link
+// {
+//   position: absolute;
+//   text-transform: uppercase;
+//   bottom: 94.4%;
+//   display: inline-block;
+//    background-color: #ccc;
+//    border: 1px solid #777;
+//    padding: 0 1.5em;
+//    margin: 0.5em;
+//    color: #333;
+//    font-weight: bolder;
+//    text-shadow: 0 1px 0 rgba(255,255,255,.8);
+//    border-radius: .2em;
+//    box-shadow: 0 0 1px 1px rgba(255,255,255,.8) inset, 0 1px 0 rgba(0,0,0,.3);
+//    padding-left: 3px;
+//    padding-right: 3px;
+//    right: 60px;
+//    font-size: 10px;
+//
+// }
+//
+// @media (min-width: 900px) {
+// div.post_link {
+//     font-size: 18px;
+//   }
+// }
+//
+//
+// a.dropdown-toggle {
+//   text-decoration: none;
+// }

@@ -23,124 +23,6 @@
  @import "lightbox";
  @import "main";
 
-
-
-
- // @media screen and (max-width: 736px) {
- //   div.home_page_body {
- //     position: relative;
- //     width: 95%;
- //     top:260px;
- //    left: 10px;
- //   }
- // }
-
-
-//buttons
-// @media only screen and (max-width: 320px), only screen and (max-device-width: 375px) {
-//   #centrada {
-//     position: relative;
-//     top:-790px;
-//    left: 10px;
-//   }
-// }
-//buttons
-.breacrumb {
-  list-style: none;
-  margin: 30px;
-  padding: 10px;
-  font-size: 20px;
-  color: #fff;
-  background: rgba( 0, 0, 0, .2 );
-  display: inline-block;
-  border-radius: 15px;
-
-  > li {
-    display: inline-block;
-    padding: 0 30px;
-    line-height: 60px;
-    background: #3498db;
-    position: relative;
-    border: 0 #3498db;
-    cursor: pointer;
-
-    + li {
-      margin-left: 45px;
-    }
-
-    &:hover {
-      background: #fa5ba5;
-      border-color: #fa5ba5;
-      margin-left: 55px;
-      margin-right: 10px;
-    }
-
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      border: 30px solid transparent;
-      border-right: 0;
-      top: 0;
-    }
-
-    &:before {
-      right: 100%;
-      border-top-color: inherit;
-      border-bottom-color: inherit;
-    }
-
-    &:after {
-      left: 100%;
-      border-left-color: inherit;
-    }
-
-    &:first-child {
-      border-radius: 10px 0 0 10px;
-      padding-left: 40px;
-      margin-left: 0;
-
-      &:before {
-        content: none;
-      }
-    }
-
-    &:last-child {
-      border-radius: 0 10px 10px 0;
-      padding-right: 40px;
-      margin-right: 0;
-
-      &:after {
-        content: none;
-      }
-    }
-  }
-}
- //buttons end here
-
-
-
- body {
-   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-   font-size: 14px;
-   overflow-x: hidden;
-   text-align: center;
- }
-
- .jR3DCarouselGalleryDefault,
- .jR3DCarouselGalleryCustom {
-   margin: 0 auto;
- }
-
- .jR3DCarouselGalleryCustom .captions {
-   position: relative;
-   padding: 5px 0;
-   bottom: 4px;
-   color: white;
-   background: #2eb127;
- }
-
-
  //Church Name stylings
 
 div.church_name {
@@ -232,13 +114,24 @@ $pulse-time: 3s;
   text-align: center;
 }
 
+//three D images
+div.container_again {
+  position:relative;
+        top:-90%;
+
+  }
+
+
+
+
+
+
 
   body{
  	margin: 0;
  	padding: 0;
  	font: 300 14px/18px Roboto;
-  background: #351B66;
-
+ 	background: url('images/image.png');
   }
 
 
@@ -277,14 +170,14 @@ $pulse-time: 3s;
  	float: left;
  	list-style: none;
  	position:relative;
- 	background:  #030033;
+ 	background: #23364B;
  }
  .exo-menu > li {	display: inline-block;float:left;}
  .exo-menu > li > a{
  	color: #ccc;
  	text-decoration: none;
  	text-transform: uppercase;
- 	border-right: 1px #D5D5D5 dotted;
+ 	border-right: 1px #365670 dotted;
  	-webkit-transition: color 0.2s linear, background 0.2s linear;
  	-moz-transition: color 0.2s linear, background 0.2s linear;
  	-o-transition: color 0.2s linear, background 0.2s linear;
@@ -426,8 +319,18 @@ $pulse-time: 3s;
      color: #ccc;
      font-size: 85%;
  }
-
-
+ a.view-more{
+   border-radius: 1px;
+   margin-top:15px;
+   background-color: #009FE1;
+   padding: 2px 10px !important;
+   line-height: 21px !important;
+   display: inline-block !important;
+ }
+ a.view-more:hover{
+ 	color:#fff;
+ 	background:#0DADEF;
+ }
  ul.icon-des li a i {
      color: #fff;
      width: 35px;
@@ -463,7 +366,9 @@ $pulse-time: 3s;
  	font-size:90%;
  	margin-top:15px;
  }
-
+ .Blog a.view-more{
+ 	margin-top:0px;
+ }
  /*Images*/
  .Images{
  	left:0;

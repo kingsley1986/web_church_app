@@ -1,105 +1,77 @@
-h1, h2{
-  border-left: 5px #666 solid;
-  border-bottom: 1px #666 solid;
-  padding: 0 0 5px 10px;
-  margin-bottom: 30px;
-}
 
-#gallery img{
+
+
+
+
+.social {
+  display: inline-block;
+  position: relative;
   width: 100%;
-
+  padding: 16px;
+  margin-bottom: 16px;
+  margin-right: 16px;
+  background-color: rgba(231, 231, 231, 0.6);
+  box-shadow: 8px 8px 0 0px rgba(0, 0, 0, 0.25);
 }
 
-.col-md-3{
+nav {
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+nav ul {
+  margin: auto;
   padding: 0;
+  list-style: none;
+  width: 260px;
 }
 
-.photo {
-  text-align:  center;
-  position: relative;
+nav ul li {
+  display: inline;
 }
 
-
-.photo,
-.photo-hover,
-.photo-hover .mask,
-.photo-img,
-.photo-info{
-  width: 293px;
-  height: 220px;
+nav ul li a:hover {
+  opacity: 0.7;
 }
 
-
-.photo-image,
-.photo-hover,
-.photo-hover .mask{
-  position: absolute;
-  top:0;
-  left:0;
+nav ul li a.email {
+  border-left: 50px solid #c9182c;
+  color: #c9182c;
 }
 
-.photo-type-line .photo-hover {
-  z-index: 100;
-  transition: all 300ms ease-out;
-  -webkit-transition: all 300ms ease-out;
-  -moz-transition: all 300ms ease-out;
-  opacity: 0;
-  cursor:pointer;
-  display: block;
-  text-decoration: none;
-  text-align: center;
-
+nav ul li a.twitter {
+  border-left: 50px solid #00a0d1;
+  color: #00a0d1;
 }
 
-
-.photo-type-line .photo-info {
-  z-index: 10;
-  color: #fff;
-  display: table-cell;
-  vertical-align: middle;
-  position: relative;
-
+nav ul li a.facebook {
+  border-left: 50px solid #365998;
+  color: #365998;
 }
 
-img {
-  -webkit-filter: none;
+nav ul li a.github {
+  border-left: 50px solid #4183c4;
+  color: #4183c4;
+}
+
+nav ul li a.google {
+  border-left: 50px solid #db4a39;
+  color: #db4a39;
+}
+
+nav ul li a.instagram {
+  border-left: 50px solid #634d40;
+  color: #634d40;
+}
+
+nav ul li a.tumblr {
+  border-left: 50px solid #34526f;
+  color: #34526f;
 }
 
 
-.photo-type-line .photo-info .headline{
-  font-size: 20px;
-
-}
-
-
-.photo-type-line .photo-info .line{
-  height: 1px;
-  width: 0%;
-  margin: 15px auto;
-  background: #fff;
-  -webkit-transition: all 500ms ease-out;
-  -moz-transition: all 500ms ease-out;
-  transition: all 500ms ease-out;
-}
-
-
-.photo-type-line .photo-hover .mask{
-  background: #000;
-  filter: alpa(opacity=50);
-  opacity: 0.5;
-  z-index: 0;
-}
-
-
-.photo-type-line .photo-hover:hover .line{
-  width: 40%;
-}
-
-.photo-type-line .photo-hover:hover{
-  opacity: 1;
-}
-
-.photo-img {
-  background: #7a548f;
-  z-index: 0;
+nav ul li a.linkedin {
+  border-left: 50px solid #0e76a8;
+  color: #0e76a8;
 }
