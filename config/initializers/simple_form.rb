@@ -7,8 +7,6 @@ SimpleForm.setup do |config|
   # whole input.
   config.wrappers :default, class: :input,
     hint_class: :field_with_hint, error_class: :field_with_errors do |b|
-
-
     ## Extensions enabled by default
     # Any of these extensions can be disabled for a
     # given input by passing: `f.input EXTENSION_NAME => false`.
@@ -30,7 +28,11 @@ SimpleForm.setup do |config|
     # extensions by default, you can change `b.optional` to `b.use`.
 
     # Calculates maxlength from length validations for string inputs
+    # and/or database column lengths
     b.optional :maxlength
+
+    # Calculate minlength from length validations for string inputs
+    b.optional :minlength
 
     # Calculates pattern from format validations for string inputs
     b.optional :pattern
@@ -99,7 +101,7 @@ SimpleForm.setup do |config|
   # config.item_wrapper_class = nil
 
   # How the label text should be generated altogether with the required text.
-  config.label_text = lambda { |label, required, explicit_label| "#{required} #{label}" }
+  # config.label_text = lambda { |label, required, explicit_label| "#{required} #{label}" }
 
   # You can define the class to use on all labels. Default is nil.
   # config.label_class = nil

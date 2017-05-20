@@ -96,11 +96,10 @@ ActiveRecord::Schema.define(version: 20170421084231) do
     t.integer  "user_id"
     t.integer  "picturable_id"
     t.string   "picturable_type"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "post_id"
     t.integer  "comment_id"
-    t.integer  "upcoming_event_id"
   end
 
   add_index "pictures", ["comment_id"], name: "index_pictures_on_comment_id", using: :btree

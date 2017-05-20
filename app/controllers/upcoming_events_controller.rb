@@ -24,13 +24,20 @@ class  UpcomingEventsController < ApplicationController
   end
 
   def live_events
-    @live_events =  UpcomingEvent.all
-      # @live_events = u if u.starting_from..u.ending_time.tap { |h| h == DateTime.now}
-      # date_months = date_range.map {|d| Date.new(d.year, d.month, 1) }.uniq
-
-      # if Time.now >= u.starting_from && u.starting_from <= u.ending_time
-      # @live_events = u  if Time.now >= u.starting_from && u.starting_from <= u.ending_time
+     UpcomingEvent.all.find_each do |u|
+       start = u.starting_from.to_datetime
+     finish = u.ending_time.to_datetime
+     while(start < finish) do
+       start += 1.minute
+       if Time.now.to_s >= u.starting_from.to_s &&  start <= u.ending_time
+         @live_events = start
+         return @live_events
+       end
+     end
+    end
   end
+
+
 
 
   def upcoming_events_params

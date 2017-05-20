@@ -23,11 +23,12 @@ gem "font-awesome-rails"
 
 
 #front-end
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.4.1'
 gem 'autoprefixer-rails'
 gem 'sass-rails', '>= 3.2'
 gem 'slim'
-gem 'simple_form'
+gem 'simple_form', '~> 3.4'
+
 gem 'jquery-rails'
 
 group :development, :test do
