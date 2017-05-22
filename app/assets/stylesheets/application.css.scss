@@ -74,6 +74,9 @@
     box-shadow:         1px 1px 3px 2px #f5f5dc;
 
   }
+ hr.devidepost
+  {border-color: red yellow green;
+  }
 
 
 a, a:link, a:visited {
@@ -100,9 +103,12 @@ div.btn.btn-primary.church_name {
   left:18px;
 }
 
-body {
-  background: rgba(54, 25, 25, .5);
-}
+body{
+ margin: 0;
+ padding: 0;
+ font: 300 14px/18px Roboto;
+ background: url('images/image.png');
+ }
 
 div.container {
   background: url(http://css3exp.com/moon/img/space-bg.png) repeat-x fixed -80% 0;

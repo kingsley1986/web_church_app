@@ -1,64 +1,30 @@
-<div class="post_comment_content">
-  <table>
-    <td>
-      <div class="row">
-        <div class="span12">
-          <div class="post_title_show">
-            <%= @post.title %>
-          </div>
-          <div class="post_body_show">
-              <%= @post.post_body %>
-          </div>
-          <div class="image_link">
-            <% @post.pictures.each do |pic| %>
-              <%= link_to(image_tag(pic.image.url(:square)), pic, class: "respond_image") if pic.image? %>
-            <% end %>
-          </div>
-          <div class="post_show_days_ago">
-              <%= "posted #{time_ago_in_words(@post.created_at)}" %>
-          </div>
-          <div id="like_and_unlike" >
-            <% if current_user_signed_in %>
-              <% if @post.likes.map(&:user_id).include? current_user.id %>
-                  <%= link_to "Unlike", unlike_post_path(@post, like: true), method: :delete, :class => 'unliker', style:"color: red" %>
-                <%else %>
-                  <%= link_to "Like", like_post_path(@post, like: true), method: :post, :class => 'liker', style:"color: red; margin-top: 30px;" %>
-              <% end %>
-            <% end %>
-          </div>
-          <div class="like_word" %>
-            <%= pluralize( @post.likes.size, "like") %>
-          </div>
-          <% if @post.likes.size >= 1 %>
-            <div class="thum_icon">
-              <div class="fa fa-thumbs-o-up" aria-hidden="true"></div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span14">
-          <div class="comments" %>
-            <div class="count_comment" >
-              <%= "#{@post.comments.count} Comments" %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="comments" >
-        <%= render @post.comments %>
-      </div>
-      <div class="row">
-        <div class="span12">
-          <div class="add_comment">
-            <h3> Add a Comment: </h3>
-          </div>
-          <% if current_user_signed_in %>
-            <%= render "comments/form" %>
-          <% end %>
-        </div>
-      </div>
-    </td>
-  </table>
+<div class="col-md-6 col-md-offset-3">
+  <div class="row item" >
+    <div class="col-md-8"  style="background-color:white; margin-bottom:20px;">
+      <h2><%= @post.title %></strike></h2>
+      <h5><%= @post.post_body %></h5>
+      <p>posted <%= time_ago_in_words(@post.created_at) %> ago</p>
+      <% @post.pictures.each do |pic, remov| %>
+        <p><%= image_tag(pic.image.url(:medium), class: "img-responsive") if pic.image? %></p>
+      <% end %>
+      <% if current_user_signed_in %>
+        <% if @post.likes.map(&:user_id).include? current_user.id %>
+          <%= link_to "Unlike", unlike_post_path(@post, like: true), method: :delete, :class => 'unliker', style:"color: red" %>
+        <%else %>
+          <%= link_to "Like", like_post_path(@post, like: true), method: :post, :class => 'liker', style:"color: red; margin-top: 30px;" %>
+          <%= pluralize( @post.likes.size, "like") %>
+        <% end %>
+      <% end %>
+      <% if @post.likes.size >= 1 %>
+        <div class="fa fa-thumbs-o-up" aria-hidden="true"></div>
+      <% end %>
+      <%= "#{@post.comments.count} Comments" %>
+      <%= render @post.comments %>
+      <h3> Add a Comment: </h3>
+      <% if current_user_signed_in %>
+        <%= render "comments/form" %>
+      <% end %>
+      <%= link_to "Back", request.referer.present? ? request.referer : default_path, style:"color: red" %>
+    </div>
+  </div>
 </div>
-<%= link_to "Back", request.referer.present? ? request.referer : default_path, style:"color: red" %>

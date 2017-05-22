@@ -1,35 +1,14 @@
-<!-- <div class="new_post_link" >
-  <%if current_user_signed_in && current_user.admin? %>
-    <%= link_to "New Post", new_post_path %>
-  <% end %>
-</div> -->
-<div class="page_wrapper_index" >
-  <didv class="content_post" >
-    <% @posts.each do |post| %>
-      <div class="row">
-        <div class="span12">
-          <table style="width: 100%;">
-            <tr>
-              <td>
-                <div class="post_title" >
-                  <%= link_to post.title, post_path(post)%>
-                </div>
-                <div class="post_body" %>
-                  <%= truncate(post.post_body, length: 120) %>
-                </div>
-                <% post.pictures.each do |pic, remov| %>
-                  <div class="post_index_image" >
-                    <%= image_tag(pic.image.url(:medium), class: "img-responsive") if pic.image? %>
-                  </div>
-                <% end %>
-                <div class="post_created" >
-                  <%= post.created_at.strftime("%B, %d, %Y") %>
-                </div>
-              </td>
-            </tr>
-          </table>
-        </div>
+<div class="col-md-6 col-md-offset-3">
+  <% @posts.each do |post| %>
+    <div class="row item" >
+      <div class="col-md-8"  style="background-color:white; margin-bottom:20px;">
+        <h2><%= link_to post.title, post %></strike></h2>
+        <h5><%= truncate(post.post_body, length: 280) %></h5>
+        <p>posted <%= time_ago_in_words(post.created_at) %> ago</p>
+        <% post.pictures.each do |pic, remov| %>
+          <p><%= image_tag(pic.image.url(:medium), class: "img-responsive") if pic.image? %></p>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

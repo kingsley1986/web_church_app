@@ -38,7 +38,7 @@
       :collection => %w[Female Male]
     %>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+      <i class="icon-ok icon-white"></i> Sign Up
+    <% end %>
 <% end %>

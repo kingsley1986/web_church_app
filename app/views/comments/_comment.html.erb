@@ -1,55 +1,41 @@
-<div class="comment_content" >
-  <table>
-    <td>
-      <div class="row">
-        <div class="span13">
-          <div class="comment_body_view">
-            <%= comment.body %>
-          </div>
-          <% comment.pictures.each do |comment_pic| %>
-              <%= link_to(image_tag(comment_pic.image.url(:thumb)), comment_pic, class: "img-responsive") if comment_pic.image? %>
-          <% end %>
-          <div class="commentor" >
-            <%= comment.user.first_name %>
-          </div>
-          <div class="comment_show_days_ago" >
-            <%= time_ago_in_words((comment.created_at)) %>
-          </div>
-          <%= simple_form_for([comment, comment.replies.new], :defaults => { :input_html => { :class => "repy_class" } }) do |f| %>
-            <% if current_user_signed_in %>
-              <%= f.input :reply_body, placeholder: "Reply to this comment", label: "reply", as: :text %>
-            <% end %>
-          <% end %>
-          <ul>
-            <div class="like_and_unlike_comment" >
-              <% if current_user_signed_in %>
-                <% if comment.likes.map(&:user_id).include? current_user.id %>
-                  <%= link_to "Unlike", unlike_comment_path(comment, like: true), method: 'delete' %>
-                <% else %>
-                  <%= link_to "Like", like_comment_path(comment, like: true), method: 'post', class: "my_classified" %>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="comment_like_word">
-              <%= pluralize( comment.likes.size, "like") %>
-            </div>
-            <div class="thum_icon_comment">
-              <% if comment.likes.size > 0 %>
-                <div class="fa fa-thumbs-o-up" aria-hidden="true"></div>
-              <% end %>
-            </div>
-          </ul>
-          <div class"reply_link" %>
-            <%= link_to  pluralize(comment.replies.count, "reply"), comment_replies_path(comment.id, @reply ), class: "replies_class", style:"color: red; position: relative;
-            top: 30px;"  %>
-          </div>
-          <div class="delete_comment">
-            <% if current_user && user_signed_in? && comment.user_id == current_user.id || current_user && current_user.admin? %>
-              <p><%= link_to "Delete Comment", comment_path(comment), data: {confirm: 'Are you sure?'},  method: :delete, remote: true,  :class => 'delete_comment' %></p>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </td>
-  </table>
-</div>
+</br>
+  <hr class="devidepost">
+  <div class="postboy" style="font-size:15px; margin-bottom:15px;">
+    <%= comment.body %>
+  </div>
+  <% comment.pictures.each do |comment_pic| %>
+    <%= link_to(image_tag(comment_pic.image.url(:thumb)), comment_pic, class: "img-responsive") if comment_pic.image? %>
+  <% end %>
+</br>
+
+<p><%= comment.user.first_name %></p>
+<%= time_ago_in_words((comment.created_at)) %>
+
+<%= simple_form_for([comment, comment.replies.new], :defaults => { :input_html => { :class => "repy_class" } }) do |f| %>
+  <% if current_user_signed_in %>
+    <%= f.input :reply_body, placeholder: "Reply to this comment", label: "reply", as: :text %>
+  <% end %>
+<% end %>
+<% if current_user_signed_in %>
+  <% if comment.likes.map(&:user_id).include? current_user.id %>
+  <br>
+    <%= link_to "Unlike", unlike_comment_path(comment, like: true), method: 'delete', class:"btn btn-primary" %>
+  <% else %>
+  <br>
+    <%= link_to "Like", like_comment_path(comment, like: true), method: 'post', class:"btn btn-success" %>
+
+    <br>
+    <% end %>
+    <% end %>
+    <% if comment.likes.size > 0 %>
+      <%= pluralize( comment.likes.size, "like") %>
+      <div class="fa fa-thumbs-o-up" style="font-size:20px; color:blue"  aria-hidden="true"></div>
+<% end %>
+</br>
+<%= link_to  pluralize(comment.replies.count, "reply"), comment_replies_path(comment.id, @reply ), class:"btn btn-success", style:"margin-top:8px;" %>
+</br>
+<% if current_user && user_signed_in? && comment.user_id == current_user.id || current_user && current_user.admin? %>
+</br>
+<%= link_to "Delete Comment", comment_path(comment), data: {confirm: 'Are you sure?'},  method: :delete, remote: true,  class:"btn btn-danger" %>
+<% end %>
+</hr>
