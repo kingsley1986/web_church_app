@@ -1,3 +1,4 @@
+alert "i am image gallery"
 jssor_1_slider_init = ->
   jssor_1_SlideoTransitions = [
     [ {

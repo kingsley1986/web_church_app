@@ -1,3 +1,4 @@
+alert "i am page"
 jssor_1_slider_init = ->
   jssor_1_SlideoTransitions = [
     [ {

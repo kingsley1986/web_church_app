@@ -1,3 +1,4 @@
+alert "i am active_admin"
 jssor_1_slider_init = ->
   jssor_1_SlideoTransitions = [
     [ {
