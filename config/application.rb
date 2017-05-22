@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module WebChurchApp
   class Application < Rails::Application
+  config.assets.paths << Rails.root.join('vendor', 'assets', 'public', 'images', 'public/images', '/public/images')
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -23,7 +25,5 @@ module WebChurchApp
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.initialize_on_precompile = false
-    config.serve_static_assets = true
-    config.assets.compile = true
   end
 end
