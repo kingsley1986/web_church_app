@@ -18,6 +18,7 @@
 
 
 
+
 // slider for javascript
 
 jssor_1_slider_init = function() {
