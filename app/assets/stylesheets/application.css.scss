@@ -22,6 +22,48 @@
  @import "bootstrap";
  @import "lightbox";
  @import "main";
+ // this is for image slider
+ .jssorb01 {
+     position: absolute;
+ }
+ .jssorb01 div, .jssorb01 div:hover, .jssorb01 .av {
+     position: absolute;
+     /* size of bullet elment */
+     width: 12px;
+     height: 12px;
+     filter: alpha(opacity=70);
+     opacity: .7;
+     overflow: hidden;
+     cursor: pointer;
+     border: #000 1px solid;
+ }
+ .jssorb01 div { background-color: gray; }
+ .jssorb01 div:hover, .jssorb01 .av:hover { background-color: #d3d3d3; }
+ .jssorb01 .av { background-color: #fff; }
+ .jssorb01 .dn, .jssorb01 .dn:hover { background-color: #555555;
+ }
+
+ .jssora02l, .jssora02r {
+     display: block;
+     position: absolute;
+     /* size of arrow element */
+     width: 45px;
+     height: 55px;
+     cursor: pointer;
+     background: url('img/a02.png') no-repeat;
+     overflow: hidden;
+ }
+ .jssora02l { background-position: -3px -33px; }
+ .jssora02r { background-position: -63px -33px; }
+ .jssora02l:hover { background-position: -123px -33px; }
+ .jssora02r:hover { background-position: -183px -33px; }
+ .jssora02l.jssora02ldn { background-position: -3px -33px; }
+ .jssora02r.jssora02rdn { background-position: -63px -33px; }
+ .jssora02l.jssora02lds { background-position: -3px -33px; opacity: .3; pointer-events: none; }
+ .jssora02r.jssora02rds { background-position: -63px -33px; opacity: .3; pointer-events: none; }
+ // image slider ends here
+
+
  hr.side
   { border: 3px dashed #0000FF;
    border-radius: 10px;
@@ -39,27 +81,88 @@ a, a:link, a:visited {
    text-decoration: none;
  }
 
- body {
-   background: url(http://css3exp.com/moon/img/space-bg.png) repeat-x fixed -80% 0;
-   background:
-     url(http://css3exp.com/moon/img/stars-1.png) repeat-x fixed -130% 0,
-     url(http://css3exp.com/moon/img/stars-2.png) repeat-x fixed 40% 0,
-     url(http://css3exp.com/moon/img/space-bg.png) repeat-x fixed -80% 0,
-     url(http://css3exp.com/moon/img/clouds.png) repeat-x fixed 100% 0;
-   background-color: #1a1a1a;
- }
+ // body {
+ //   background: url(http://css3exp.com/moon/img/space-bg.png) repeat-x fixed -80% 0;
+ //   background:
+ //     url(http://css3exp.com/moon/img/stars-1.png) repeat-x fixed -130% 0,
+ //     url(http://css3exp.com/moon/img/stars-2.png) repeat-x fixed 40% 0,
+ //     url(http://css3exp.com/moon/img/space-bg.png) repeat-x fixed -80% 0,
+ //     url(http://css3exp.com/moon/img/clouds.png) repeat-x fixed 100% 0;
+ //   background-color: #1a1a1a;
+ // }
 
 // background: -webkit-linear-gradient(left, grey, grey 30%, white 30%, #3D9970);
 
+
+div.btn.btn-primary.church_name {
+  font-size:25px;
+  position:relative;
+  left:18px;
+}
+
+body {
+  background: rgba(54, 25, 25, .5);
+}
+
+div.container {
+  background: url(http://css3exp.com/moon/img/space-bg.png) repeat-x fixed -80% 0;
+  background:
+    url(http://css3exp.com/moon/img/stars-1.png) repeat-x fixed -130% 0,
+    url(http://css3exp.com/moon/img/stars-2.png) repeat-x fixed 40% 0,
+    url(http://css3exp.com/moon/img/space-bg.png) repeat-x fixed -80% 0,
+    url(http://css3exp.com/moon/img/clouds.png) repeat-x fixed 100% 0;
+  background-color: #1a1a1a;
+  // width: 60%;
+
+}
+
+@media (max-width: 767px) {
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: white;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+}
+
 .navbar-inverse {
   background: #074e68;
-  border: 3px dashed yellow;
+  border: 2px dashed yellow;
    border-radius: 10px;
-   text-shadow: 4px 4px 2px rgba(245,245,220, 0.8);
-   text-shadow: 4px 4px 2px #f5f5dc;
-   -moz-box-shadow: 1px 1px 3px 2px #f5f5dc;
-   -webkit-box-shadow: 1px 1px 3px 2px #f5f5dc;
-    box-shadow:         1px 1px 3px 2px #f5f5dc;
 }
 .mega-dropdown {
   position: static !important;
