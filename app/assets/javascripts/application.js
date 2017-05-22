@@ -20,6 +20,8 @@
 
 
 // slider for javascript
+alert("helolo everyone")
+alert("djkajdkajfkdjkafjdkjafkdjkjdfkjakfjdkjj")
 
 jssor_1_slider_init = function() {
 
