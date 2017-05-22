@@ -1,3 +1,6 @@
+alert 'helolo everyone'
+alert 'djkajdkajfkdjkafjdkjafkdjkjdfkjakfjdkjj'
+
 $ ->
   $('#like_and_unlike').on  "ajax:success", (ev) ->
     $('#like_and_unlike').load(document.URL +  ' #like_and_unlike');

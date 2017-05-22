@@ -1,3 +1,5 @@
+alert 'helolo everyone'
+alert 'djkajdkajfkdjkafjdkjafkdjkjdfkjakfjdkjj'
 $ ->
   $('.delete_comment').on  "ajax:success", (ev) ->
     $(ev.target).closest(".comment_content").slideUp()
@@ -5,6 +7,7 @@ $ ->
 $ ->
   $('.simple_form.new_comment').on  "ajax:success", (event) ->
     $('.comments').load(document.URL +  ' .comments');
+
 
 
 

@@ -1,1 +1,3 @@
-#= require active_admin/base
+
+alert 'helolo everyone'
+alert 'djkajdkajfkdjkafjdkjafkdjkjdfkjakfjdkjj'

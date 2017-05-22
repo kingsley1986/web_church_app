@@ -1,6 +1,5 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+alert 'helolo everyone'
+alert 'djkajdkajfkdjkafjdkjafkdjkjdfkjakfjdkjj'
 # $ ->
 #   $('.like').on 'click', (ev) ->
 #     ev.preventDefault();
@@ -16,7 +15,8 @@
 #       }
 #       error: function(response) {
 #           var number_of_likes = response["number_of_likes"]
-#           $('.like_word_index').innerHTML("number of linkes")
+#    alert 'helolo everyone'
+
 #       }
 #     return
 #
