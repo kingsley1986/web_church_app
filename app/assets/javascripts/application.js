@@ -68,7 +68,8 @@ jssor_1_slider_init = function() {
 
     var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
 
-    /*responsive code begin*/
+    /*responsive code begin
+
     /*remove responsive code if you don't want the slider scales while window resizing*/
     function ScaleSlider() {
         var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;

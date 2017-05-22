@@ -53,7 +53,7 @@ body.lb-disable-scrolling {
   border-radius: 4px;
 
   /* Background color behind image.
-     This is visible during transitions. */
+   This is visible during transitions. */
   background-color: white;
 }
 
