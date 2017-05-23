@@ -76,7 +76,6 @@ config.assets.compile = false
 config.assets.digest = true
 
   config.serve_static_files = true
-  config.action_dispatch.x_sendfile_header = nil
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
