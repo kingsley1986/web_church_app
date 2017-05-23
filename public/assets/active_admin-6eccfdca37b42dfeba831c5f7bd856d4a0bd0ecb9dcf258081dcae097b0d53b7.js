@@ -1,1 +1,0 @@
-(function(){alert("i am active_admin")}).call(this);
