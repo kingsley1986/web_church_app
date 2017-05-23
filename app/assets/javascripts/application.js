@@ -15,3 +15,8 @@
 //= require bootstrap-sprockets
 //= require lightbox
 //= require_tree .
+
+
+
+
+// slider for javascript
